@@ -19,22 +19,22 @@ const woodstockEventPlaceValidador = z.enum([
   "Duża Scena",
   "Mała Scena",
 ]);
-const myDateValidator = z.union([z.string(), z.date()]).refine(val=>{
-  if(typeof val === 'string'){
-    return !!Date.parse(val)
+const myDateValidator = z.union([z.string(), z.date()]).refine((val) => {
+  if (typeof val === "string") {
+    return !!Date.parse(val);
   }
-  return true
-})
+  return true;
+});
 export const woodstockEventValidator = z.object({
-  dateStart:myDateValidator,
-  dateEnd:myDateValidator,
+  instances: z.array(
+    z.object({
+      dateStart: myDateValidator,
+      dateEnd: myDateValidator,
+    }),
+  ),
   event: z.string(),
   place: woodstockEventPlaceValidador,
   kind: woodstockEventKindValidator,
   description: z.string(),
-  eventId: z.string(),
-  id: z.string()
+  id: z.string(),
 });
-
-type x = z.input<typeof woodstockEventValidator>;
-type y = x['dateEnd']
