@@ -28,6 +28,7 @@ const myDateValidator = z.union([z.string(), z.date()]).refine((val) => {
 export const woodstockEventValidator = z.object({
   instances: z.array(
     z.object({
+      id: z.string(),
       dateStart: myDateValidator,
       dateEnd: myDateValidator,
     }),
