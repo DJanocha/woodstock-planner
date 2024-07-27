@@ -1,11 +1,8 @@
-import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 import { z } from "zod";
-import { TypedOmit } from "~/types/common";
 import {
   filteredEventsInputFiltersPreferenceValidator,
   filteredEventsInputFiltersValidator,
-  filteredEventsInputValidator,
 } from "~/validators/filtered-events-input";
 import {
   woodstockEventKindValidator,
@@ -24,4 +21,6 @@ const initialFiltersAtomValue: Filters = {
 export const filtersAtom = atomWithStorage<Filters>(
   filtersAtomStorageKey,
   initialFiltersAtomValue,
+  undefined,
+  { getOnInit: true },
 );

@@ -5,9 +5,10 @@ import {
     ThumbsDownIcon,
 } from "lucide-react";
 import * as React from "react";
+import { isEmpty } from "lodash";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "~/components/ui/button";
 import {
@@ -39,13 +40,21 @@ import {
     woodstockEventKindValidator,
     woodstockEventPlaceValidador,
 } from "~/validators/woodstock-event";
-
+import { useAtom } from "jotai";
+import { filtersAtom } from "~/atoms/filters-atom";
 
 export function EventFilters() {
+    const [filters, setFilters] = useAtom(filtersAtom);
     const form = useForm<z.input<typeof filteredEventsInputFiltersValidator>>({
         resolver: zodResolver(filteredEventsInputFiltersValidator),
-        defaultValues: filteredEventsInputFiltersValidator.parse({}),
+        defaultValues: filters,
     });
+    const onSubmit = React.useCallback<
+        SubmitHandler<z.input<typeof filteredEventsInputFiltersValidator>>
+    >((vals) => {
+        setFilters(filteredEventsInputFiltersValidator.parse(vals));
+    }, []);
+    const errors = form.formState.errors;
 
     return (
         <Drawer>
@@ -54,15 +63,15 @@ export function EventFilters() {
             </DrawerTrigger>
             <DrawerContent>
                 <div className="mx-auto w-full max-w-sm">
-                    <DrawerHeader>
-                        <DrawerTitle>Preferences</DrawerTitle>
-                        <DrawerDescription>
-                            Which kind of events are you looking for?
-                        </DrawerDescription>
-                    </DrawerHeader>
-                    <div className="p-4 pb-0">
-                        <Form {...form}>
-                            <form onSubmit={form.handleSubmit(() => 0)} className="flex-1">
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1">
+                            <DrawerHeader>
+                                <DrawerTitle>Preferences</DrawerTitle>
+                                <DrawerDescription>
+                                    Which kind of events are you looking for?
+                                </DrawerDescription>
+                            </DrawerHeader>
+                            <div className="p-4 pb-0">
                                 <div className="flex flex-col items-center gap-4">
                                     <FormField
                                         control={form.control}
@@ -218,15 +227,15 @@ export function EventFilters() {
                                         )}
                                     />
                                 </div>
-                            </form>
-                        </Form>
-                    </div>
-                    <DrawerFooter>
-                        <Button>Save</Button>
-                        <DrawerClose asChild>
-                            <Button variant="outline">Cancel</Button>
-                        </DrawerClose>
-                    </DrawerFooter>
+                            </div>
+                            <DrawerFooter>
+                                <Button type="submit">Save</Button>
+                                <DrawerClose asChild>
+                                    <Button variant="outline">Cancel</Button>
+                                </DrawerClose>
+                            </DrawerFooter>
+                        </form>
+                    </Form>
                 </div>
             </DrawerContent>
         </Drawer>
