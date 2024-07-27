@@ -40,80 +40,12 @@ import {
     woodstockEventPlaceValidador,
 } from "~/validators/woodstock-event";
 
-const data = [
-    {
-        goal: 400,
-    },
-    {
-        goal: 300,
-    },
-    {
-        goal: 200,
-    },
-    {
-        goal: 300,
-    },
-    {
-        goal: 200,
-    },
-    {
-        goal: 278,
-    },
-    {
-        goal: 189,
-    },
-    {
-        goal: 239,
-    },
-    {
-        goal: 300,
-    },
-    {
-        goal: 200,
-    },
-    {
-        goal: 278,
-    },
-    {
-        goal: 189,
-    },
-    {
-        goal: 349,
-    },
-];
 
 export function EventFilters() {
-    const [goal, setGoal] = React.useState(350);
-
-    function onClick(adjustment: number) {
-        setGoal(Math.max(200, Math.min(400, goal + adjustment)));
-    }
     const form = useForm<z.input<typeof filteredEventsInputFiltersValidator>>({
         resolver: zodResolver(filteredEventsInputFiltersValidator),
         defaultValues: filteredEventsInputFiltersValidator.parse({}),
     });
-    const days = form.watch("days");
-    const toggleArrEl = React.useCallback(
-        <T,>({
-            elem,
-            allItems,
-            currentlySelectedItem,
-        }: {
-            elem: T;
-            currentlySelectedItem: T[];
-            allItems: T[];
-        }) => {
-            const newSelected = currentlySelectedItem.includes(elem)
-                ? currentlySelectedItem.filter((item) => item !== elem)
-                : [...currentlySelectedItem, elem];
-            const sorted = allItems.filter((sortedEl) =>
-                newSelected.includes(sortedEl),
-            );
-            return sorted;
-        },
-        [],
-    );
-    console.log({ days });
 
     return (
         <Drawer>
