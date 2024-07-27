@@ -58,13 +58,12 @@ export function SingleWoodstockEvent({
               size="icon"
               asChild
               variant={"link"}
-              onClick={() => { }}
             >
               <XIcon className="cursor-pointer font-bold text-red-700" />
             </Button>
           </div>
           {configItems.map(({ Icon, text }) => (
-            <div className="flex items-start gap-2 text-sm text-muted-foreground">
+            <div className="flex items-start gap-2 text-sm text-muted-foreground" key={text}>
               <Icon className="size-6" />
               <span className="flex-1 overflow-ellipsis">{text}</span>
             </div>
