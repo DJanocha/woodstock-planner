@@ -30,7 +30,7 @@ export function AllEvents() {
   const { data: filteredEvents = [] } = api.events.getFiltered.useQuery(values);
 
   return (
-    <div className="w-full px-[8rem] py-2">
+    <div className="w-full lg:px-[8rem] px-4 py-2">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(() => 0)}>
           <div className="flex flex-col gap-4">

@@ -49,12 +49,12 @@ export function SingleWoodstockEvent({
     <div className="h-30 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
         <div className="grid gap-1">
-          <div className="flex w-full flex-row items-center justify-between">
+          <div className="flex w-full flex-row items-start justify-between">
             <h3 className="w-11/12 overflow-ellipsis text-lg font-semibold text-black">
               {woodstockEvent.event}
             </h3>
             <Button
-              className="w-1/12"
+              className="w-1/12 p-0"
               size="icon"
               asChild
               variant={"link"}
