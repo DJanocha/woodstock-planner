@@ -12,23 +12,23 @@ export const eventsRouter = createTRPCRouter({
     .input(filteredEventsInputValidator)
     .query(({ input }) => {
       const skip = input.pageSize * input.pageIndex;
-      const eventKeysToFilterBy: (keyof (typeof events)[number])[] = [
+      const eventKeysTosearchBy: (keyof (typeof events)[number])[] = [
         "kind",
         "place",
         "description",
         "kind",
         "place",
-        'event'
+        "event",
         // date we cannot use because its not a string
       ];
       const filtered = events.filter((e) =>
-        eventKeysToFilterBy.some((evKey) => {
-          const val = z.string().default('').parse(e[evKey]);
-          return val?.includes(input.filterBy.toLowerCase());
+        eventKeysTosearchBy.some((evKey) => {
+          const val = z.string().default("").parse(e[evKey]);
+          return val?.includes(input.searchBy.toLowerCase());
         }),
       );
-  
-      const spliced =filtered.slice(skip,skip+input.pageSize)
+
+      const spliced = filtered.slice(skip, skip + input.pageSize);
       return spliced;
     }),
 });

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const woodstockEventKindValidator = z.enum([
+export const woodstockEventKindValidator = z.enum([
   "Warsztat",
   "Kabaret",
   "Film",
@@ -9,7 +9,7 @@ const woodstockEventKindValidator = z.enum([
   "Bieg",
   "Koncert",
 ]);
-const woodstockEventPlaceValidador = z.enum([
+export const woodstockEventPlaceValidador = z.enum([
   "Strefa Warsztatów ASP",
   "Namiot Warsztatowy ASP",
   "Strefa Działań Twórczych ASP",
@@ -25,14 +25,14 @@ const myDateValidator = z.union([z.string(), z.date()]).refine((val) => {
   }
   return true;
 });
+
+export const woodstockEventInstanceValidator = z.object({
+  id: z.string(),
+  dateStart: myDateValidator,
+  dateEnd: myDateValidator,
+});
 export const woodstockEventValidator = z.object({
-  instances: z.array(
-    z.object({
-      id: z.string(),
-      dateStart: myDateValidator,
-      dateEnd: myDateValidator,
-    }),
-  ),
+  instances: z.array(woodstockEventInstanceValidator),
   event: z.string(),
   place: woodstockEventPlaceValidador,
   kind: woodstockEventKindValidator,
