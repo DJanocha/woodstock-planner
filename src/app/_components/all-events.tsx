@@ -12,6 +12,7 @@ import { SingleEvent } from "./single-event";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Label } from "~/components/ui/label";
 import { Input } from "~/components/ui/input";
+import { SingleWoodstockEvent } from "~/components/single-woodstock-event";
 
 
 export function AllEvents() {
@@ -24,7 +25,7 @@ export function AllEvents() {
 
 
   return (
-    <div className="w-full max-w-xs">
+    <div className="w-full px-[8rem] py-2">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(() => 0)}
@@ -50,8 +51,9 @@ export function AllEvents() {
       Events:
       <div className="flex flex-col gap-4">
 
-        {filteredEvents.slice(0, 5).map((_event, index) => (
-          <SingleEvent key={index} event={_event} />
+        {filteredEvents.slice(0, 5).map((event, index) => (
+          // <SingleEvent key={index} event={_event} />
+          <SingleWoodstockEvent woodstockEvent={event} />
         ))}
       </div>
     </div>
