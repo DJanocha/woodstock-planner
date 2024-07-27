@@ -9,7 +9,8 @@ import { ReceiptTextIcon, MapPinIcon, XIcon } from "lucide-react";
 import { z } from "zod";
 import { woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
-import { format } from 'date-fns'
+import { format } from "date-fns";
+import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
 
 /** Add fonts into your Next.js project:
 
@@ -33,15 +34,18 @@ export function SingleWoodstockEvent({
   const configItems = useMemo((): {
     Icon: typeof MapPinIcon;
     text: string;
+    isCollapsible: boolean;
   }[] => {
     return [
       {
         Icon: MapPinIcon,
         text: place,
+        isCollapsible: false,
       },
       {
         Icon: ReceiptTextIcon,
         text: description,
+        isCollapsible: true,
       },
     ];
   }, []);
@@ -53,32 +57,35 @@ export function SingleWoodstockEvent({
             <h3 className="w-11/12 overflow-ellipsis text-lg font-semibold text-black">
               {woodstockEvent.event}
             </h3>
-            <Button
-              className="w-1/12 p-0"
-              size="icon"
-              asChild
-              variant={"link"}
-            >
+            <Button className="w-1/12 p-0" size="icon" asChild variant={"link"}>
               <XIcon className="cursor-pointer font-bold text-red-700" />
             </Button>
           </div>
-          {configItems.map(({ Icon, text }) => (
-            <div className="flex items-start gap-2 text-sm text-muted-foreground" key={text}>
+          {configItems.map(({ Icon, text, isCollapsible }) => (
+            <div
+              className="flex items-start gap-2 text-sm text-muted-foreground"
+              key={text}
+            >
               <Icon className="size-6" />
-              <span className="flex-1 overflow-ellipsis">{text}</span>
+              {isCollapsible ? (
+                <CollapsibleLargeText text={text} />
+              ) : (
+                <span className="flex-1 overflow-ellipsis">{text}</span>
+              )}
             </div>
           ))}
         </div>
         <XIcon />
       </div>
 
-      <div className="mt-4 flex items-center gap-2 flex-wrap">
+      <div className="mt-4 flex flex-wrap items-center gap-2">
         {instances.map((instance) => (
           <div
             key={instance.id}
-            className="rounded-full bg-gradient-to-r from-green-500 to-green-600 px-3 py-1 text-xs font-medium text-green-50 w-max"
+            className="w-max rounded-full bg-gradient-to-r from-green-500 to-green-600 px-3 py-1 text-xs font-medium text-green-50"
           >
-            {format(instance.dateStart, 'EEE HH:mm')} - {format(instance.dateEnd, 'HH:mm')}
+            {format(instance.dateStart, "EEE HH:mm")} -{" "}
+            {format(instance.dateEnd, "HH:mm")}
           </div>
         ))}
       </div>
