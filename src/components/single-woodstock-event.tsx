@@ -10,6 +10,7 @@ import {
   MapPinIcon,
   XIcon,
   HeartIcon,
+  PartyPopperIcon,
   ThumbsDownIcon,
   ShieldQuestionIcon,
 } from "lucide-react";
@@ -37,13 +38,18 @@ export function SingleWoodstockEvent({
 }: {
   woodstockEvent: z.input<typeof woodstockEventValidator>;
 }) {
-  const { place, description, instances } = woodstockEvent;
+  const { place, description, instances, kind } = woodstockEvent;
   const configItems = useMemo((): {
     Icon: typeof MapPinIcon;
     text: string;
     isCollapsible: boolean;
   }[] => {
     return [
+      {
+        Icon: PartyPopperIcon,
+        text: kind,
+        isCollapsible: false,
+      },
       {
         Icon: MapPinIcon,
         text: place,
