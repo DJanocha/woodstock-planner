@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { events, getDayByDate } from "~/events-list";
+import { events } from "~/events-list";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { hasGivenEventAnInstanceInAnyOfGivenDays } from "~/utils";

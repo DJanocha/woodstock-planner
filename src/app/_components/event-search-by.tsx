@@ -10,10 +10,10 @@ import {
   FormItem,
   FormMessage,
 } from "~/components/ui/form";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { filteredEventsInputSearchByValidator } from "~/validators/filtered-events-input";
-import { z } from "zod";
+import { type z } from "zod";
 import { useCallback } from "react";
 type FormValues = z.infer<typeof filteredEventsInputSearchByValidator>;
 export const EventsSearchBy = () => {
@@ -22,9 +22,12 @@ export const EventsSearchBy = () => {
     resolver: zodResolver(filteredEventsInputSearchByValidator),
     defaultValues: { ...searchBy },
   });
-  const onSubmit = useCallback<SubmitHandler<FormValues>>((vals) => {
-    setSearchBy(vals);
-  }, []);
+  const onSubmit = useCallback<SubmitHandler<FormValues>>(
+    (vals) => {
+      setSearchBy(vals);
+    },
+    [setSearchBy],
+  );
   return (
     <Form {...form}>
       <form onChange={form.handleSubmit(onSubmit)} className="flex flex-1">

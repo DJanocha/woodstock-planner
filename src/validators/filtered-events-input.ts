@@ -24,19 +24,13 @@ export type UserPreference = z.infer<
   typeof filteredEventsInputFiltersPreferenceValidator
 >;
 
-export const dislikedEventsInstancesIdsValidtor = z.object({
+export const userPreferenceDetailsValidator = z.object({
   dislikedEventsIds: z.string().array().default([]),
-});
-export type DislikedEventsInstances = z.infer<
-  typeof dislikedEventsInstancesIdsValidtor
->;
-
-export const selectedEventsInstancesValidator = z.object({
+  likedEventsIds: z.string().array().default([]),
   selectedEventsInstancesIds: z.string().array().default([]),
 });
-
-export type SelectedEventsInstances = z.infer<
-  typeof selectedEventsInstancesValidator
+export type UserPreferenceDetails = z.infer<
+  typeof userPreferenceDetailsValidator
 >;
 
 export const filteredEventsInputFiltersValidator = z.object({
@@ -58,7 +52,6 @@ export const filteredEventsInputSearchByValidator = z.object({
 });
 
 export const filteredEventsInputValidator = paginatedInput
-  .merge(dislikedEventsInstancesIdsValidtor)
-  .merge(selectedEventsInstancesValidator)
+  .merge(userPreferenceDetailsValidator)
   .merge(filteredEventsInputFiltersValidator)
   .merge(filteredEventsInputSearchByValidator);

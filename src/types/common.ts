@@ -29,7 +29,7 @@ export type MakeObjValuesStrings<TObj> = {
     ? MakeObjValuesStrings<TObj[Key]>
     : string;
 };
-type EitherSync<T> =
+export type EitherSync<T> =
   | {
       error: Error;
       result: undefined;
@@ -45,7 +45,7 @@ type EitherSync<T> =
  *
  * @template T The type of the result value.
  */
-type Either<T> =
+export type Either<T> =
   | Promise<{
       error: Error;
       result: undefined;
@@ -55,6 +55,7 @@ type Either<T> =
       error: undefined;
     }>;
 
-type PartialBy<T extends Record<string, unknown>, K extends keyof T> = Prettify<
-  TypedOmit<T, K> & Partial<Pick<T, K>>
->;
+export type PartialBy<
+  T extends Record<string, unknown>,
+  K extends keyof T,
+> = Prettify<TypedOmit<T, K> & Partial<Pick<T, K>>>;

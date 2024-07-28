@@ -6,22 +6,15 @@
 
 import { format } from "date-fns";
 import { useAtom } from "jotai";
-import {
-  MapPinIcon,
-  XIcon
-} from "lucide-react";
-import { useCallback, useMemo } from "react";
-import { z } from "zod";
+import { type MapPinIcon, XIcon } from "lucide-react";
+import { useCallback, useEffect, useMemo } from "react";
+import { type z } from "zod";
 import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
-import {
-  userDislikedEventsInstancesAtom,
-  userSelectedEventsInstancesAtom,
-} from "~/atoms/user-preferences-atom";
+import { userPreferenceDetailsAtom } from "~/atoms/user-preferences-atom";
 import { iconsConfig } from "~/configs/icons";
 import { cn } from "~/lib/utils";
-import { ExcludeFromUnion } from "~/types/common";
-import { UserPreference } from "~/validators/filtered-events-input";
-import { woodstockEventValidator } from "~/validators/woodstock-event";
+import { type UserPreference } from "~/validators/filtered-events-input";
+import { type woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
 
 /** Add fonts into your Next.js project:
@@ -43,50 +36,75 @@ export function SingleWoodstockEvent({
   woodstockEvent: z.input<typeof woodstockEventValidator>;
 }) {
   const { place, description, instances, kind } = woodstockEvent;
-  const [dislikedInstancesIds, setDislikedInstancesIds] = useAtom(
-    userDislikedEventsInstancesAtom,
+  const [preferenceDetails, setPreferenceDetails] = useAtom(
+    userPreferenceDetailsAtom,
   );
-  const [selectedEventsIds, setSelectedEventsIds] = useAtom(
-    userSelectedEventsInstancesAtom,
-  );
-  const currentPreference = useMemo(
-    () =>
-      dislikedInstancesIds.dislikedEventsIds.includes(woodstockEvent.id)
-        ? "disliked"
-        : "undecided",
-    [dislikedInstancesIds],
-  );
-
+  const currentPreference = useMemo((): UserPreference => {
+    if (preferenceDetails.dislikedEventsIds.includes(woodstockEvent.id)) {
+      return "disliked";
+    }
+    if (preferenceDetails.likedEventsIds.includes(woodstockEvent.id)) {
+      return "liked";
+    }
+    return "undecided";
+  }, [
+    preferenceDetails.dislikedEventsIds,
+    preferenceDetails.likedEventsIds,
+    woodstockEvent.id,
+  ]);
   const changePreferences = useCallback(
-    ({
-      newPreference,
-    }: {
-      newPreference: ExcludeFromUnion<UserPreference, "liked">;
-    }) => {
+    ({ newPreference }: { newPreference: UserPreference }) => {
       if (newPreference === currentPreference) {
         return;
       }
-      if (newPreference === "disliked") {
-        return setDislikedInstancesIds({
-          dislikedEventsIds: [
-            ...dislikedInstancesIds.dislikedEventsIds,
-            woodstockEvent.id,
-          ],
-        });
+      switch (newPreference) {
+        case "disliked":
+          return setPreferenceDetails({
+            ...preferenceDetails,
+            dislikedEventsIds: [
+              ...preferenceDetails.dislikedEventsIds,
+              woodstockEvent.id,
+            ],
+            likedEventsIds: preferenceDetails.likedEventsIds.filter(
+              (id) => id !== woodstockEvent.id,
+            ),
+          });
+
+        case "liked":
+          return setPreferenceDetails({
+            ...preferenceDetails,
+            dislikedEventsIds: preferenceDetails.dislikedEventsIds.filter(
+              (id) => id !== woodstockEvent.id,
+            ),
+            likedEventsIds: [
+              ...preferenceDetails.likedEventsIds,
+              woodstockEvent.id,
+            ],
+          });
+
+        case "undecided":
+          return setPreferenceDetails({
+            ...preferenceDetails,
+            dislikedEventsIds: preferenceDetails.dislikedEventsIds.filter(
+              (id) => id !== woodstockEvent.id,
+            ),
+            likedEventsIds: preferenceDetails.likedEventsIds.filter(
+              (id) => id !== woodstockEvent.id,
+            ),
+          });
+
+        default:
+          break;
       }
-      return setDislikedInstancesIds({
-        dislikedEventsIds:
-          dislikedInstancesIds.dislikedEventsIds.filter(
-            (id) => id !== woodstockEvent.id,
-          ),
-      });
     },
     [
       currentPreference,
-      setSelectedEventsIds,
-      selectedEventsIds.selectedEventsInstancesIds,
+      preferenceDetails,
+      setPreferenceDetails,
+      woodstockEvent.id,
     ],
   );
+
   const configItems = useMemo((): {
     Icon: typeof MapPinIcon;
     text: string;
@@ -109,26 +127,26 @@ export function SingleWoodstockEvent({
         isCollapsible: true,
       },
     ];
-  }, ["description", "kind", "place"]);
+  }, [description, kind, place]);
   const preferencesConfigItems = useMemo<
     {
       icon: typeof MapPinIcon;
       onClick: () => void;
-      key: string;
+      key: UserPreference;
       isActive: boolean;
     }[]
   >(
     () => [
       {
-        key: "like",
+        key: "liked",
         icon: iconsConfig.preferences.liked,
         onClick: () => {
-          console.log("liking. not really");
+          changePreferences({ newPreference: "liked" });
         },
-        isActive: false,
+        isActive: currentPreference === "liked",
       },
       {
-        key: "undecide",
+        key: "undecided",
         icon: iconsConfig.preferences.undecided,
         onClick: () => {
           changePreferences({ newPreference: "undecided" });
@@ -136,7 +154,7 @@ export function SingleWoodstockEvent({
         isActive: currentPreference === "undecided",
       },
       {
-        key: "dislike",
+        key: "disliked",
         icon: iconsConfig.preferences.disliked,
         onClick: () => {
           changePreferences({ newPreference: "disliked" });
@@ -155,25 +173,28 @@ export function SingleWoodstockEvent({
               {woodstockEvent.event}
             </h3>
             <div className="flex flex-row gap-2">
-              {preferencesConfigItems.map((preference) => (
-                <Button
-                  className="w-1/12 p-0"
-                  size="icon"
-                  asChild
-                  variant={"link"}
-                  key={preference.key}
-                  onClick={preference.onClick}
-                >
-                  {
-                    <preference.icon
-                      className={cn(
-                        "h-6 w-6",
-                        preference.isActive ? "" : "text-gray-500",
-                      )}
-                    />
-                  }
-                </Button>
-              ))}
+              {preferencesConfigItems.map((preference) => {
+                return (
+                  <Button
+                    className="w-1/12 p-0"
+                    size="icon"
+                    asChild
+                    variant={"link"}
+                    key={preference.key}
+                    onClick={preference.onClick}
+                  >
+                    {
+                      <preference.icon
+                        className={cn(
+                          "h-6 w-6",
+                          preference.isActive ? "" : "text-gray-500",
+                          //   preference.isActive ? "text-black" : "text-gray-500",
+                        )}
+                      />
+                    }
+                  </Button>
+                );
+              })}
             </div>
           </div>
           {configItems.map(({ Icon, text, isCollapsible }) => (

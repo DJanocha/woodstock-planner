@@ -1,34 +1,10 @@
 import { atomWithStorage } from "jotai/utils";
-import {
-  DislikedEventsInstances,
-  SelectedEventsInstances,
-} from "~/validators/filtered-events-input";
-// const dislikedEventsStorageKey = "woodstock-planner-disliked-events";
-// export const userPreferencesDislikedEventsAtom = atomWithStorage<string[]>(
-//   dislikedEventsStorageKey,
-//   [],
-//   undefined,
-//   { getOnInit: true },
-// );
+import { type UserPreferenceDetails } from "~/validators/filtered-events-input";
+const preferenceDetailsStorageKey = "woodstock-planner-preference-details";
 
-const selectedEventsInstancesStorageKey =
-  "woodstock-planner-selected-events-instances";
-
-export const userSelectedEventsInstancesAtom =
-  atomWithStorage<SelectedEventsInstances>(
-    selectedEventsInstancesStorageKey,
-    { selectedEventsInstancesIds: [] },
-    undefined,
-    { getOnInit: true },
-  );
-
-const dislikedEventsInstancesStorageKey =
-  "woodstock-planner-disliked-events-instances";
-
-export const userDislikedEventsInstancesAtom =
-  atomWithStorage<DislikedEventsInstances>(
-    dislikedEventsInstancesStorageKey,
-    { dislikedEventsIds: [] },
-    undefined,
-    { getOnInit: true },
-  );
+export const userPreferenceDetailsAtom = atomWithStorage<UserPreferenceDetails>(
+  preferenceDetailsStorageKey,
+  { dislikedEventsIds: [], likedEventsIds: [], selectedEventsInstancesIds: [] },
+  undefined,
+  { getOnInit: true },
+);

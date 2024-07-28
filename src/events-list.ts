@@ -1,20 +1,9 @@
+import { isSameDay } from "date-fns";
 import { z } from "zod";
-import { woodstockEventValidator } from "./validators/woodstock-event";
-import {
-  addDays,
-  addHours,
-  isSameDay,
-  startOfDay,
-  startOfWeek,
-} from "date-fns";
-import {
-  Day,
-  filteredEventsInputFiltersDayValidator,
-  isDay,
-} from "./validators/filtered-events-input";
-import { isEmpty } from "lodash";
+import { type Day, isDay } from "./validators/filtered-events-input";
+import { type woodstockEventValidator } from "./validators/woodstock-event";
 
-const polishTimezoneOffset = 2;
+// const _polishTimezoneOffset = 2;
 export const events: z.input<typeof woodstockEventValidator>[] = [
   {
     event: "Koło Tortury\nOkręgowa Izba Radców Prawnych w Poznaniu",
@@ -12164,7 +12153,8 @@ const daysToDatesMap: Record<Day, Date> = {
 export const getDayByDate = (_date: string | Date) => {
   const date = z.coerce.date().parse(_date);
   const maybeDay = Object.entries(daysToDatesMap).find((entry) => {
-    const [day, asDate] = entry;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_day, asDate] = entry;
     if (isSameDay(asDate, date)) {
       return entry;
     }

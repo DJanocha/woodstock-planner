@@ -1,6 +1,6 @@
 import { atom } from "jotai";
-import { z } from "zod";
-import { filteredEventsInputSearchByValidator } from "~/validators/filtered-events-input";
+import { type z } from "zod";
+import { type filteredEventsInputSearchByValidator } from "~/validators/filtered-events-input";
 const initValue: z.infer<typeof filteredEventsInputSearchByValidator> = {
   searchBy: "",
 };

@@ -1,8 +1,8 @@
 import { atomWithStorage } from "jotai/utils";
-import { z } from "zod";
+import { type z } from "zod";
 import {
   filteredEventsInputFiltersPreferenceValidator,
-  filteredEventsInputFiltersValidator,
+  type filteredEventsInputFiltersValidator,
 } from "~/validators/filtered-events-input";
 import {
   woodstockEventKindValidator,
