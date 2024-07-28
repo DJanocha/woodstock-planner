@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useAtom } from "jotai";
 import { searchByAtom } from "~/atoms/search-by-atom";
 import { Input } from "~/components/ui/input";
@@ -8,7 +8,7 @@ import {
     FormDescription,
     FormField,
     FormItem,
-    FormMessage
+    FormMessage,
 } from "~/components/ui/form";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,12 +23,12 @@ export const EventsSearchBy = () => {
         defaultValues: { ...searchBy },
     });
     const onSubmit = useCallback<SubmitHandler<FormValues>>((vals) => {
-        setSearchBy(vals)
-    }, [])
+        setSearchBy(vals);
+    }, []);
     return (
         <Form {...form}>
-            <form onChange={form.handleSubmit(onSubmit)} className="flex-1 flex">
-                <div className="flex flex-col items-center gap-4 flex-1 w-full">
+            <form onChange={form.handleSubmit(onSubmit)} className="flex flex-1">
+                <div className="flex w-full flex-1 flex-col items-center gap-4">
                     <FormField
                         control={form.control}
                         name={`searchBy`}
@@ -38,6 +38,15 @@ export const EventsSearchBy = () => {
                                     <Input
                                         {...field}
                                         placeholder="what event are you interested in?"
+                                        onKeyDown={(e) => {
+                                            console.log(e.key);
+                                            if (e.key === "Enter") {
+                                                e.preventDefault();
+                                                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore
+                                                document.activeElement.blur();
+                                            }
+                                        }}
                                     />
                                 </FormControl>
                                 <FormDescription />
@@ -48,5 +57,5 @@ export const EventsSearchBy = () => {
                 </div>
             </form>
         </Form>
-    )
-}
+    );
+};
