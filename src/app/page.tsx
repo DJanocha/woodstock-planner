@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="flex flex-col  items-stretch md:items-center justify-start bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white h-screen px-8">
-        <div className="container flex flex-col md:items-center justify-center gap-12 py-16 items-stretch h-[10vh]">
+        <div className="container flex flex-col md:items-center justify-center gap-12 py-16 items-stretch h-[10dvh]">
           <h1 className="flex flex-col items-center text-5xl font-extrabold tracking-tight sm:text-[5rem] md:flex-row ">
             <span>Woodstock</span>
             <div className="flex flex-row justify-between">
@@ -18,11 +18,11 @@ export default async function Home() {
             </div>
           </h1>
         </div>
-        <ScrollArea className="h-[60vh] overflow-auto">
+        <ScrollArea className="h-[60dvh] overflow-auto">
           <AllEvents />
 
         </ScrollArea>
-        <nav className="flex flex-row items-center gap-2 h-[15vh]">
+        <nav className="flex flex-row items-center gap-2 h-[15dvh]">
           <EventsSearchBy />
           <EventFilters />
         </nav>
