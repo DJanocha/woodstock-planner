@@ -105,31 +105,24 @@ export function SingleWoodstockEvent({
             <h3 className="w-11/12 overflow-ellipsis text-lg font-semibold text-black">
               {woodstockEvent.event}
             </h3>
-            <div className="flex flex-row gap-2">
+            <div className="flex w-1/12 flex-1 flex-row justify-between">
               {eventFriendshipVariants.map((friendship) => {
                 const Icon = iconsConfig.preferences[friendship];
                 const isActive = currentFriendship === friendship;
                 return (
                   <Button
-                    className="w-1/12 p-0"
-                    size="icon"
-                    asChild
                     variant={"link"}
                     key={friendship}
+                    className="p-1"
                     onClick={() =>
                       setFriendship({
                         newStatus: friendship,
                       })
                     }
                   >
-                    {
-                      <Icon
-                        className={cn(
-                          "h-6 w-6",
-                          isActive ? "" : "text-gray-400",
-                        )}
-                      />
-                    }
+                    <Icon
+                      className={cn("h-6 w-6", isActive ? "" : "text-gray-400")}
+                    />
                   </Button>
                 );
               })}
