@@ -43,6 +43,9 @@ import {
 } from "~/validators/woodstock-event";
 import { useAtom } from "jotai";
 import { filtersAtom } from "~/atoms/filters-atom";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { Separator } from "~/components/ui/separator";
+import { iconsConfig } from "~/configs/icons";
 
 export function EventFilters() {
     const [filters, setFilters] = useAtom(filtersAtom);
@@ -55,191 +58,197 @@ export function EventFilters() {
     >((vals) => {
         setFilters(filteredEventsInputFiltersValidator.parse(vals));
     }, []);
-    const errors = form.formState.errors;
 
     return (
-        <Drawer>
+        <Drawer onClose={form.handleSubmit(onSubmit)}>
             <DrawerTrigger>
                 <FilterIcon />
             </DrawerTrigger>
-            <DrawerContent>
-                <div className="mx-auto w-full max-w-sm">
-                    <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1">
-                            <DrawerHeader>
-                                <DrawerTitle>Preferences</DrawerTitle>
-                                <DrawerDescription>
-                                    Which kind of events are you looking for?
-                                </DrawerDescription>
-                            </DrawerHeader>
-                            <div className="p-4 pb-0">
-                                <div className="flex flex-col items-center gap-4">
-                                    <FormField
-                                        control={form.control}
-                                        name={`days`}
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel> days:</FormLabel>
-                                                <FormControl>
-                                                    <ToggleGroup
-                                                        variant="outline"
-                                                        type="multiple"
-                                                        {...field}
-                                                        onValueChange={field.onChange}
-                                                    >
-                                                        {filteredEventsInputFiltersDayValidator.options.map(
-                                                            (day) => (
-                                                                <ToggleGroupItem
-                                                                    value={day}
-                                                                    aria-label={`Toggle day named ${day}`}
-                                                                    key={day}
-                                                                >
-                                                                    {day}
-                                                                </ToggleGroupItem>
-                                                            ),
-                                                        )}
-                                                    </ToggleGroup>
-                                                </FormControl>
-                                                <FormDescription />
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={form.control}
-                                        name={`kinds`}
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel> kinds:</FormLabel>
-                                                <FormControl>
-                                                    <ToggleGroup
-                                                        variant="outline"
-                                                        type="multiple"
-                                                        {...field}
-                                                        onValueChange={field.onChange}
-                                                        className="flex flex-wrap"
-                                                    >
-                                                        {woodstockEventKindValidator.options.map((kind) => (
-                                                            <ToggleGroupItem
-                                                                value={kind}
-                                                                aria-label={`Toggle kind named ${kind}`}
-                                                                key={kind}
-                                                            >
-                                                                {kind}
-                                                            </ToggleGroupItem>
-                                                        ))}
-                                                    </ToggleGroup>
-                                                </FormControl>
-                                                <FormDescription />
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={form.control}
-                                        name={`places`}
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel> places:</FormLabel>
-                                                <FormControl>
-                                                    <ToggleGroup
-                                                        variant="outline"
-                                                        type="multiple"
-                                                        {...field}
-                                                        onValueChange={field.onChange}
-                                                        className="flex flex-wrap"
-                                                    >
-                                                        {woodstockEventPlaceValidador.options.map(
-                                                            (place) => (
-                                                                <ToggleGroupItem
-                                                                    value={place}
-                                                                    aria-label={`Toggle place named ${place}`}
-                                                                    key={place}
-                                                                >
-                                                                    {place}
-                                                                </ToggleGroupItem>
-                                                            ),
-                                                        )}
-                                                    </ToggleGroup>
-                                                </FormControl>
-                                                <FormDescription />
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={form.control}
-                                        name={`preferences`}
-                                        render={({ field }) => (
-                                            <FormItem className="w-full">
-                                                <FormLabel> preferences:</FormLabel>
-                                                <FormControl>
-                                                    <ToggleGroup
-                                                        variant="outline"
-                                                        type="multiple"
-                                                        {...field}
-                                                        onValueChange={field.onChange}
-                                                        className="flex flex-wrap"
-                                                    >
+            <DrawerContent className="max-h-[90vh] h-[90vh]">
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 mx-auto w-full max-w-sm">
+                        <DrawerHeader>
+                            <DrawerTitle>Preferences</DrawerTitle>
+                            <DrawerDescription>
+                                Which kind of events are you looking for?
+                            </DrawerDescription>
+                        </DrawerHeader>
+                        <Separator />
+                        <ScrollArea className="p-4 max-h-[60vh] h-[60vh] overflow-auto pb-0 flex flex-col items-center gap-4" >
+                            <FormField
+                                control={form.control}
+                                name={`days`}
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel> days:</FormLabel>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('days', filteredEventsInputFiltersDayValidator.options)}>all</Button>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('days', [])}>none</Button>
+                                        <FormControl>
+                                            <ToggleGroup
+                                                variant="outline"
+                                                type="multiple"
+                                                {...field}
+                                                onValueChange={field.onChange}
+                                            >
+                                                {filteredEventsInputFiltersDayValidator.options.map(
+                                                    (day) => (
                                                         <ToggleGroupItem
-                                                            value={
-                                                                filteredEventsInputFiltersPreferenceValidator
-                                                                    .enum.liked
-                                                            }
-                                                            aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.liked}`}
-                                                            key={
-                                                                filteredEventsInputFiltersPreferenceValidator
-                                                                    .enum.liked
-                                                            }
+                                                            value={day}
+                                                            aria-label={`Toggle day named ${day}`}
+                                                            key={day}
                                                         >
-                                                            <HeartIcon />
+                                                            {day}
                                                         </ToggleGroupItem>
+                                                    ),
+                                                )}
+                                            </ToggleGroup>
+                                        </FormControl>
+                                        <FormDescription />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name={`kinds`}
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel> kinds:</FormLabel>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('kinds', woodstockEventKindValidator.options)}>all</Button>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('kinds', [])}>none</Button>
+                                        <FormControl>
+                                            <ToggleGroup
+                                                variant="outline"
+                                                type="multiple"
+                                                {...field}
+                                                onValueChange={field.onChange}
+                                                className="flex flex-wrap"
+                                            >
+                                                {woodstockEventKindValidator.options.map((kind) => (
+                                                    <ToggleGroupItem
+                                                        value={kind}
+                                                        aria-label={`Toggle kind named ${kind}`}
+                                                        key={kind}
+                                                    >
+                                                        {kind}
+                                                    </ToggleGroupItem>
+                                                ))}
+                                            </ToggleGroup>
+                                        </FormControl>
+                                        <FormDescription />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name={`places`}
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel> places:</FormLabel>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('places', woodstockEventPlaceValidador.options)}>all</Button>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('places', [])}>none</Button>
+                                        <FormControl>
+                                            <ToggleGroup
+                                                variant="outline"
+                                                type="multiple"
+                                                {...field}
+                                                onValueChange={field.onChange}
+                                                className="flex flex-wrap"
+                                            >
+                                                {woodstockEventPlaceValidador.options.map(
+                                                    (place) => (
                                                         <ToggleGroupItem
-                                                            value={
-                                                                filteredEventsInputFiltersPreferenceValidator
-                                                                    .enum.disliked
-                                                            }
-                                                            aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.disliked}`}
-                                                            key={
-                                                                filteredEventsInputFiltersPreferenceValidator
-                                                                    .enum.disliked
-                                                            }
+                                                            value={place}
+                                                            aria-label={`Toggle place named ${place}`}
+                                                            key={place}
                                                         >
-                                                            <ThumbsDownIcon />
+                                                            {place}
                                                         </ToggleGroupItem>
-                                                        <ToggleGroupItem
-                                                            value={
-                                                                filteredEventsInputFiltersPreferenceValidator
-                                                                    .enum.undecided
-                                                            }
-                                                            aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.undecided}`}
-                                                            key={
-                                                                filteredEventsInputFiltersPreferenceValidator
-                                                                    .enum.undecided
-                                                            }
-                                                        >
-                                                            <ShieldQuestionIcon />
-                                                        </ToggleGroupItem>
-                                                    </ToggleGroup>
-                                                </FormControl>
-                                                <FormDescription />
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                            <DrawerFooter>
-                                <DrawerClose asChild>
-                                    <Button type="submit">Save</Button>
-                                </DrawerClose>
-                                <DrawerClose asChild>
-                                    <Button variant="outline">Cancel</Button>
-                                </DrawerClose>
-                            </DrawerFooter>
-                        </form>
-                    </Form>
-                </div>
+                                                    ),
+                                                )}
+                                            </ToggleGroup>
+                                        </FormControl>
+                                        <FormDescription />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name={`preferences`}
+                                render={({ field }) => (
+                                    <FormItem className="w-full">
+                                        <FormLabel> preferences:</FormLabel>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('preferences', filteredEventsInputFiltersPreferenceValidator.options)}>all</Button>
+                                        <Button variant={'ghost'} onClick={() => form.setValue('preferences', [])}>none</Button>
+                                        <FormControl>
+                                            <ToggleGroup
+                                                variant="outline"
+                                                type="multiple"
+                                                {...field}
+                                                onValueChange={field.onChange}
+                                                className="flex flex-wrap"
+                                            >
+                                                <ToggleGroupItem
+                                                    value={
+                                                        filteredEventsInputFiltersPreferenceValidator
+                                                            .enum.liked
+                                                    }
+                                                    aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.liked}`}
+                                                    key={
+                                                        filteredEventsInputFiltersPreferenceValidator
+                                                            .enum.liked
+                                                    }
+                                                >
+                                                    {<iconsConfig.preferences.liked />}
+                                                </ToggleGroupItem>
+                                                <ToggleGroupItem
+                                                    value={
+                                                        filteredEventsInputFiltersPreferenceValidator
+                                                            .enum.disliked
+                                                    }
+                                                    aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.disliked}`}
+                                                    key={
+                                                        filteredEventsInputFiltersPreferenceValidator
+                                                            .enum.disliked
+                                                    }
+                                                >
+                                                    {<iconsConfig.preferences.disliked />}
+                                                </ToggleGroupItem>
+                                                <ToggleGroupItem
+                                                    value={
+                                                        filteredEventsInputFiltersPreferenceValidator
+                                                            .enum.undecided
+                                                    }
+                                                    aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.undecided}`}
+                                                    key={
+                                                        filteredEventsInputFiltersPreferenceValidator
+                                                            .enum.undecided
+                                                    }
+                                                >
+                                                    {<iconsConfig.preferences.undecided />}
+                                                </ToggleGroupItem>
+                                            </ToggleGroup>
+                                        </FormControl>
+                                        <FormDescription />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </ScrollArea>
+
+                        {/* <Separator />
+                        <DrawerFooter className="flex flex-row gap-4">
+                            <DrawerClose asChild>
+                                <Button type="submit" className="w-full">Save</Button>
+                            </DrawerClose>
+                            <DrawerClose asChild>
+                                <Button variant="outline" className="w-full">Cancel</Button>
+                            </DrawerClose>
+                        </DrawerFooter> */}
+                    </form>
+                </Form>
             </DrawerContent>
         </Drawer>
     );

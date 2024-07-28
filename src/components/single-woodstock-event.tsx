@@ -98,17 +98,17 @@ export function SingleWoodstockEvent({
   }[] => {
     return [
       {
-        Icon: PartyPopperIcon,
+        Icon: iconsConfig.eventProperties.kind,
         text: kind,
         isCollapsible: false,
       },
       {
-        Icon: MapPinIcon,
+        Icon: iconsConfig.eventProperties.place,
         text: place,
         isCollapsible: false,
       },
       {
-        Icon: ReceiptTextIcon,
+        Icon: iconsConfig.eventProperties.description,
         text: description,
         isCollapsible: true,
       },
@@ -125,7 +125,7 @@ export function SingleWoodstockEvent({
     () => [
       {
         key: "like",
-        icon: HeartIcon,
+        icon: iconsConfig.preferences.liked,
         onClick: () => {
           console.log("liking. not really");
         },
@@ -133,7 +133,7 @@ export function SingleWoodstockEvent({
       },
       {
         key: "undecide",
-        icon: ShieldQuestionIcon,
+        icon: iconsConfig.preferences.undecided,
         onClick: () => {
           changePreferences({ newPreference: "undecided" });
         },
@@ -141,7 +141,7 @@ export function SingleWoodstockEvent({
       },
       {
         key: "dislike",
-        icon: ThumbsDownIcon,
+        icon: iconsConfig.preferences.disliked,
         onClick: () => {
           changePreferences({ newPreference: "disliked" });
         },
