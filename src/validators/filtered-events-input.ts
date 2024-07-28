@@ -11,6 +11,9 @@ export const filteredEventsInputFiltersDayValidator = z.enum([
   "friday",
   "saturday",
 ]);
+export type Day = z.infer<typeof filteredEventsInputFiltersDayValidator>;
+export const isDay = (value: unknown): value is Day =>
+  filteredEventsInputFiltersDayValidator.safeParse(value).success;
 export const filteredEventsInputFiltersPreferenceValidator = z.enum([
   "liked",
   "disliked",
