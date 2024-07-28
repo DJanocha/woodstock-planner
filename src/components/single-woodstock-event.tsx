@@ -98,35 +98,13 @@ export function SingleWoodstockEvent({
     return null;
   }
   return (
-    <div className="h-30 rounded-lg border bg-background p-4 sm:p-6">
+    <div className="h-30 flex flex-col gap-4 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
         <div className="flex w-full flex-col items-stretch gap-1">
           <div className="flex w-full flex-row items-start justify-between">
-            <h3 className="w-11/12 overflow-ellipsis text-lg font-semibold text-black">
+            <h3 className="w-full overflow-ellipsis text-lg font-semibold text-black">
               {woodstockEvent.event}
             </h3>
-            <div className="flex w-1/12 flex-1 flex-row justify-between">
-              {eventFriendshipVariants.map((friendship) => {
-                const Icon = iconsConfig.preferences[friendship];
-                const isActive = currentFriendship === friendship;
-                return (
-                  <Button
-                    variant={"link"}
-                    key={friendship}
-                    className="p-1"
-                    onClick={() =>
-                      setFriendship({
-                        newStatus: friendship,
-                      })
-                    }
-                  >
-                    <Icon
-                      className={cn("h-6 w-6", isActive ? "" : "text-gray-400")}
-                    />
-                  </Button>
-                );
-              })}
-            </div>
           </div>
           {configItems.map(({ Icon, text, isCollapsible }) => (
             <div
@@ -142,7 +120,7 @@ export function SingleWoodstockEvent({
             </div>
           ))}
         </div>
-        <XIcon />
+        {/* <XIcon /> */}
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -154,6 +132,7 @@ export function SingleWoodstockEvent({
               variant={"secondary"}
               onClick={() => toggleSaveInstanceId({ instanceId: instance.id })}
               className={cn(
+                "cursor-pointer",
                 isSaved
                   ? "to bg-gradient-to-br from-green-700 to-green-900 text-white ring-2 ring-green-900"
                   : "",
@@ -162,6 +141,28 @@ export function SingleWoodstockEvent({
               {format(instance.dateStart, "EEE HH:mm")} -{" "}
               {format(instance.dateEnd, "HH:mm")}
             </Badge>
+          );
+        })}
+      </div>
+      <div className="flex w-full flex-1 flex-row justify-between gap-2">
+        {eventFriendshipVariants.map((friendship) => {
+          const Icon = iconsConfig.preferences[friendship];
+          const isActive = currentFriendship === friendship;
+          return (
+            <Button
+              variant={"secondary"}
+              key={friendship}
+              className="w-full"
+              onClick={() =>
+                setFriendship({
+                  newStatus: friendship,
+                })
+              }
+            >
+              <Icon
+                className={cn("h-6 w-6", isActive ? "" : "text-gray-300")}
+              />
+            </Button>
           );
         })}
       </div>
