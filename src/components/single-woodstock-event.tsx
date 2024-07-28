@@ -5,7 +5,14 @@
  */
 
 import { ComponentProps, SVGProps, useMemo } from "react";
-import { ReceiptTextIcon, MapPinIcon, XIcon } from "lucide-react";
+import {
+  ReceiptTextIcon,
+  MapPinIcon,
+  XIcon,
+  HeartIcon,
+  ThumbsDownIcon,
+  ShieldQuestionIcon,
+} from "lucide-react";
 import { z } from "zod";
 import { woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
@@ -49,17 +56,56 @@ export function SingleWoodstockEvent({
       },
     ];
   }, []);
+  const preferencesConfigItems = useMemo<
+    { icon: typeof MapPinIcon; onClick: () => void; key: string }[]
+  >(
+    () => [
+      {
+        key: "like",
+        icon: HeartIcon,
+        onClick: () => {
+          console.log("liking");
+        },
+      },
+      {
+        key: "undecide",
+        icon: ShieldQuestionIcon,
+        onClick: () => {
+          console.log("undeciding");
+        },
+      },
+      {
+        key: "dislike",
+        icon: ThumbsDownIcon,
+        onClick: () => {
+          console.log("disliking");
+        },
+      },
+    ],
+    [],
+  );
   return (
     <div className="h-30 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
         <div className="grid gap-1">
-          <div className="flex w-full flex-row items-start justify-between">
+          <div className="flex w-full flex-row items-start justify-between ">
             <h3 className="w-11/12 overflow-ellipsis text-lg font-semibold text-black">
               {woodstockEvent.event}
             </h3>
-            <Button className="w-1/12 p-0" size="icon" asChild variant={"link"}>
-              <XIcon className="cursor-pointer font-bold text-red-700" />
-            </Button>
+            <div className="flex flex-row gap-2">
+              {preferencesConfigItems.map((preference) => (
+                <Button
+                  className="w-1/12 p-0"
+                  size="icon"
+                  asChild
+                  variant={"link"}
+                  key={preference.key}
+                  onClick={preference.onClick}
+                >
+                  {<preference.icon className="h-6 w-6" />}
+                </Button>
+              ))}
+            </div>
           </div>
           {configItems.map(({ Icon, text, isCollapsible }) => (
             <div

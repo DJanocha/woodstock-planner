@@ -3,9 +3,6 @@ import { events } from "~/events-list";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { filteredEventsInputValidator } from "~/validators/filtered-events-input";
-import { woodstockEventValidator } from "~/validators/woodstock-event";
-
-// Mocked DB
 
 export const eventsRouter = createTRPCRouter({
   getFiltered: publicProcedure

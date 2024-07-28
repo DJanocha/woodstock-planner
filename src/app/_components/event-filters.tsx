@@ -229,7 +229,9 @@ export function EventFilters() {
                                 </div>
                             </div>
                             <DrawerFooter>
-                                <Button type="submit">Save</Button>
+                                <DrawerClose asChild>
+                                    <Button type="submit">Save</Button>
+                                </DrawerClose>
                                 <DrawerClose asChild>
                                     <Button variant="outline">Cancel</Button>
                                 </DrawerClose>
