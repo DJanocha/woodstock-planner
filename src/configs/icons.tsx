@@ -1,10 +1,10 @@
 import {
+  CircleHelpIcon,
   HeartIcon,
   type LucideProps,
   MapPinIcon,
   PartyPopperIcon,
   ReceiptTextIcon,
-  ShieldQuestionIcon,
   ThumbsDownIcon,
 } from "lucide-react";
 import type react from "react";
@@ -19,7 +19,7 @@ export const iconsConfig = {
   preferences: {
     liked: HeartIcon,
     disliked: ThumbsDownIcon,
-    undecided: ShieldQuestionIcon,
+    undecided: CircleHelpIcon,
   },
   eventProperties: {
     kind: PartyPopperIcon,

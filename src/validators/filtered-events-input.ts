@@ -17,9 +17,11 @@ export const isDay = (value: unknown): value is Day =>
 
 export const filteredEventsInputFiltersPreferenceValidator = z.enum([
   "liked",
-  "disliked",
   "undecided",
+  "disliked",
 ]);
+export const userPreferences =
+  filteredEventsInputFiltersPreferenceValidator.options;
 export type UserPreference = z.infer<
   typeof filteredEventsInputFiltersPreferenceValidator
 >;

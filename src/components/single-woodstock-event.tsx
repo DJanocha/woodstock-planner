@@ -6,14 +6,17 @@
 
 import { format } from "date-fns";
 import { useAtom } from "jotai";
-import { type MapPinIcon, XIcon } from "lucide-react";
-import { useCallback, useEffect, useMemo } from "react";
+import { XIcon, type MapPinIcon } from "lucide-react";
+import { useCallback, useMemo } from "react";
 import { type z } from "zod";
 import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
 import { userPreferenceDetailsAtom } from "~/atoms/user-preferences-atom";
 import { iconsConfig } from "~/configs/icons";
 import { cn } from "~/lib/utils";
-import { type UserPreference } from "~/validators/filtered-events-input";
+import {
+  userPreferences,
+  type UserPreference,
+} from "~/validators/filtered-events-input";
 import { type woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
 
@@ -128,42 +131,6 @@ export function SingleWoodstockEvent({
       },
     ];
   }, [description, kind, place]);
-  const preferencesConfigItems = useMemo<
-    {
-      icon: typeof MapPinIcon;
-      onClick: () => void;
-      key: UserPreference;
-      isActive: boolean;
-    }[]
-  >(
-    () => [
-      {
-        key: "liked",
-        icon: iconsConfig.preferences.liked,
-        onClick: () => {
-          changePreferences({ newPreference: "liked" });
-        },
-        isActive: currentPreference === "liked",
-      },
-      {
-        key: "undecided",
-        icon: iconsConfig.preferences.undecided,
-        onClick: () => {
-          changePreferences({ newPreference: "undecided" });
-        },
-        isActive: currentPreference === "undecided",
-      },
-      {
-        key: "disliked",
-        icon: iconsConfig.preferences.disliked,
-        onClick: () => {
-          changePreferences({ newPreference: "disliked" });
-        },
-        isActive: currentPreference === "disliked",
-      },
-    ],
-    [changePreferences, currentPreference],
-  );
   return (
     <div className="h-30 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
@@ -173,22 +140,23 @@ export function SingleWoodstockEvent({
               {woodstockEvent.event}
             </h3>
             <div className="flex flex-row gap-2">
-              {preferencesConfigItems.map((preference) => {
+              {userPreferences.map((pref) => {
+                const Icon = iconsConfig.preferences[pref];
+                const isActive = currentPreference === pref;
                 return (
                   <Button
                     className="w-1/12 p-0"
                     size="icon"
                     asChild
                     variant={"link"}
-                    key={preference.key}
-                    onClick={preference.onClick}
+                    key={pref}
+                    onClick={() => changePreferences({ newPreference: pref })}
                   >
                     {
-                      <preference.icon
+                      <Icon
                         className={cn(
                           "h-6 w-6",
-                          preference.isActive ? "" : "text-gray-500",
-                          //   preference.isActive ? "text-black" : "text-gray-500",
+                          isActive ? "" : "text-gray-400",
                         )}
                       />
                     }
