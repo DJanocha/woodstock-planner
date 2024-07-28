@@ -31,13 +31,16 @@ import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
 import { iconsConfig } from "~/configs/icons";
 import {
   filteredEventsInputFiltersDayValidator,
-  filteredEventsInputFiltersPreferenceValidator,
   filteredEventsInputFiltersValidator,
 } from "~/validators/filtered-events-input";
 import {
   woodstockEventKindValidator,
   woodstockEventPlaceValidador,
 } from "~/validators/woodstock-event";
+import {
+  eventFriendshipVariant,
+  eventFriendshipVariants,
+} from "~/validators/events-friendship";
 
 export function EventFilters() {
   const [filters, setFilters] = useAtom(filtersAtom);
@@ -217,24 +220,21 @@ export function EventFilters() {
               />
               <FormField
                 control={form.control}
-                name={`preferences`}
+                name={`friendships`}
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <FormLabel> preferences:</FormLabel>
                     <Button
                       variant={"ghost"}
                       onClick={() =>
-                        form.setValue(
-                          "preferences",
-                          filteredEventsInputFiltersPreferenceValidator.options,
-                        )
+                        form.setValue("friendships", eventFriendshipVariants)
                       }
                     >
                       all
                     </Button>
                     <Button
                       variant={"ghost"}
-                      onClick={() => form.setValue("preferences", [])}
+                      onClick={() => form.setValue("friendships", [])}
                     >
                       none
                     </Button>
@@ -247,41 +247,23 @@ export function EventFilters() {
                         className="flex flex-wrap"
                       >
                         <ToggleGroupItem
-                          value={
-                            filteredEventsInputFiltersPreferenceValidator.enum
-                              .liked
-                          }
-                          aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.liked}`}
-                          key={
-                            filteredEventsInputFiltersPreferenceValidator.enum
-                              .liked
-                          }
+                          value={eventFriendshipVariant.enum.liked}
+                          aria-label={`Toggle place named ${eventFriendshipVariant.enum.liked}`}
+                          key={eventFriendshipVariant.enum.liked}
                         >
                           {<iconsConfig.preferences.liked />}
                         </ToggleGroupItem>
                         <ToggleGroupItem
-                          value={
-                            filteredEventsInputFiltersPreferenceValidator.enum
-                              .disliked
-                          }
-                          aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.disliked}`}
-                          key={
-                            filteredEventsInputFiltersPreferenceValidator.enum
-                              .disliked
-                          }
+                          value={eventFriendshipVariant.enum.disliked}
+                          aria-label={`Toggle place named ${eventFriendshipVariant.enum.disliked}`}
+                          key={eventFriendshipVariant.enum.disliked}
                         >
                           {<iconsConfig.preferences.disliked />}
                         </ToggleGroupItem>
                         <ToggleGroupItem
-                          value={
-                            filteredEventsInputFiltersPreferenceValidator.enum
-                              .undecided
-                          }
-                          aria-label={`Toggle place named ${filteredEventsInputFiltersPreferenceValidator.enum.undecided}`}
-                          key={
-                            filteredEventsInputFiltersPreferenceValidator.enum
-                              .undecided
-                          }
+                          value={eventFriendshipVariant.enum.undecided}
+                          aria-label={`Toggle place named ${eventFriendshipVariant.enum.undecided}`}
+                          key={eventFriendshipVariant.enum.undecided}
                         >
                           {<iconsConfig.preferences.undecided />}
                         </ToggleGroupItem>

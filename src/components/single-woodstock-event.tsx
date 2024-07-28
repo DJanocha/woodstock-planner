@@ -10,13 +10,14 @@ import { XIcon, type MapPinIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { type z } from "zod";
 import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
+import { filtersAtom } from "~/atoms/filters-atom";
 import { userPreferenceDetailsAtom } from "~/atoms/user-preferences-atom";
 import { iconsConfig } from "~/configs/icons";
 import { cn } from "~/lib/utils";
 import {
-  userPreferences,
-  type UserPreference,
-} from "~/validators/filtered-events-input";
+  eventFriendshipVariants,
+  type EventFriendship,
+} from "~/validators/events-friendship";
 import { type woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
 
@@ -39,10 +40,11 @@ export function SingleWoodstockEvent({
   woodstockEvent: z.input<typeof woodstockEventValidator>;
 }) {
   const { place, description, instances, kind } = woodstockEvent;
+  const [userFilters] = useAtom(filtersAtom);
   const [preferenceDetails, setPreferenceDetails] = useAtom(
     userPreferenceDetailsAtom,
   );
-  const currentPreference = useMemo((): UserPreference => {
+  const currentPreference = useMemo((): EventFriendship => {
     if (preferenceDetails.dislikedEventsIds.includes(woodstockEvent.id)) {
       return "disliked";
     }
@@ -56,7 +58,7 @@ export function SingleWoodstockEvent({
     woodstockEvent.id,
   ]);
   const changePreferences = useCallback(
-    ({ newPreference }: { newPreference: UserPreference }) => {
+    ({ newPreference }: { newPreference: EventFriendship }) => {
       if (newPreference === currentPreference) {
         return;
       }
@@ -131,6 +133,15 @@ export function SingleWoodstockEvent({
       },
     ];
   }, [description, kind, place]);
+  if (
+    eventFriendshipVariants.some(
+      (pref) =>
+        currentPreference === pref &&
+        !(userFilters.friendships ?? []).includes(currentPreference),
+    )
+  ) {
+    return null;
+  }
   return (
     <div className="h-30 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
@@ -140,7 +151,7 @@ export function SingleWoodstockEvent({
               {woodstockEvent.event}
             </h3>
             <div className="flex flex-row gap-2">
-              {userPreferences.map((pref) => {
+              {eventFriendshipVariants.map((pref) => {
                 const Icon = iconsConfig.preferences[pref];
                 const isActive = currentPreference === pref;
                 return (

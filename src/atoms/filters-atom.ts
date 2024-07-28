@@ -1,9 +1,7 @@
 import { atomWithStorage } from "jotai/utils";
 import { type z } from "zod";
-import {
-  filteredEventsInputFiltersPreferenceValidator,
-  type filteredEventsInputFiltersValidator,
-} from "~/validators/filtered-events-input";
+import { eventFriendshipVariants } from "~/validators/events-friendship";
+import { type filteredEventsInputFiltersValidator } from "~/validators/filtered-events-input";
 import {
   woodstockEventKindValidator,
   woodstockEventPlaceValidador,
@@ -14,7 +12,7 @@ const filtersAtomStorageKey = "woodstock-planner-filters";
 const initialFiltersAtomValue: Filters = {
   days: ["wednesday", "thursday", "friday", "saturday"],
   kinds: woodstockEventKindValidator.options,
-  preferences: filteredEventsInputFiltersPreferenceValidator.options,
+  friendships: eventFriendshipVariants,
   places: woodstockEventPlaceValidador.options,
 };
 

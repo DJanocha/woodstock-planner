@@ -4,6 +4,7 @@ import {
   woodstockEventPlaceValidador,
 } from "./woodstock-event";
 import { paginatedInput } from "./paginated-input";
+import { eventFriendshipVariant } from "./events-friendship";
 
 export const filteredEventsInputFiltersDayValidator = z.enum([
   "wednesday",
@@ -15,17 +16,6 @@ export type Day = z.infer<typeof filteredEventsInputFiltersDayValidator>;
 export const isDay = (value: unknown): value is Day =>
   filteredEventsInputFiltersDayValidator.safeParse(value).success;
 
-export const filteredEventsInputFiltersPreferenceValidator = z.enum([
-  "liked",
-  "undecided",
-  "disliked",
-]);
-export const userPreferences =
-  filteredEventsInputFiltersPreferenceValidator.options;
-export type UserPreference = z.infer<
-  typeof filteredEventsInputFiltersPreferenceValidator
->;
-
 export const userPreferenceDetailsValidator = z.object({
   dislikedEventsIds: z.string().array().default([]),
   likedEventsIds: z.string().array().default([]),
@@ -36,9 +26,9 @@ export type UserPreferenceDetails = z.infer<
 >;
 
 export const filteredEventsInputFiltersValidator = z.object({
-  preferences: filteredEventsInputFiltersPreferenceValidator
+  friendships: eventFriendshipVariant
     .array()
-    .default(filteredEventsInputFiltersPreferenceValidator.options),
+    .default(eventFriendshipVariant.options),
   days: filteredEventsInputFiltersDayValidator
     .array()
     .default(["friday", "thursday", "saturday", "wednesday"]),
