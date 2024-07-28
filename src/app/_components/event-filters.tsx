@@ -30,7 +30,7 @@ import { Separator } from "~/components/ui/separator";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
 import { iconsConfig } from "~/configs/icons";
 import {
-  filteredEventsInputFiltersDayValidator,
+  eventDayValidator,
   filteredEventsInputFiltersValidator,
 } from "~/validators/filtered-events-input";
 import {
@@ -141,10 +141,7 @@ export function EventFilters() {
                     <Button
                       variant={"ghost"}
                       onClick={() =>
-                        form.setValue(
-                          "days",
-                          filteredEventsInputFiltersDayValidator.options,
-                        )
+                        form.setValue("days", eventDayValidator.options)
                       }
                     >
                       all
@@ -162,17 +159,15 @@ export function EventFilters() {
                         {...field}
                         onValueChange={field.onChange}
                       >
-                        {filteredEventsInputFiltersDayValidator.options.map(
-                          (day) => (
-                            <ToggleGroupItem
-                              value={day}
-                              aria-label={`Toggle day named ${day}`}
-                              key={day}
-                            >
-                              {day}
-                            </ToggleGroupItem>
-                          ),
-                        )}
+                        {eventDayValidator.options.map((day) => (
+                          <ToggleGroupItem
+                            value={day}
+                            aria-label={`Toggle day named ${day}`}
+                            key={day}
+                          >
+                            {day}
+                          </ToggleGroupItem>
+                        ))}
                       </ToggleGroup>
                     </FormControl>
                     <FormDescription />

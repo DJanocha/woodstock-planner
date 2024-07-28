@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
+  .sx__week-header > * {
+    opacity: 0.2;
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
@@ -59,7 +61,6 @@
     --chart-5: 340 75% 55%;
   }
 }
-
 
 @layer base {
   * {

@@ -1,5 +1,6 @@
 import { atomWithStorage } from "jotai/utils";
 import { type z } from "zod";
+import { eventDays } from "~/validators/event-day";
 import { eventFriendshipVariants } from "~/validators/events-friendship";
 import { type filteredEventsInputFiltersValidator } from "~/validators/filtered-events-input";
 import {
@@ -10,7 +11,7 @@ type Filters = z.infer<typeof filteredEventsInputFiltersValidator>;
 
 const filtersAtomStorageKey = "woodstock-planner-filters";
 const initialFiltersAtomValue: Filters = {
-  days: ["wednesday", "thursday", "friday", "saturday"],
+  days: eventDays,
   kinds: woodstockEventKindValidator.options,
   friendships: eventFriendshipVariants,
   places: woodstockEventPlaceValidador.options,

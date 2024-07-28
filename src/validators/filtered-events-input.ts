@@ -5,16 +5,10 @@ import {
 } from "./woodstock-event";
 import { paginatedInput } from "./paginated-input";
 import { eventFriendshipVariant } from "./events-friendship";
+import { type EventDay, eventDays, eventDayValidator } from "./event-day";
 
-export const filteredEventsInputFiltersDayValidator = z.enum([
-  "wednesday",
-  "thursday",
-  "friday",
-  "saturday",
-]);
-export type Day = z.infer<typeof filteredEventsInputFiltersDayValidator>;
-export const isDay = (value: unknown): value is Day =>
-  filteredEventsInputFiltersDayValidator.safeParse(value).success;
+export const isEventDay = (value: unknown): value is EventDay =>
+  eventDayValidator.safeParse(value).success;
 
 export const userPreferenceDetailsValidator = z.object({
   dislikedEventsIds: z.string().array().default([]),
@@ -29,9 +23,7 @@ export const filteredEventsInputFiltersValidator = z.object({
   friendships: eventFriendshipVariant
     .array()
     .default(eventFriendshipVariant.options),
-  days: filteredEventsInputFiltersDayValidator
-    .array()
-    .default(["friday", "thursday", "saturday", "wednesday"]),
+  days: eventDayValidator.array().default(eventDays),
   kinds: woodstockEventKindValidator
     .array()
     .default(woodstockEventKindValidator.options),

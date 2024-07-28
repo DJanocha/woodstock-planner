@@ -35,6 +35,9 @@ dependencies:
   '@schedule-x/calendar':
     specifier: ^1.55.0
     version: 1.55.0(@preact/signals@1.3.0)(preact@10.23.1)
+  '@schedule-x/react':
+    specifier: ^1.54.0
+    version: 1.54.0(@schedule-x/calendar@1.55.0)(react-dom@18.3.1)(react@18.3.1)
   '@schedule-x/theme-default':
     specifier: ^1.55.0
     version: 1.55.0
@@ -882,6 +885,18 @@ packages:
     dependencies:
       '@preact/signals': 1.3.0(preact@10.23.1)
       preact: 10.23.1
+    dev: false
+
+  /@schedule-x/react@1.54.0(@schedule-x/calendar@1.55.0)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-1UK/9AgK2vCmZLCUemYLlognfbA1P31l35uJLJgZO8JJEWl/MEB95g3jLFoTkaqUETLvVPZpyKwenk+rCO4Mxg==}
+    peerDependencies:
+      '@schedule-x/calendar': 1.55.0
+      react: ^16.7.0 || ^17 || ^18
+      react-dom: ^16.7.0 || ^17 || ^18
+    dependencies:
+      '@schedule-x/calendar': 1.55.0(@preact/signals@1.3.0)(preact@10.23.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /@schedule-x/theme-default@1.55.0:
