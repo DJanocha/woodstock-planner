@@ -11,7 +11,11 @@ import { useCallback, useMemo } from "react";
 import { type z } from "zod";
 import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
 import { filtersAtom } from "~/atoms/filters-atom";
-import { userPreferenceDetailsAtom } from "~/atoms/user-preferences-atom";
+import {
+  generateEventFriendshipAtom,
+  savedEventInstancesIdsAtom,
+  userPreferenceDetailsAtom,
+} from "~/atoms/user-preferences-atom";
 import { iconsConfig } from "~/configs/icons";
 import { cn } from "~/lib/utils";
 import {
@@ -20,6 +24,7 @@ import {
 } from "~/validators/events-friendship";
 import { type woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 
 /** Add fonts into your Next.js project:
 
@@ -41,73 +46,23 @@ export function SingleWoodstockEvent({
 }) {
   const { place, description, instances, kind } = woodstockEvent;
   const [userFilters] = useAtom(filtersAtom);
-  const [preferenceDetails, setPreferenceDetails] = useAtom(
-    userPreferenceDetailsAtom,
+  //   const [] = useAtom(saveatom);
+  const eventFriendshipAtom = useMemo(
+    () => generateEventFriendshipAtom({ eventId: woodstockEvent.id }),
+    [woodstockEvent.id],
   );
-  const currentPreference = useMemo((): EventFriendship => {
-    if (preferenceDetails.dislikedEventsIds.includes(woodstockEvent.id)) {
-      return "disliked";
-    }
-    if (preferenceDetails.likedEventsIds.includes(woodstockEvent.id)) {
-      return "liked";
-    }
-    return "undecided";
-  }, [
-    preferenceDetails.dislikedEventsIds,
-    preferenceDetails.likedEventsIds,
-    woodstockEvent.id,
-  ]);
-  const changePreferences = useCallback(
-    ({ newPreference }: { newPreference: EventFriendship }) => {
-      if (newPreference === currentPreference) {
-        return;
-      }
-      switch (newPreference) {
-        case "disliked":
-          return setPreferenceDetails({
-            ...preferenceDetails,
-            dislikedEventsIds: [
-              ...preferenceDetails.dislikedEventsIds,
-              woodstockEvent.id,
-            ],
-            likedEventsIds: preferenceDetails.likedEventsIds.filter(
-              (id) => id !== woodstockEvent.id,
-            ),
-          });
-
-        case "liked":
-          return setPreferenceDetails({
-            ...preferenceDetails,
-            dislikedEventsIds: preferenceDetails.dislikedEventsIds.filter(
-              (id) => id !== woodstockEvent.id,
-            ),
-            likedEventsIds: [
-              ...preferenceDetails.likedEventsIds,
-              woodstockEvent.id,
-            ],
-          });
-
-        case "undecided":
-          return setPreferenceDetails({
-            ...preferenceDetails,
-            dislikedEventsIds: preferenceDetails.dislikedEventsIds.filter(
-              (id) => id !== woodstockEvent.id,
-            ),
-            likedEventsIds: preferenceDetails.likedEventsIds.filter(
-              (id) => id !== woodstockEvent.id,
-            ),
-          });
-
-        default:
-          break;
-      }
+  const [currentFriendship, setFriendship] = useAtom(eventFriendshipAtom);
+  const [savedEventsInstancesIds, setSavedEventsInstancesIds] = useAtom(
+    savedEventInstancesIdsAtom,
+  );
+  const toggleSaveInstanceId = useCallback(
+    ({ instanceId }: { instanceId: string }) => {
+      const updatedInstancesIds = savedEventsInstancesIds.includes(instanceId)
+        ? savedEventsInstancesIds.filter((id) => id !== instanceId)
+        : [...savedEventsInstancesIds, instanceId];
+      setSavedEventsInstancesIds(updatedInstancesIds);
     },
-    [
-      currentPreference,
-      preferenceDetails,
-      setPreferenceDetails,
-      woodstockEvent.id,
-    ],
+    [savedEventsInstancesIds, setSavedEventsInstancesIds],
   );
 
   const configItems = useMemo((): {
@@ -136,8 +91,8 @@ export function SingleWoodstockEvent({
   if (
     eventFriendshipVariants.some(
       (pref) =>
-        currentPreference === pref &&
-        !(userFilters.friendships ?? []).includes(currentPreference),
+        currentFriendship === pref &&
+        !(userFilters.friendships ?? []).includes(currentFriendship),
     )
   ) {
     return null;
@@ -151,17 +106,21 @@ export function SingleWoodstockEvent({
               {woodstockEvent.event}
             </h3>
             <div className="flex flex-row gap-2">
-              {eventFriendshipVariants.map((pref) => {
-                const Icon = iconsConfig.preferences[pref];
-                const isActive = currentPreference === pref;
+              {eventFriendshipVariants.map((friendship) => {
+                const Icon = iconsConfig.preferences[friendship];
+                const isActive = currentFriendship === friendship;
                 return (
                   <Button
                     className="w-1/12 p-0"
                     size="icon"
                     asChild
                     variant={"link"}
-                    key={pref}
-                    onClick={() => changePreferences({ newPreference: pref })}
+                    key={friendship}
+                    onClick={() =>
+                      setFriendship({
+                        newStatus: friendship,
+                      })
+                    }
                   >
                     {
                       <Icon
@@ -194,15 +153,24 @@ export function SingleWoodstockEvent({
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        {instances.map((instance) => (
-          <div
-            key={instance.id}
-            className="w-max rounded-full bg-gradient-to-r from-green-500 to-green-600 px-3 py-1 text-xs font-medium text-green-50"
-          >
-            {format(instance.dateStart, "EEE HH:mm")} -{" "}
-            {format(instance.dateEnd, "HH:mm")}
-          </div>
-        ))}
+        {instances.map((instance) => {
+          const isSaved = savedEventsInstancesIds.includes(instance.id);
+          return (
+            <Badge
+              key={instance.id}
+              variant={"secondary"}
+              onClick={() => toggleSaveInstanceId({ instanceId: instance.id })}
+              className={cn(
+                isSaved
+                  ? "to bg-gradient-to-br from-green-700 to-green-900 text-white ring-2 ring-green-900"
+                  : "",
+              )}
+            >
+              {format(instance.dateStart, "EEE HH:mm")} -{" "}
+              {format(instance.dateEnd, "HH:mm")}
+            </Badge>
+          );
+        })}
       </div>
     </div>
   );
