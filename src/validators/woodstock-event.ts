@@ -39,3 +39,4 @@ export const woodstockEventValidator = z.object({
   description: z.string(),
   id: z.string(),
 });
+export type WoodstockEvent = z.infer<typeof woodstockEventValidator>;

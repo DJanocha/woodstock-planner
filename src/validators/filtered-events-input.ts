@@ -14,11 +14,31 @@ export const filteredEventsInputFiltersDayValidator = z.enum([
 export type Day = z.infer<typeof filteredEventsInputFiltersDayValidator>;
 export const isDay = (value: unknown): value is Day =>
   filteredEventsInputFiltersDayValidator.safeParse(value).success;
+
 export const filteredEventsInputFiltersPreferenceValidator = z.enum([
   "liked",
   "disliked",
   "undecided",
 ]);
+export type UserPreference = z.infer<
+  typeof filteredEventsInputFiltersPreferenceValidator
+>;
+
+export const dislikedEventsInstancesIdsValidtor = z.object({
+  dislikedEventsIds: z.string().array().default([]),
+});
+export type DislikedEventsInstances = z.infer<
+  typeof dislikedEventsInstancesIdsValidtor
+>;
+
+export const selectedEventsInstancesValidator = z.object({
+  selectedEventsInstancesIds: z.string().array().default([]),
+});
+
+export type SelectedEventsInstances = z.infer<
+  typeof selectedEventsInstancesValidator
+>;
+
 export const filteredEventsInputFiltersValidator = z.object({
   preferences: filteredEventsInputFiltersPreferenceValidator
     .array()
@@ -38,5 +58,7 @@ export const filteredEventsInputSearchByValidator = z.object({
 });
 
 export const filteredEventsInputValidator = paginatedInput
+  .merge(dislikedEventsInstancesIdsValidtor)
+  .merge(selectedEventsInstancesValidator)
   .merge(filteredEventsInputFiltersValidator)
   .merge(filteredEventsInputSearchByValidator);

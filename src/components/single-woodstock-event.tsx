@@ -4,21 +4,29 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
-import { ComponentProps, SVGProps, useMemo } from "react";
+import { format } from "date-fns";
+import { useAtom } from "jotai";
 import {
-  ReceiptTextIcon,
-  MapPinIcon,
-  XIcon,
   HeartIcon,
+  MapPinIcon,
   PartyPopperIcon,
-  ThumbsDownIcon,
+  ReceiptTextIcon,
   ShieldQuestionIcon,
+  ThumbsDownIcon,
+  XIcon,
 } from "lucide-react";
+import { useCallback, useMemo } from "react";
 import { z } from "zod";
+import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
+import {
+  userDislikedEventsInstancesAtom,
+  userSelectedEventsInstancesAtom,
+} from "~/atoms/user-preferences-atom";
 import { woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
-import { format } from "date-fns";
-import { CollapsibleLargeText } from "~/app/_components/collapsible-large-text";
+import { UserPreference } from "~/validators/filtered-events-input";
+import { ExcludeFromUnion } from "~/types/common";
+import { cn } from "~/lib/utils";
 
 /** Add fonts into your Next.js project:
 
@@ -39,6 +47,50 @@ export function SingleWoodstockEvent({
   woodstockEvent: z.input<typeof woodstockEventValidator>;
 }) {
   const { place, description, instances, kind } = woodstockEvent;
+  const [dislikedInstancesIds, setDislikedInstancesIds] = useAtom(
+    userDislikedEventsInstancesAtom,
+  );
+  const [selectedEventsIds, setSelectedEventsIds] = useAtom(
+    userSelectedEventsInstancesAtom,
+  );
+  const currentPreference = useMemo(
+    () =>
+      dislikedInstancesIds.dislikedEventsIds.includes(woodstockEvent.id)
+        ? "disliked"
+        : "undecided",
+    [dislikedInstancesIds],
+  );
+
+  const changePreferences = useCallback(
+    ({
+      newPreference,
+    }: {
+      newPreference: ExcludeFromUnion<UserPreference, "liked">;
+    }) => {
+      if (newPreference === currentPreference) {
+        return;
+      }
+      if (newPreference === "disliked") {
+        return setDislikedInstancesIds({
+          dislikedEventsIds: [
+            ...dislikedInstancesIds.dislikedEventsIds,
+            woodstockEvent.id,
+          ],
+        });
+      }
+      return setDislikedInstancesIds({
+        dislikedEventsIds:
+          dislikedInstancesIds.dislikedEventsIds.filter(
+            (id) => id !== woodstockEvent.id,
+          ),
+      });
+    },
+    [
+      currentPreference,
+      setSelectedEventsIds,
+      selectedEventsIds.selectedEventsInstancesIds,
+    ],
+  );
   const configItems = useMemo((): {
     Icon: typeof MapPinIcon;
     text: string;
@@ -61,40 +113,48 @@ export function SingleWoodstockEvent({
         isCollapsible: true,
       },
     ];
-  }, []);
+  }, ["description", "kind", "place"]);
   const preferencesConfigItems = useMemo<
-    { icon: typeof MapPinIcon; onClick: () => void; key: string }[]
+    {
+      icon: typeof MapPinIcon;
+      onClick: () => void;
+      key: string;
+      isActive: boolean;
+    }[]
   >(
     () => [
       {
         key: "like",
         icon: HeartIcon,
         onClick: () => {
-          console.log("liking");
+          console.log("liking. not really");
         },
+        isActive: false,
       },
       {
         key: "undecide",
         icon: ShieldQuestionIcon,
         onClick: () => {
-          console.log("undeciding");
+          changePreferences({ newPreference: "undecided" });
         },
+        isActive: currentPreference === "undecided",
       },
       {
         key: "dislike",
         icon: ThumbsDownIcon,
         onClick: () => {
-          console.log("disliking");
+          changePreferences({ newPreference: "disliked" });
         },
+        isActive: currentPreference === "disliked",
       },
     ],
-    [],
+    [changePreferences, currentPreference],
   );
   return (
     <div className="h-30 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
-        <div className="grid gap-1">
-          <div className="flex w-full flex-row items-start justify-between ">
+        <div className="flex w-full flex-col items-stretch gap-1">
+          <div className="flex w-full flex-row items-start justify-between">
             <h3 className="w-11/12 overflow-ellipsis text-lg font-semibold text-black">
               {woodstockEvent.event}
             </h3>
@@ -108,7 +168,14 @@ export function SingleWoodstockEvent({
                   key={preference.key}
                   onClick={preference.onClick}
                 >
-                  {<preference.icon className="h-6 w-6" />}
+                  {
+                    <preference.icon
+                      className={cn(
+                        "h-6 w-6",
+                        preference.isActive ? "" : "text-gray-500",
+                      )}
+                    />
+                  }
                 </Button>
               ))}
             </div>
@@ -118,7 +185,7 @@ export function SingleWoodstockEvent({
               className="flex items-start gap-2 text-sm text-muted-foreground"
               key={text}
             >
-              <Icon className="size-6" />
+              <Icon className={"size-6"} />
               {isCollapsible ? (
                 <CollapsibleLargeText text={text} />
               ) : (

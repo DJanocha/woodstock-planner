@@ -1,4 +1,8 @@
 export type TypedOmit<TObj, TKey extends keyof TObj> = Omit<TObj, TKey>;
+export type ExcludeFromUnion<
+  TUnion,
+  TExcluded extends TUnion,
+> = TUnion extends TExcluded ? never : TUnion;
 export type TypedPick<TObj, TKey extends keyof TObj> = Pick<TObj, TKey>;
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type OtherStringOr<T extends string> = T | (string & {});
@@ -54,10 +58,3 @@ type Either<T> =
 type PartialBy<T extends Record<string, unknown>, K extends keyof T> = Prettify<
   TypedOmit<T, K> & Partial<Pick<T, K>>
 >;
-
-type X = {
-  a: string;
-  b: string;
-};
-
-type Y = PartialBy<X, "a">;
