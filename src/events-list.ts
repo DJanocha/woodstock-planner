@@ -1,9 +1,9 @@
-import { isSameDay } from "date-fns";
+import { addHours, isSameDay } from "date-fns";
 import { z } from "zod";
 import { type Day, isDay } from "./validators/filtered-events-input";
 import { type woodstockEventValidator } from "./validators/woodstock-event";
 
-// const _polishTimezoneOffset = 2;
+const _polishTimezoneOffset = 2;
 export const events: z.input<typeof woodstockEventValidator>[] = [
   {
     event: "Koło Tortury\nOkręgowa Izba Radców Prawnych w Poznaniu",
@@ -14,58 +14,58 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0feee060-63ad-4c7c-aacd-cf1190e187a0",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "b481ef22-6b17-42e4-9fe9-a3a58efb5c6d",
       },
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "e9bc65b2-3ff8-4457-b578-400122eb21f3",
       },
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "c02eb550-8f5f-4767-b9ed-ed79cb8466af",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "2eaa2d8c-cae2-4f29-93c3-977903d88500",
       },
       {
-        dateStart: "2024-08-01T19:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T19:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "85acb8aa-e4aa-4223-a51b-37853bf70c97",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "53535f1e-df93-403e-bcad-95ef090d5aa4",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "59c44eb8-3d4a-48ff-841a-fec77e5f2944",
       },
       {
-        dateStart: "2024-08-02T19:30:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T19:30:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "b8c5a5fa-67e6-4c9f-b5a4-9cc9bfff82ad",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "2c3d9b26-b61d-4f3c-b96b-6014621f804c",
       },
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "61d72a77-aafb-4a84-96dd-cfdeb4ddc9bf",
       },
       {
-        dateStart: "2024-08-03T19:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T19:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "0029bdcf-cf11-4d59-93b8-2c30af434a0c",
       },
     ],
@@ -80,8 +80,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9ea28482-e757-4731-81ca-dc9958034e27",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "547a4102-9b49-4561-9da9-f23b6f230686",
       },
     ],
@@ -95,8 +95,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e8da0465-fe4a-46f3-bbf5-6ddef376a2f4",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "f99acd09-6a97-486a-a2e5-ae01bc3f919c",
       },
     ],
@@ -110,23 +110,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "efe2b30d-38ea-4b40-b11f-8d990b5d8a7b",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "ba95a5b7-c9c5-4015-bfce-5c8001a79ba3",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "eb471f22-eb6c-4b44-8b17-8f7a995599f6",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "d7d303a6-246f-47d3-8e28-e39a9df9f79b",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "2f3ba33b-d51c-45bc-ba0d-186a7c78ac9b",
       },
     ],
@@ -140,23 +140,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8b236d92-7209-49b9-a8df-e92ca3840ba6",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "af6784f8-73ca-4b46-8289-ed37a2d14f7e",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "84f03e79-b27a-462b-87cd-54af77c73daf",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "5fccc317-9a3a-46a9-ae08-3166468a230f",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "788fafae-57c0-488b-850c-215c37b1e1ab",
       },
     ],
@@ -171,23 +171,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0949126f-0f67-45ff-b280-8b542acb1d43",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "593dd9aa-2071-4c5e-9373-67cb34ccdfda",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "c63dd34f-efbf-4f54-aef0-d1baf0bc9179",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "fa61b4fa-fee0-4d00-95df-e428bcf31736",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "bc074acb-b5f9-427f-98eb-7bd81e5cf1b6",
       },
     ],
@@ -202,23 +202,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8c757d1b-6037-4eb1-9f67-2dd533b12111",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "c011ef0e-828d-4687-bc3d-0405a88cc90e",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "fdb19772-3cc7-4f83-b2a3-f20205037f3f",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "bb160934-8e3b-4c8f-8068-270a695b021d",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "82c87631-98ac-4190-a371-9e31c25fd42a",
       },
     ],
@@ -233,23 +233,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9cc45ecb-0b0d-450a-9180-f7786c53a661",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "02c4c32f-682d-457b-a84a-18ee6f9016aa",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "e7b8a7fd-044c-4eca-abc0-6bf27847e43e",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "413ae900-f060-4bc2-b0c3-8cc822c6b6b1",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "c73ee019-34c6-4df0-a693-9dc7cceb1f31",
       },
     ],
@@ -263,23 +263,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "df08f11a-a9dc-4d1e-b522-642b1cc91d2d",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "11a59125-a073-4b5b-83de-399ec44255d4",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "de263e09-b351-4e5d-95ca-51236efff8d6",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "561e7dc5-ea09-436e-8c54-5ecd82269675",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "c844d70c-d81f-42ef-a207-910a3638675e",
       },
     ],
@@ -294,8 +294,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "af8bf782-781d-458d-bcac-4525acc931a8",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "62cbefee-483e-4ec8-bd20-af9ef95c51bf",
       },
     ],
@@ -310,23 +310,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0445de41-45cf-46f9-9123-ec0f0b147741",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "37939c2c-b9b3-4bbe-b6a9-c69dde5d8cfc",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "5f023f2a-8fdc-4d53-81fa-7820b7fa98ec",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "ee681515-278d-414e-b9d8-c95731191669",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "b6e470b2-a2bb-4b3e-87a9-9c90e37268cd",
       },
     ],
@@ -340,23 +340,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2a2f912a-586a-4bb5-aceb-75031eda4450",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "ee44741b-a0ca-45a8-9dbd-27417cac2bbf",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "11b37183-4274-447c-9c86-8a24e0d12035",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "fcc0d181-823c-46c6-b981-1518f433a6ab",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "501d2505-4ada-4efa-b31b-1ef5ef98754b",
       },
     ],
@@ -370,8 +370,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "870bc897-6360-40bb-966b-d0f9570f37a2",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "541266ea-f450-42ce-b8f7-78a59a9e0c9f",
       },
     ],
@@ -386,23 +386,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "25bb35bd-7399-4c21-a663-4007852a07c1",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:30:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:30:00.000+02:00",
         id: "46045fd2-7c5d-43d7-ac04-cc7aa45fa1e9",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:30:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:30:00.000+02:00",
         id: "6019732d-6e7d-4a86-b211-b3cc744c4a20",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:30:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:30:00.000+02:00",
         id: "54a0bfdd-6c2a-4ab9-bc7a-31517cdf5c86",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:30:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:30:00.000+02:00",
         id: "5331ef68-43bb-47fa-aaef-7819c2e3bab9",
       },
     ],
@@ -417,23 +417,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0281ca0c-6821-4daa-8483-462fd68b17b1",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T18:30:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:30:00.000+02:00",
         id: "03ae4d97-b893-43a5-bb20-4ed46023a870",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:30:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:30:00.000+02:00",
         id: "5b2a9132-39e0-4e73-96b1-e26570ed437a",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:30:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:30:00.000+02:00",
         id: "486f984d-9df4-4b91-9bfe-aa485dcb11fb",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:30:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:30:00.000+02:00",
         id: "be0fac2c-6ef1-4def-94c9-b64e11785744",
       },
     ],
@@ -447,23 +447,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fd123a05-99d8-42fb-8759-624fbaa4fc93",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "95fccc60-29c5-4f06-b451-bb3574f14a1c",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "4af50e48-7add-47c2-a152-2f6f4cffeafa",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "7e70dee5-56b3-4a83-a28c-8468c6efe1b7",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "b2de3eaa-5672-474a-b469-3330a8d9dfc9",
       },
     ],
@@ -477,13 +477,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c4a5dae4-1854-4a62-988c-276f15e27895",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "150359e4-955e-4524-b874-42ce06ffe6d8",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "e1a501df-dc3d-4b63-af08-c542d18209fc",
       },
     ],
@@ -497,23 +497,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7bfd7a50-6969-49f2-8a77-38d9362245d9",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "6ab0d098-2345-49c6-9b17-1d9b3ca5c6a5",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "3f04212e-f098-44bf-a9cb-53701db9151c",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "3407f333-1ccc-42e3-9ae2-6afd36fd06a5",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "a260bfbf-f666-4915-83b2-60e9a3a062f7",
       },
     ],
@@ -527,23 +527,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b16de8e4-281e-4cb7-8da0-50a27c7f23c7",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "277b584c-fc63-4be5-8740-4475518ec322",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "df4157e9-f9c8-4203-94dc-b186f2d10e71",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "55e03656-39f2-452d-a117-888f105cb902",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "853e41a2-3f5b-414e-a5c8-cd9a1bae6811",
       },
     ],
@@ -557,23 +557,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "533b38ed-201a-4f4c-9fd4-afa65565be86",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "be0024fa-fa47-4131-b00f-5e0a7dbb3c24",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "18d01b19-0b87-44cc-b5b6-b2dcdd847f65",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "8ccd84ad-8f88-447b-9d07-21e357b296f5",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "df079d27-0059-452f-b8b1-d41c6f5b5fb1",
       },
     ],
@@ -588,23 +588,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "393b81ff-4b34-465d-98e1-e7a4ed907897",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "13b7ff52-631f-4124-b194-0519ad2210f8",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "f6c38b86-c427-4bf3-922e-ad1c895c3585",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "eef9b2f2-4c0f-4cae-8836-c0639e49a003",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "b30cc62d-8bca-4c2e-8dac-1c2c8b58de13",
       },
     ],
@@ -618,13 +618,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2daae9a7-3834-4e18-9023-ebbdf51709ae",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "a75b227b-adf4-486e-92ab-f4e5cb965f3e",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "60a00c67-f225-4e81-8057-c21f6e2cad34",
       },
     ],
@@ -638,23 +638,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2ebd5f87-2803-4b95-a605-c9ae5b9f78d1",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "c38fecfb-4fa8-443a-9a55-fed489d64c0f",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "39ea1427-d949-4d41-bcaf-a12889e3af2f",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "ecf979e7-19bc-453c-8764-c4bc93d4f0f5",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "bf22fc34-1456-437b-8b97-c09aec394e8e",
       },
     ],
@@ -668,23 +668,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7a1ef0d4-554e-48f7-9454-4923236f4697",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "6f81bec7-0e36-48a7-8bc9-975c96da6f69",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "df74b478-c77f-4ae5-9b15-1465a391531b",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "995ea05c-10a6-4d25-aad2-ecd79eae1606",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "7d0aa0a4-749a-4ff1-b042-6a945d7cceff",
       },
     ],
@@ -698,23 +698,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "530d6653-7750-4ee4-b37d-3043b8a51335",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "84dc5608-690d-455b-8ba5-becdaa78c045",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T10:30:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T10:30:00.000+02:00",
         id: "90fcf7b4-f80f-4da4-9ba4-12a7c4a4c227",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T10:30:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T10:30:00.000+02:00",
         id: "356e3690-d31a-42e3-a07b-acbbb9021505",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "33bcc7be-d274-46d2-a1e9-925995630896",
       },
     ],
@@ -729,23 +729,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5a41ab83-9e2d-4db0-90c4-53a47a0d1413",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "0d34b727-f8e1-4b4a-b509-5a6aa0359175",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "0f0e3af7-e12e-48ef-83f6-a6fef1dfb5fb",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "f66118b2-983b-4160-b510-85b024582ced",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "16636d20-6872-4bad-bd6f-89132ea1bfa0",
       },
     ],
@@ -760,23 +760,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4fae086e-5f38-4d36-acd7-e6bef374b127",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T10:30:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T10:30:00.000+02:00",
         id: "09a73ab1-07c3-4a9f-8d48-afd1997abd20",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T10:30:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T10:30:00.000+02:00",
         id: "b6c0724e-d694-4088-8ec0-8fb6c4ee4c88",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T10:30:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T10:30:00.000+02:00",
         id: "91c75d22-e506-4602-9008-92e37f928681",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T10:30:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T10:30:00.000+02:00",
         id: "04a9cc01-0aea-45b7-867c-fc952d72293c",
       },
     ],
@@ -791,23 +791,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "458ee2f1-074b-4f54-915f-612c98ab92b9",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "6eca9a15-bd1b-4270-a22e-ed20e3affcb3",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "c34a15a4-df17-461f-b34a-90a12d6e614e",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "c2a36656-fc03-4f85-bf3c-c73dea1333cf",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "8018c9cb-9ac1-4551-9f0a-8ee7eecb808b",
       },
     ],
@@ -822,13 +822,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f5ea2cfa-5ff4-4161-aa0c-57e96e135d6b",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "bb4a513d-5bcc-4bc6-b006-c3df56e27837",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "51d2f078-0e77-4991-8952-b51df63c4f2e",
       },
     ],
@@ -842,23 +842,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "76e1cd39-11fd-405c-b846-1b7bc07103b3",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "1f44017c-ab82-4a6c-b610-d63350dc99d5",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "ac43bd91-6150-46f6-b659-d01c5d3a3bfe",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "7082afe0-5166-42ef-ae5e-ec8e3c7303a5",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "52cbbdd6-ce20-458f-9d92-6b8d01aac745",
       },
     ],
@@ -873,23 +873,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "40b165d0-e6d2-4db0-bc93-87df7303de4f",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "a51accc9-b481-42a0-803c-7bcd8d0bf3ee",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "87313ae5-6ac6-4336-b0fd-ab3ede0f2ce6",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "2a5cb682-a703-4fac-a452-6065c5dd79c8",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "d03a1044-f69a-4229-9580-55c5ccc740c0",
       },
     ],
@@ -904,23 +904,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7683b697-bbea-4d40-8989-11faec421e31",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "a3088604-cbb3-41c8-9ed6-22733d84fae2",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "da89fb81-5396-42d4-8b05-49f332eedc97",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "20db4a84-2c9b-40f1-bdf9-98fe2379c82e",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "23d4fb77-ca45-4e85-8ed6-c4f635b83b0d",
       },
     ],
@@ -934,23 +934,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a830ee1a-1dec-4c68-b318-0c96fb0de3f1",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "0b7a1069-1404-4236-bb82-4e4ad78f7a7f",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "88dab95c-88c4-4f48-a15c-f1de3813b876",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "102affac-9cee-4c23-8e6f-7a6e44f29ba9",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "813cfb65-483f-4dc9-9269-5e293dd9f575",
       },
     ],
@@ -964,23 +964,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "029c47cc-272f-4378-86d7-72296653e5e5",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "853471c0-bb91-4b6c-a5f6-d77c4936c83c",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "3088596c-8073-44e8-b472-e45ae9cad9fe",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "ef963d31-7946-4e35-8902-f7dede47f9ce",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "9223dde6-3c75-4f87-bbea-385d11dac440",
       },
     ],
@@ -995,18 +995,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "17271f4a-888c-4f14-a841-c7a226447907",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "a3f0ed2f-31b8-415c-92eb-de4f5cdbfbfb",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "5b0c04b8-deac-4995-8b1d-962c1f12b755",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "6093451e-743c-4a85-b836-f29041c07672",
       },
     ],
@@ -1021,23 +1021,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "25e90f96-03e4-4aca-a8f7-4f2d1e1a0f1c",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "0bdc1db4-4a76-4d1d-9cf5-4a4a73758cae",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "d0e60501-9c6b-42f4-bc5d-cb461b9a2a40",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "421db727-c651-4e2e-8527-ea055aea6fcc",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "0b79b775-2e8a-4cb9-bb86-3814f94801eb",
       },
     ],
@@ -1050,8 +1050,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f50ab272-b191-474c-aaed-fde83f3343b2",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "90b41e33-5c2f-4cbb-ab2f-d69d417a9fcd",
       },
     ],
@@ -1065,8 +1065,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8ce42042-0cf3-40d0-ae16-06f8aad8dd24",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "b6027bae-72ce-48fc-899d-5bcd4e95f969",
       },
     ],
@@ -1080,13 +1080,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f0c92107-296d-49d3-a834-caaaedba9638",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "9511b825-8ce6-4983-ba8f-9332d64a2457",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "7e189ef0-f3ca-4490-a4df-a71ec071cfd0",
       },
     ],
@@ -1101,43 +1101,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b44f696c-c596-4569-9b8b-0f54d40a0bdc",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T10:20:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T10:20:00.000+02:00",
         id: "7b58a5f0-344b-4d28-8f70-da7db8742f8d",
       },
       {
-        dateStart: "2024-07-31T14:30:00.000Z",
-        dateEnd: "2024-07-31T14:50:00.000Z",
+        dateStart: "2024-07-31T14:30:00.000+02:00",
+        dateEnd: "2024-07-31T14:50:00.000+02:00",
         id: "a17f8d3e-06a2-470d-b5d2-381a3a8f6ce0",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T10:20:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T10:20:00.000+02:00",
         id: "ea7d60e7-d300-4ad4-b6a2-27cb5e9dedbe",
       },
       {
-        dateStart: "2024-08-01T14:30:00.000Z",
-        dateEnd: "2024-08-01T14:50:00.000Z",
+        dateStart: "2024-08-01T14:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:50:00.000+02:00",
         id: "9418349a-5207-4fd7-b733-8883e5b17ddb",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T10:20:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T10:20:00.000+02:00",
         id: "66f04876-9618-4a65-8701-84b279f1c4b5",
       },
       {
-        dateStart: "2024-08-02T14:30:00.000Z",
-        dateEnd: "2024-08-02T14:50:00.000Z",
+        dateStart: "2024-08-02T14:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:50:00.000+02:00",
         id: "1d289c52-124c-4ca2-a9a6-5ee637936261",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T10:20:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T10:20:00.000+02:00",
         id: "ceb2fa22-d119-45ab-bd1b-e93f6c11dd40",
       },
       {
-        dateStart: "2024-08-03T14:30:00.000Z",
-        dateEnd: "2024-08-03T14:50:00.000Z",
+        dateStart: "2024-08-03T14:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:50:00.000+02:00",
         id: "560ab9b8-70bb-461c-b88a-d24caa5a399e",
       },
     ],
@@ -1152,43 +1152,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "12c70c65-1c29-456a-9255-2336e5e1efad",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "9fdf445f-7318-470f-9a0d-b57c8ab788ee",
       },
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "4170b004-b837-48c5-bff5-dd8ad1f52885",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "6ab99d53-0f4b-4762-a846-548da16523f1",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "b2949535-0d4d-4ef5-b2c7-09a4d9cfcf57",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "a630abab-27fd-4d2d-bcbe-2cdde29b757e",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "37f51c55-2f0d-4cc8-84a3-427c7761b44f",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "66bec39a-0d4b-4f0c-bc76-52f4b7716a49",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "2e94bef8-1012-4948-beed-5ca00e31bd7d",
       },
     ],
@@ -1203,23 +1203,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b30587f7-e8d9-4059-babe-17147e9e8fda",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "936c4471-f422-44c7-884d-aac5bc483fb3",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "2e33d360-7432-4360-a72e-fa89b15c128b",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "77f8dadf-c2b3-4e19-86da-bac6c43dc296",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "d013dc32-eb92-4ec6-972f-1d30fa579a42",
       },
     ],
@@ -1233,23 +1233,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3abeef5d-7c01-44ca-82a1-02e9a01d6f3c",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "0ad0ffb8-bf04-4022-9ca9-ba07aedf3e2f",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "609cd7f9-1c8f-4a79-a249-9318e262a1cb",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "f02e62af-d3cc-4f1a-94b0-af69d689055e",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "34a79887-1a82-4a12-9f8a-71fee7ab8105",
       },
     ],
@@ -1264,8 +1264,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c69bad6b-4773-454e-b269-315f1d82f963",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "eec2d32f-352a-486b-b1b2-79227130b60a",
       },
     ],
@@ -1279,8 +1279,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "89c39d47-d77c-4622-b0c7-159fdcaffb4c",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "62ff9536-7b6d-426a-8b75-de7c29f6f4d0",
       },
     ],
@@ -1294,43 +1294,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6e984fbd-1282-4e8e-8e3c-1b52f184365e",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "7368eb6e-6547-4df4-8e52-5a4786abf958",
       },
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "b1fc21ea-f560-4f1e-ae77-2c8c484dbd3a",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "01661d71-c69d-493e-819f-9d1d1456f8f6",
       },
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "9c6edc1e-5323-444f-ad0e-b95af8034b9d",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "46027880-d616-419b-a6fa-6aa11e2e1d58",
       },
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "66592506-a7c7-47eb-a9c2-152411651d1a",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "e0c52db6-2801-4aee-8aae-ff2e465448c9",
       },
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "9528e917-ac6c-400e-89f9-7afa5149cf42",
       },
     ],
@@ -1344,23 +1344,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f55eaa5c-01ad-44c8-b6ee-cd3bdbdd2577",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "c2f107a1-17c0-4980-aba4-b7bfa7e67cc9",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "833c0c6f-9de3-433e-81d0-2a110c07a805",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "ea403284-308d-47cd-97ea-e3ea35a61afd",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "2bad23d7-a24e-4f4d-9848-212c441b4047",
       },
     ],
@@ -1375,23 +1375,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c8cef79a-c693-49db-97cf-4c9f54c282e7",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "68d10fa7-6ea3-41a4-bd99-70dfcde3ebf2",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "99bca1b4-f76b-4011-9fae-189bc3b3ec34",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "5d30bd57-3a9b-4354-bb27-9b8f2e3fe465",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "924a55dd-8017-4d10-9c23-2d946b3208be",
       },
     ],
@@ -1405,8 +1405,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "dcfeee0d-9c98-4c9a-a624-a836bf76205e",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "444ed681-4749-49a0-99b1-3bb573529f17",
       },
     ],
@@ -1421,23 +1421,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e3265ec2-edae-4e90-8231-3ef2cb9ff3de",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "c6f374ba-53e2-456f-ae9d-43e20a6c659b",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "ca856aab-25ad-47eb-bcd7-2cc641c007f4",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "b88b2f23-26ea-4327-a1aa-e944293fc900",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "22f0d1f5-0f3a-4ba4-9419-f4a303cfc81c",
       },
     ],
@@ -1452,23 +1452,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8015fdbf-2c26-40e1-a463-864affe226ea",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "b19e4f59-de49-42c7-9066-696b963d7029",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "d14a4358-d9d1-4f54-a303-76daa9f34cf3",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "2f3058b1-3a56-4259-a22d-3e4d010dc6d2",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "38118916-a7a5-477e-b863-5030ab84ffab",
       },
     ],
@@ -1483,23 +1483,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b6d6593e-f5cf-455c-b6cf-c97556c230f1",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "c4848438-8893-4928-afc1-581254123983",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "0dcd6b1c-1126-420d-847d-ae0a1c95a772",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "90922692-113d-4595-9210-f9a5d8c27ec0",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "24671269-7319-4371-9a17-5ee3ff154a7d",
       },
     ],
@@ -1513,23 +1513,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ef087bc6-e6d2-4e43-bce9-205b98ac207c",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "ea83071d-6d60-4b77-a91c-c6c2208a930b",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "91dd139b-916a-4ff6-8de9-535dcae712d0",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "77a7da2d-12a3-4f15-8e9f-d0b5481bb1e7",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "c3c551de-3187-4876-b1c7-46731db56989",
       },
     ],
@@ -1543,23 +1543,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "97a4e080-b825-41c4-88c9-98065cfba41c",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "978c4937-71e9-4fc4-b745-dd28ef021d67",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "77108416-39cc-4b03-8cdf-62aaf6282bc4",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "0b7a7998-642e-4c8a-a29f-9b2dcc3c8329",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "84328f1c-121b-4aa7-a5d9-d1b75bc150a9",
       },
     ],
@@ -1573,23 +1573,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "374c8d33-d73c-4c66-8f1d-b7a03729d318",
     instances: [
       {
-        dateStart: "2024-07-31T10:00:00.000Z",
-        dateEnd: "2024-07-31T21:00:00.000Z",
+        dateStart: "2024-07-31T10:00:00.000+02:00",
+        dateEnd: "2024-07-31T21:00:00.000+02:00",
         id: "986107cf-a97a-4287-a6f6-4a4b09cf49c5",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "05650d67-7b94-427a-95ad-af3776786e0b",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "7f95d339-793a-46e9-9f9d-c861d7074098",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "51f5c390-66db-4f85-aba4-1d8c8f2e3d68",
       },
     ],
@@ -1604,23 +1604,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6412fd18-a28f-4c6c-8cab-a519210a8060",
     instances: [
       {
-        dateStart: "2024-07-31T10:20:00.000Z",
-        dateEnd: "2024-07-31T11:00:00.000Z",
+        dateStart: "2024-07-31T10:20:00.000+02:00",
+        dateEnd: "2024-07-31T11:00:00.000+02:00",
         id: "3af095fc-1c19-4488-810f-d6a9089474a3",
       },
       {
-        dateStart: "2024-08-01T10:20:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:20:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "86d42904-8151-4c49-a4ea-8b40ae65dccd",
       },
       {
-        dateStart: "2024-08-02T10:20:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:20:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "54b112a2-d4ae-4119-b327-eeaa7294c44a",
       },
       {
-        dateStart: "2024-08-03T10:20:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:20:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "d8f00821-62df-4d9f-9998-5113f62e10d6",
       },
     ],
@@ -1635,23 +1635,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8c22faca-b728-4373-b59e-4b3a516f2e62",
     instances: [
       {
-        dateStart: "2024-07-31T10:30:00.000Z",
-        dateEnd: "2024-07-31T13:30:00.000Z",
+        dateStart: "2024-07-31T10:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:30:00.000+02:00",
         id: "3f680e1f-918c-4b6d-9854-2ae5e8440634",
       },
       {
-        dateStart: "2024-08-01T16:30:00.000Z",
-        dateEnd: "2024-08-01T19:30:00.000Z",
+        dateStart: "2024-08-01T16:30:00.000+02:00",
+        dateEnd: "2024-08-01T19:30:00.000+02:00",
         id: "38271f02-b1b4-47ff-a328-878d4d4322e2",
       },
       {
-        dateStart: "2024-08-02T10:30:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T10:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "2421569c-f193-4ad7-8ebe-3a591e0f730e",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "b5ddb8f2-95cc-4846-9736-9e06cda1c556",
       },
     ],
@@ -1666,23 +1666,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "268b3abe-0b02-42e1-8ac2-959f21ac862a",
     instances: [
       {
-        dateStart: "2024-07-31T10:30:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T10:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "7b6b5988-964a-4443-9a48-df460ded3533",
       },
       {
-        dateStart: "2024-08-01T10:30:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T10:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "a978ed9c-e5c0-4c43-ad33-df42c4e5f91a",
       },
       {
-        dateStart: "2024-08-02T10:30:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T10:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "70670733-7efd-4d51-bd07-15a3327cbaf2",
       },
       {
-        dateStart: "2024-08-03T10:30:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T10:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "193b0608-fcd5-41be-b7b8-23c545692957",
       },
     ],
@@ -1697,23 +1697,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8261258a-c605-4479-8128-33818f3bb29a",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "65d35487-729a-4729-b2e2-c6f93e9c0a41",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "9981e91a-f4f0-45a3-be14-a7682c3917b6",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "da63354b-6dd2-4a5e-b392-9c6b2c20a6fc",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "3f9ff04c-a189-4068-b8f2-7ffc41059c45",
       },
     ],
@@ -1728,8 +1728,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4c004e3a-600f-4c0d-a537-07762965c60f",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "6d8fac14-1062-461b-bdd6-aab57a291605",
       },
     ],
@@ -1743,23 +1743,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6a0ffb73-3d48-4290-adfe-36b95756fb3d",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "c47645f1-a62e-4a05-938b-43a83f333c07",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "ed3f3612-64ce-4fbf-84e1-0a4030ca686b",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "da08394f-ad77-42d8-b12b-d82654932000",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "ad424c92-2d7a-4469-a56b-411afc5c4057",
       },
     ],
@@ -1773,23 +1773,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a12a4360-8e1f-4f6e-811a-56754284380e",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T11:40:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:40:00.000+02:00",
         id: "ec17367c-0839-4f6e-bfcd-f95b9738fffd",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T11:40:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:40:00.000+02:00",
         id: "ca4b421f-1219-4299-97f5-c0c326290351",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T11:40:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:40:00.000+02:00",
         id: "b632dd76-a829-4a18-91f7-927eb78c9b45",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T11:40:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:40:00.000+02:00",
         id: "0d31ddfd-a59f-47e7-a559-b50b63eea0d6",
       },
     ],
@@ -1803,8 +1803,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a8069637-c974-439a-8b96-5816fd9d51c2",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "7758ab83-983a-4b49-8377-e5c4f7fc25a2",
       },
     ],
@@ -1819,23 +1819,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f30bf258-4412-4bac-bb83-3e5d304adc6a",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T11:45:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:45:00.000+02:00",
         id: "729b2cd9-397b-4a04-a145-7a0bae510a53",
       },
       {
-        dateStart: "2024-08-01T10:30:00.000Z",
-        dateEnd: "2024-08-01T11:15:00.000Z",
+        dateStart: "2024-08-01T10:30:00.000+02:00",
+        dateEnd: "2024-08-01T11:15:00.000+02:00",
         id: "52b28128-1b3b-4bd6-b05e-1fbbeef4ed8d",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "14f576d3-28df-46b4-8c97-24d7f598db6c",
       },
       {
-        dateStart: "2024-08-02T10:30:00.000Z",
-        dateEnd: "2024-08-02T11:15:00.000Z",
+        dateStart: "2024-08-02T10:30:00.000+02:00",
+        dateEnd: "2024-08-02T11:15:00.000+02:00",
         id: "ab7b5760-b4f9-43d6-9ee3-f0c6652ea7d0",
       },
     ],
@@ -1850,23 +1850,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9621759b-1ee8-4a5c-b0e1-c33856719a03",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "42bedbe5-a50b-49ce-9780-ae605cfbb329",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "79c84825-eef7-47bf-a34f-a71e9b0e568b",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "8172059c-6edd-475a-8feb-967af14a4f2b",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "c6da479d-4010-400d-9b24-fe4002d348a7",
       },
     ],
@@ -1881,63 +1881,63 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "83c1ba98-a595-4572-b05e-95335b00dc9a",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T11:30:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:30:00.000+02:00",
         id: "b2684bac-f58f-4df1-990a-7da801300106",
       },
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T14:30:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:30:00.000+02:00",
         id: "a0a853af-7510-4b59-b5bd-a38069e8f8a3",
       },
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T16:30:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:30:00.000+02:00",
         id: "e2554844-4a7b-4bf0-bbbf-5b07c519e7f2",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T11:30:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:30:00.000+02:00",
         id: "f10f4dc0-42e8-4f60-977e-4c1aaa87698e",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T14:30:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:30:00.000+02:00",
         id: "75cce90c-0c19-42d6-bfbd-5bf3dce3801d",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T16:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:30:00.000+02:00",
         id: "2c8f9dd4-2c6a-43f1-bbe8-905ed3ec732d",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T11:30:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:30:00.000+02:00",
         id: "016ab95a-c970-45f6-aa3a-33888cee2c77",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "fb70183e-0605-4501-964c-1e55d0f4156b",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T16:30:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:30:00.000+02:00",
         id: "34f16293-c13e-4bd8-84b0-0628064b6b69",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T11:30:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:30:00.000+02:00",
         id: "0ed7f871-97b1-4750-a82a-38c5a3d7e743",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T14:30:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:30:00.000+02:00",
         id: "b8d0c7bf-7e5e-4a26-8408-99766129e450",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "ec5b4db7-c0a8-405f-8cfa-da1848e8ac4c",
       },
     ],
@@ -1952,18 +1952,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aa3195fe-0f84-4562-b35f-4dfdfd5b4bb5",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "7795779b-2995-4e7a-82dd-a6122e9e30f8",
       },
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "5ee342e1-8f92-44a9-a8a2-70def87689e8",
       },
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "46da1127-d4d5-412c-85c8-85d7913361d4",
       },
     ],
@@ -1977,8 +1977,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6d9c8ece-c13b-49ba-af4b-88dc069132ad",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "192b49a2-6937-4c23-8212-e6753c677753",
       },
     ],
@@ -1992,18 +1992,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "01c5f07a-9b32-44d7-a09b-e073a71b0e42",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "effb8f6b-40f4-426d-9fdd-5a13313e5781",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "67cf0ca4-c523-4cd6-8c30-a1ebfff301a9",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "7393157f-316b-41cb-804c-288ece084c74",
       },
     ],
@@ -2018,23 +2018,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c39a3802-d343-42f1-bbd9-d1a3de98148d",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "524cf51d-9e56-4772-9275-636aebaafea8",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "1af1f1d3-1847-4887-895a-440f8b6ac811",
       },
       {
-        dateStart: "2024-08-02T10:30:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T10:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "66b8dceb-c71c-4a32-a832-245b28729711",
       },
       {
-        dateStart: "2024-08-03T10:30:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T10:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "429f5fa9-da27-4ef8-b275-d23b097e43af",
       },
     ],
@@ -2048,8 +2048,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "05df17ad-4450-45bb-9c7b-917015577410",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "2a229df8-d92e-4c07-9b7d-c2bd9d3288e7",
       },
     ],
@@ -2064,23 +2064,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d64192e1-edf1-4477-96db-85d1d62133f4",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "0039e48d-0d0a-42ed-baf4-8325abced17a",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "1d9a12fc-f609-4c69-ad6f-89c1b91df43f",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "1dd9474f-2132-4a59-bd29-b595f63476f0",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "53391921-d07a-459f-baf7-22ebf28c8841",
       },
     ],
@@ -2095,23 +2095,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "85fc9915-93df-4484-8a44-d78b59a9343b",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T12:30:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:30:00.000+02:00",
         id: "3b319d5f-2ee6-4341-b09c-dd7f55df655c",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:30:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:30:00.000+02:00",
         id: "bc3c8ab2-fb8b-47bd-a2d8-24dd227d45e8",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:30:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:30:00.000+02:00",
         id: "1687376e-cd91-470f-8fa4-7ef4ef6586a6",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:30:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:30:00.000+02:00",
         id: "7d38bd5e-514f-4ed2-a70e-8a1ae8176e2d",
       },
     ],
@@ -2125,23 +2125,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "95c6eb9c-7445-4f2b-8bdc-edc468fc72c0",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T12:30:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:30:00.000+02:00",
         id: "a5cc074e-bc93-4f8b-b66f-2baddb02752a",
       },
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:30:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:30:00.000+02:00",
         id: "0bd9ac9c-2831-4ffb-b250-64d014352de5",
       },
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "28f3b5e0-a073-4583-b263-2d73247b8b50",
       },
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "8c5f228e-072c-4dd7-8f53-11acaf22dfbd",
       },
     ],
@@ -2155,8 +2155,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ab7ef29b-f724-4c53-90bf-c42af7c2b01d",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "93ebee2c-2474-4a63-9277-4d893f17a445",
       },
     ],
@@ -2170,13 +2170,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "47bc7137-746f-411e-bac5-02147d7b3997",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "b4d489ed-0541-4c08-87d2-8ce5a4e18023",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "5082fc03-ef34-4344-84f5-59693ed1b64c",
       },
     ],
@@ -2191,18 +2191,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8d9574ba-7805-4423-bacf-681fc2294b6b",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T11:30:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T11:30:00.000+02:00",
         id: "b7c2fa58-01d2-4fb5-8715-96791b6feffb",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T11:30:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:30:00.000+02:00",
         id: "a42f7542-1db1-406b-a84c-13e9a561c8d1",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T11:30:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:30:00.000+02:00",
         id: "efee5904-81fc-421a-8fa8-bdcb18ec048c",
       },
     ],
@@ -2216,23 +2216,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "63ebf354-63ae-43dc-bb72-440a704d761c",
     instances: [
       {
-        dateStart: "2024-07-31T11:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "414e5a31-e87d-4793-a94d-d2cc304b2e90",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "64ffbc02-7dd7-40ef-b3dc-4f854954e232",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "ac30ac7a-ffaf-453e-8475-f3dfeeaa7e18",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "b8de9d23-dddb-4ab0-83cf-8b33b479d292",
       },
     ],
@@ -2247,43 +2247,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8b017874-911a-4daf-9e03-b0e9f4ebbaa7",
     instances: [
       {
-        dateStart: "2024-07-31T11:10:00.000Z",
-        dateEnd: "2024-07-31T11:30:00.000Z",
+        dateStart: "2024-07-31T11:10:00.000+02:00",
+        dateEnd: "2024-07-31T11:30:00.000+02:00",
         id: "6fd19bba-c0ae-4134-91a7-fed447f7333f",
       },
       {
-        dateStart: "2024-07-31T12:30:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "2ed3b9bb-21be-4b63-830a-25d49f18ab3d",
       },
       {
-        dateStart: "2024-08-01T11:10:00.000Z",
-        dateEnd: "2024-08-01T11:30:00.000Z",
+        dateStart: "2024-08-01T11:10:00.000+02:00",
+        dateEnd: "2024-08-01T11:30:00.000+02:00",
         id: "c8c19104-ebf9-4414-994e-df93142b6815",
       },
       {
-        dateStart: "2024-08-01T12:30:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "e113cea3-beed-4368-b11e-e01b3f8b939d",
       },
       {
-        dateStart: "2024-08-02T11:10:00.000Z",
-        dateEnd: "2024-08-02T11:30:00.000Z",
+        dateStart: "2024-08-02T11:10:00.000+02:00",
+        dateEnd: "2024-08-02T11:30:00.000+02:00",
         id: "6b68b6b2-01f8-4e5f-a2bd-0b1677cfba7c",
       },
       {
-        dateStart: "2024-08-02T12:30:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "73faf82a-7cb5-4177-9b69-9bf3b790cd2a",
       },
       {
-        dateStart: "2024-08-03T11:10:00.000Z",
-        dateEnd: "2024-08-03T11:30:00.000Z",
+        dateStart: "2024-08-03T11:10:00.000+02:00",
+        dateEnd: "2024-08-03T11:30:00.000+02:00",
         id: "cbac3c91-4372-4ec4-b665-929ddbdd3037",
       },
       {
-        dateStart: "2024-08-03T12:30:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "c2b93ecd-b4ba-4686-8dd0-63df3eda9d7e",
       },
     ],
@@ -2297,43 +2297,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5f474476-032e-4b54-8335-cb999574e2c2",
     instances: [
       {
-        dateStart: "2024-07-31T11:30:00.000Z",
-        dateEnd: "2024-07-31T12:30:00.000Z",
+        dateStart: "2024-07-31T11:30:00.000+02:00",
+        dateEnd: "2024-07-31T12:30:00.000+02:00",
         id: "5e7e09a5-2d61-487d-8712-eb6af1faa84c",
       },
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "75ea7efc-c633-4ee5-96f4-accb5b9645c1",
       },
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T12:30:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T12:30:00.000+02:00",
         id: "f379271d-7c3f-4906-99b8-570242b8df45",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "078b3757-4e14-4451-9c19-fffdcfc79c8f",
       },
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T12:30:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T12:30:00.000+02:00",
         id: "aa42a96a-f1e0-4198-ada0-d7131b5a31f5",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "d34fe373-3a12-44e3-a9e7-de61c9fb86da",
       },
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T12:30:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T12:30:00.000+02:00",
         id: "a04556ae-d87b-4d47-abc1-6b6833b69684",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "cf07c354-4654-4b6d-871e-518ec0f6bb5c",
       },
     ],
@@ -2347,8 +2347,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d797497e-1a43-4e26-8e4c-46c93b42510c",
     instances: [
       {
-        dateStart: "2024-07-31T11:30:00.000Z",
-        dateEnd: "2024-07-31T12:00:00.000Z",
+        dateStart: "2024-07-31T11:30:00.000+02:00",
+        dateEnd: "2024-07-31T12:00:00.000+02:00",
         id: "d6f06288-2438-431c-90b8-a71e3f7c90de",
       },
     ],
@@ -2362,33 +2362,33 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a6a43d6f-5d9d-4f57-ae69-85eaf28330eb",
     instances: [
       {
-        dateStart: "2024-07-31T11:30:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "a8d65890-06da-4104-8151-b8121fb80a5c",
       },
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:30:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:30:00.000+02:00",
         id: "f4568c8e-83ff-4657-bbf4-456c2ec3385f",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:30:00.000+02:00",
         id: "4eabc65b-8790-40e8-ba64-17d865f8dbeb",
       },
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:30:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:30:00.000+02:00",
         id: "b7d993f2-b5df-4ef2-a4e5-9e66a753d7d7",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:30:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:30:00.000+02:00",
         id: "2b69cc2b-1a2c-4a7d-aa60-37038710c0fc",
       },
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T19:30:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:30:00.000+02:00",
         id: "f93d5ff9-82ee-4991-a8eb-b34d9c50b3d6",
       },
     ],
@@ -2402,23 +2402,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d931fa4a-9cb9-489b-a810-05b86110a537",
     instances: [
       {
-        dateStart: "2024-07-31T11:30:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T11:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "7e2cb65c-b3e9-454c-8112-c62340cceea3",
       },
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "929fdb2f-6788-4cf9-bb22-f9c199f95f1c",
       },
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "fa1b63f2-93fc-4777-a41b-8eb99a0d7802",
       },
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "488fac20-a2ce-4ccc-9346-e4a11c97d429",
       },
     ],
@@ -2433,23 +2433,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3c61010d-6884-4638-946f-a05434e37908",
     instances: [
       {
-        dateStart: "2024-07-31T11:50:00.000Z",
-        dateEnd: "2024-07-31T12:40:00.000Z",
+        dateStart: "2024-07-31T11:50:00.000+02:00",
+        dateEnd: "2024-07-31T12:40:00.000+02:00",
         id: "c08c3e6d-4d04-4a3f-b211-55e79ea97635",
       },
       {
-        dateStart: "2024-08-01T11:50:00.000Z",
-        dateEnd: "2024-08-01T12:40:00.000Z",
+        dateStart: "2024-08-01T11:50:00.000+02:00",
+        dateEnd: "2024-08-01T12:40:00.000+02:00",
         id: "feabec4b-31d4-4e14-99af-39111be49568",
       },
       {
-        dateStart: "2024-08-02T11:50:00.000Z",
-        dateEnd: "2024-08-02T12:40:00.000Z",
+        dateStart: "2024-08-02T11:50:00.000+02:00",
+        dateEnd: "2024-08-02T12:40:00.000+02:00",
         id: "084c2490-b684-44e3-b681-57afe07cda22",
       },
       {
-        dateStart: "2024-08-03T11:50:00.000Z",
-        dateEnd: "2024-08-03T12:40:00.000Z",
+        dateStart: "2024-08-03T11:50:00.000+02:00",
+        dateEnd: "2024-08-03T12:40:00.000+02:00",
         id: "23e0cbca-8d4c-46ea-a387-a6690689fbf3",
       },
     ],
@@ -2463,23 +2463,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b89494eb-6fa9-4edc-9b61-76b35fd1385c",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "e85f1f78-9018-4e7a-9639-cf090dad5c6b",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "61d82955-9807-4fb9-806c-deded40340ec",
       },
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "116874c3-4f3d-4e97-a3ea-f9e25d5526f7",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "30c6c291-7850-44ea-a778-419747d3980c",
       },
     ],
@@ -2494,8 +2494,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "425f01c8-e15e-438f-a737-81c8b8eac79b",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "c9fc734a-2c26-4205-a235-3d08f9aec51d",
       },
     ],
@@ -2509,23 +2509,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a9c1c588-86e1-480e-9070-0dc86c7554cb",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "2203dc1c-eaf1-4b2e-9b12-1dc0f8c2e93a",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "3509f22d-b63f-4a3d-a4b6-db0693dc539a",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "773d368b-a044-4cfa-a4a1-2a1caf9e3068",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "0f575385-1c86-4384-9bcd-23ae34209381",
       },
     ],
@@ -2540,33 +2540,33 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aed18860-7660-4487-94f1-24fcb6acd743",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "bb4302ce-2cce-4452-8be0-8982c8ea6e80",
       },
       {
-        dateStart: "2024-07-31T16:30:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T16:30:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "0a5ad5ff-9c4e-46fd-bd43-09d7c0c28f4e",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "1f920537-8791-41b3-8572-6d2e75a65182",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "fce55438-0d4f-4b12-b7ec-b5a112ee8119",
       },
       {
-        dateStart: "2024-08-02T17:30:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T17:30:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "4abe16e8-1bad-45f3-867f-09ff6cff4055",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "8451c087-18ef-4cc9-b7fc-95b5daecb0cb",
       },
     ],
@@ -2581,8 +2581,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "95049bf5-7c4e-4b6a-9b34-a76d0396d8d6",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "8228221e-358b-4601-bedf-1cce357951a7",
       },
     ],
@@ -2597,23 +2597,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8448d016-2a5e-41b4-aea8-b1ff6c86b808",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "49ea44cc-329c-4284-a2ae-86d08d173bc9",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "387e7070-e17c-4846-878e-af50c8483c4d",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "1f9b01c9-5ed8-4c1c-b676-09a5a68cf6ec",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "96842960-272f-4829-af7d-b904e7047d54",
       },
     ],
@@ -2627,13 +2627,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "29330c43-af3f-471a-8f95-f122eb48cf48",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T12:45:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:45:00.000+02:00",
         id: "d1b5bd25-84bf-4813-89fd-3c5786b865be",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T12:45:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:45:00.000+02:00",
         id: "1a7a3eb6-889e-472a-8af2-b20f50bed127",
       },
     ],
@@ -2648,8 +2648,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "13402042-2dbd-46ac-9e29-195f3e8ef56a",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "977cf0e6-4d57-490f-ac8d-82b1149c2f58",
       },
     ],
@@ -2663,13 +2663,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6ca96daf-2bd1-46be-9152-f68707b6647c",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "cc547d0f-ba4b-4a73-a9b1-0913828ba575",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "2cb2463b-e4d8-4b79-bf98-bbbe1d730f1a",
       },
     ],
@@ -2683,13 +2683,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4d6c01da-f3fb-42aa-9d84-2311b887c607",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "0e35ad2c-6fc5-42e1-8017-648f9c7b4349",
       },
       {
-        dateStart: "2024-08-01T09:00:00.000Z",
-        dateEnd: "2024-08-01T10:00:00.000Z",
+        dateStart: "2024-08-01T09:00:00.000+02:00",
+        dateEnd: "2024-08-01T10:00:00.000+02:00",
         id: "ac51db9b-b04d-4f76-bbb7-0556457d6f45",
       },
     ],
@@ -2703,8 +2703,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "45b215f5-57d5-44f8-9081-3ca68e2bcef5",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "e156dd2a-63ba-4211-89e0-f90f3a36e45e",
       },
     ],
@@ -2719,23 +2719,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "208190ec-5aab-41a0-8e12-ad9be118ed59",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "bc59d963-6d42-4d57-9dd1-404b43a9ddf2",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "56c718d6-4111-4868-b7f2-2b90d463a7f8",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "f17017e5-9a65-45f7-a11f-6354ac432f30",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "1c1222f5-ec4a-4068-9209-4f5a705fc0bc",
       },
     ],
@@ -2750,8 +2750,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b67c9a7e-3d88-4fd3-9b2e-6db4e5fe2130",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T12:55:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:55:00.000+02:00",
         id: "8406cd41-054a-43da-87ef-ee8724f4f915",
       },
     ],
@@ -2766,18 +2766,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "814efc63-400a-4f09-ae56-c36838708105",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "83292e62-f7b0-47f2-a3da-278cbb7ec8a9",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "b4937428-a07d-472a-b381-887b28092ec9",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "133db770-d605-4c87-8142-6665a792d8c6",
       },
     ],
@@ -2791,23 +2791,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "edf7aaf2-a0bb-4281-9dde-09e18c6e358c",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "edb08d1d-1af3-4e1b-b2c0-4d874a0ef7f2",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "c22fd44f-8bd9-4751-9fd0-9bce71fe63f7",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "6f814fe3-d6bb-4d69-bc7b-d75819456c2e",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "e6f09651-c6d5-42b2-9084-07e798295df2",
       },
     ],
@@ -2822,38 +2822,38 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "876b0035-eb99-4ca4-bfe9-80d4fd794d1e",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "0108056d-ceb9-485f-8b22-fc25285c3d0c",
       },
       {
-        dateStart: "2024-08-01T12:30:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "ca898b45-5e1a-4b51-982b-146d6df0f9af",
       },
       {
-        dateStart: "2024-08-01T14:30:00.000Z",
-        dateEnd: "2024-08-01T15:30:00.000Z",
+        dateStart: "2024-08-01T14:30:00.000+02:00",
+        dateEnd: "2024-08-01T15:30:00.000+02:00",
         id: "0f03e472-0dbd-4c71-b638-4e9b57b996e7",
       },
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "e4ba9d07-61d3-4bc4-bdde-9a35fa940ab4",
       },
       {
-        dateStart: "2024-08-02T14:30:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T14:30:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "6b82eb25-8a59-4736-b1ba-48715d4af074",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "9a55d357-44df-4102-8838-2713721771ae",
       },
       {
-        dateStart: "2024-08-03T14:30:00.000Z",
-        dateEnd: "2024-08-03T15:30:00.000Z",
+        dateStart: "2024-08-03T14:30:00.000+02:00",
+        dateEnd: "2024-08-03T15:30:00.000+02:00",
         id: "5487ecd5-704a-464a-ac62-f0c27ffdc473",
       },
     ],
@@ -2867,8 +2867,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e542e5d2-045f-4a78-969c-67938197ae2b",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T12:55:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T12:55:00.000+02:00",
         id: "9c614180-e964-4e56-a1e5-a75f7f2de45e",
       },
     ],
@@ -2883,23 +2883,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5ee7c38b-4550-40a3-a4e3-3358f7f0980b",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "9a4f26d0-85fa-4fd7-aeac-a21e2e2f93d9",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "de0bf1bd-b183-407d-be79-40f05a7848d9",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "1959205f-4e52-48b3-bde4-e5c3a0113da5",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "97bcdec5-98a2-4769-8da8-2c6fc19b76f9",
       },
     ],
@@ -2913,13 +2913,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "451228e5-d16b-4d87-828c-c42eb257ef6d",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:30:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:30:00.000+02:00",
         id: "3493234e-cf17-4f7c-a11b-46d91efb1f53",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "f9b14a17-3972-4628-ae94-73427322ecdb",
       },
     ],
@@ -2933,23 +2933,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "85b8acb0-7d54-45da-a14f-8001b5fc45bc",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "cb5f8d1e-f084-42c8-895d-e52674ce3099",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "cf88b310-11f5-47e1-98f0-823e962c6af6",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "d4b53b30-2c5c-48fe-8f84-c7ff317f65dd",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "ecd545b9-ea96-43b3-9f60-363c53e22996",
       },
     ],
@@ -2963,23 +2963,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5c2386c2-af83-4668-bfe8-c41fddb0b2be",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "fe125805-4bf6-47f4-8a4c-f704db3b2562",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "7b97e282-dbc9-46d2-bc5c-8cd04033add3",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "bbe729e5-702c-4f70-abf4-230885132d3b",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "45650d6e-c716-4088-a96a-9737e7d341a9",
       },
     ],
@@ -2993,13 +2993,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5466ccc8-e4e4-45bf-bee6-11a113780bef",
     instances: [
       {
-        dateStart: "2024-07-31T12:00:00.000Z",
-        dateEnd: "2024-07-31T13:00:00.000Z",
+        dateStart: "2024-07-31T12:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:00:00.000+02:00",
         id: "df8776e0-10fe-41c7-9965-dec3d7b85370",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "30c2a22c-f2d5-4b09-ab99-f6e31bb40a7d",
       },
     ],
@@ -3014,8 +3014,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "349e780c-bf6c-4e83-8a6c-618fa682ac21",
     instances: [
       {
-        dateStart: "2024-07-31T12:30:00.000Z",
-        dateEnd: "2024-07-31T13:30:00.000Z",
+        dateStart: "2024-07-31T12:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:30:00.000+02:00",
         id: "849f64b8-50cd-4c53-808b-7b6448290bee",
       },
     ],
@@ -3029,13 +3029,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "de237c0c-6c6d-47ca-b53d-50a052852708",
     instances: [
       {
-        dateStart: "2024-07-31T12:30:00.000Z",
-        dateEnd: "2024-07-31T14:30:00.000Z",
+        dateStart: "2024-07-31T12:30:00.000+02:00",
+        dateEnd: "2024-07-31T14:30:00.000+02:00",
         id: "d9171da6-ea7e-4a99-8cd3-6026a8380aa7",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "5456630a-7f3c-4bcf-9f2a-68cb2cefcd91",
       },
     ],
@@ -3050,8 +3050,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "473b6d75-9c3a-408e-b419-25681e4791a6",
     instances: [
       {
-        dateStart: "2024-07-31T12:30:00.000Z",
-        dateEnd: "2024-07-31T13:30:00.000Z",
+        dateStart: "2024-07-31T12:30:00.000+02:00",
+        dateEnd: "2024-07-31T13:30:00.000+02:00",
         id: "6265b1ab-e231-4c7d-b3ef-ecd36ecd35de",
       },
     ],
@@ -3065,23 +3065,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b96fdae7-f7fc-4a9c-b148-d4ea0bcbacc4",
     instances: [
       {
-        dateStart: "2024-07-31T12:40:00.000Z",
-        dateEnd: "2024-07-31T13:30:00.000Z",
+        dateStart: "2024-07-31T12:40:00.000+02:00",
+        dateEnd: "2024-07-31T13:30:00.000+02:00",
         id: "908b54a9-972e-49b2-b461-badba05ca4ea",
       },
       {
-        dateStart: "2024-08-01T12:40:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T12:40:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "c06579cd-cfc0-428e-a9bb-9481e19fe850",
       },
       {
-        dateStart: "2024-08-02T12:40:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T12:40:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "6d6eff70-481d-4055-8c96-a130d5d890b4",
       },
       {
-        dateStart: "2024-08-03T12:40:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T12:40:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "c526de7e-0be2-4142-a9c3-ad6bc16818cd",
       },
     ],
@@ -3096,18 +3096,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e800c88f-8b9e-449f-87dc-cc70d2366d2a",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T13:45:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:45:00.000+02:00",
         id: "d41c3d0c-58ec-4283-a11e-df2ee7bf6c90",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T13:45:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:45:00.000+02:00",
         id: "88bd218d-cc38-48e9-9ea3-d962444ba9c2",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T12:45:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:45:00.000+02:00",
         id: "1e62fbcd-123e-40ba-b9ec-467e810abed6",
       },
     ],
@@ -3122,8 +3122,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "48a07ee4-7908-4fac-8851-8b18d8e26316",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "12a50f48-9202-46f5-860e-8271ab89c0b4",
       },
     ],
@@ -3138,23 +3138,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a343de77-1a0f-473d-a7ad-157ba017b1a3",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "fc0add22-35cd-4eb8-9e80-64fa9b215a71",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "5a2501d0-4ef4-4dc5-a443-224176104e08",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "0b1fbe54-ab43-42e5-aad6-815015a92718",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "364a5e54-cc6f-41db-96e0-6a08529f81aa",
       },
     ],
@@ -3169,23 +3169,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4d80811a-0867-47c2-a02d-fbe5a9c73757",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "e67c3318-8f8d-404f-b519-2904bad59fbb",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "f7d26023-8e56-4d38-979e-c6b7ab73ee52",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "c207c51d-62d1-48e2-ad1c-6e134556065c",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "7c9c56b5-7e80-4923-b4c0-f24d922ef84b",
       },
     ],
@@ -3199,13 +3199,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "59850804-3117-4dc5-a91c-9bbccaf6ccd8",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "981340a8-8fe4-442a-8818-90c4b0b04647",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "d429f478-a1a0-424e-ad1e-ca95825cbf3f",
       },
     ],
@@ -3219,8 +3219,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c33f8cda-56b0-448c-98f4-6ed3b743f3c5",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "cb685aaa-2279-4b83-8daf-8890d176eed0",
       },
     ],
@@ -3234,23 +3234,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b426e6f8-fba6-4e20-ab47-d337bac0190a",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "28acc118-13eb-478a-a51f-84b210e7547f",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "958cf279-cd8d-4009-a0ba-e2180205cf74",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "7c69be9c-f5f6-48a1-bd2c-e6579790a515",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "7a50d692-1eac-4def-a45c-8e4787d4df75",
       },
     ],
@@ -3264,23 +3264,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ad996eae-cb72-41bd-a6dc-c37d6494c074",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "521abe50-691a-433f-b834-ae96850b2d64",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "fbe0c083-d206-4ebf-86e2-0429e6965bd4",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "cd52be0f-1daf-4b8c-bf92-104034657b2b",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "653aeed3-b865-4615-ae6a-c288fc6caad0",
       },
     ],
@@ -3293,23 +3293,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "45716065-5e29-4165-a922-85a871c217d5",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T13:50:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T13:50:00.000+02:00",
         id: "72a543f7-d058-4b31-9e2e-90220efb61bc",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T13:50:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:50:00.000+02:00",
         id: "78d6ad8a-df91-487e-843a-9a3ae35a543a",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T13:50:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:50:00.000+02:00",
         id: "e337d032-5e17-4e57-8125-240d2b1863c0",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T13:50:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:50:00.000+02:00",
         id: "4f79e838-06b0-430c-9b4f-13cb66b6e37d",
       },
     ],
@@ -3324,23 +3324,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b5e53715-a111-46fa-be22-83cd5ca11136",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "b8e13128-694e-4e7d-9814-687521d5b336",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "36b43895-a608-4eb1-8586-420dd899ec03",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "8315f610-e8f8-406e-b66c-62f7d7c06f25",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "28d7d70a-482d-4c56-a2ee-c74b339afdc6",
       },
     ],
@@ -3354,23 +3354,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a5d40f09-fd29-48f7-89b0-fe2f62669f05",
     instances: [
       {
-        dateStart: "2024-07-31T13:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T13:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "88f06a1a-e1dd-4ee0-b941-3741238c3f91",
       },
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "efc1b2be-c22a-4f33-a32a-f690b7a59f3b",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "17ce1ee9-0df7-4c0b-a157-90dd74e46e2b",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "fad13b4e-ac14-4c4c-8b2c-ea8c0b4a59f5",
       },
     ],
@@ -3385,13 +3385,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ec22b9d4-3610-4eb1-a859-d9b175545df3",
     instances: [
       {
-        dateStart: "2024-07-31T13:30:00.000Z",
-        dateEnd: "2024-07-31T15:30:00.000Z",
+        dateStart: "2024-07-31T13:30:00.000+02:00",
+        dateEnd: "2024-07-31T15:30:00.000+02:00",
         id: "c214243d-c273-41b1-825d-2c36df2d7cbe",
       },
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "446fbfa0-e291-42e7-8cb1-5ac227598010",
       },
     ],
@@ -3406,8 +3406,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ec4bbe66-20ac-4ea5-aec2-8e67ffe8d331",
     instances: [
       {
-        dateStart: "2024-07-31T13:30:00.000Z",
-        dateEnd: "2024-07-31T15:30:00.000Z",
+        dateStart: "2024-07-31T13:30:00.000+02:00",
+        dateEnd: "2024-07-31T15:30:00.000+02:00",
         id: "5957e646-c64c-4975-b5f2-8dcf01a8e6a1",
       },
     ],
@@ -3422,23 +3422,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0287cbbf-4ae3-4572-81ac-38b289313c69",
     instances: [
       {
-        dateStart: "2024-07-31T13:30:00.000Z",
-        dateEnd: "2024-07-31T14:20:00.000Z",
+        dateStart: "2024-07-31T13:30:00.000+02:00",
+        dateEnd: "2024-07-31T14:20:00.000+02:00",
         id: "5585c55b-b99b-4f19-8ed6-154dde9d32aa",
       },
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T14:20:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:20:00.000+02:00",
         id: "f8dc1069-a51c-4c02-943e-2dc4e6b8691d",
       },
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T14:20:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:20:00.000+02:00",
         id: "14823f5b-1ec8-4711-8ca0-ca0a61ff34a8",
       },
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T14:20:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:20:00.000+02:00",
         id: "17d3d976-6bee-48b1-a9ab-a64125e72d6f",
       },
     ],
@@ -3453,23 +3453,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "36bf8ace-3aeb-46cc-9036-e260100dbf26",
     instances: [
       {
-        dateStart: "2024-07-31T13:30:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T13:30:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "28430f81-2c08-4653-8e59-fb625ec749f3",
       },
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "666048fe-ccac-4b15-af04-f1c2174e2a59",
       },
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "4a3199d6-6edc-4f60-b989-a4096e4822cc",
       },
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "3485e0c9-7a5d-4cae-a47d-393bd777ad72",
       },
     ],
@@ -3483,23 +3483,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "844c925d-4ce3-422c-8ee0-1e826b60b887",
     instances: [
       {
-        dateStart: "2024-07-31T13:30:00.000Z",
-        dateEnd: "2024-07-31T14:00:00.000Z",
+        dateStart: "2024-07-31T13:30:00.000+02:00",
+        dateEnd: "2024-07-31T14:00:00.000+02:00",
         id: "5e0ac66c-b1f2-4aa6-a408-f9e88a14e08d",
       },
       {
-        dateStart: "2024-08-01T15:30:00.000Z",
-        dateEnd: "2024-08-01T16:30:00.000Z",
+        dateStart: "2024-08-01T15:30:00.000+02:00",
+        dateEnd: "2024-08-01T16:30:00.000+02:00",
         id: "c7b32153-388b-4278-8b4f-b107a734c2b7",
       },
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "6789f321-0752-408e-ad2e-0b355d79f61d",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:30:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:30:00.000+02:00",
         id: "e043b0f9-f745-425b-b3a4-248f6f575cfb",
       },
     ],
@@ -3514,18 +3514,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d90c1879-af30-4ede-88c8-0981d9706394",
     instances: [
       {
-        dateStart: "2024-07-31T13:30:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T13:30:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "9e15cb97-65aa-435e-a6aa-ec1242c4d19c",
       },
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "c2549cc1-ce56-4122-b515-8fa1a078d756",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "d3389af9-40e1-4f53-b382-eb4043b50843",
       },
     ],
@@ -3540,8 +3540,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "166d803f-01e6-49b9-b4f9-e5e6aed0f7ea",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "3ab74389-1a9e-4144-809f-94cb65b5c247",
       },
     ],
@@ -3555,13 +3555,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3099c760-4339-4846-baea-b879b556166a",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "8f35f34d-c5b5-4a5e-9c48-b96bf411a329",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "9cd5c071-53df-4731-824b-bd9e930633f2",
       },
     ],
@@ -3575,8 +3575,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e858c4b8-3b30-417d-aeed-3fc835aa0c15",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "0e4519e8-28b5-4322-af2c-8a1abce3dfc8",
       },
     ],
@@ -3590,23 +3590,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "70bfacc0-12cd-4c29-af79-d9162ea796b7",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "e0f47d9c-3a21-43be-93d5-86542c036958",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "0aa323ca-5451-4b7c-95d4-26586e3b40f8",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "a7bec36b-042c-498f-977e-0abc572295ba",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "8bcd4904-07b4-4bc5-97c0-6f7c2de784b0",
       },
     ],
@@ -3621,8 +3621,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "50befd80-1fd4-41c4-9e07-2610735a2ba5",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "7c56dd79-f1d1-41fc-8c9b-464046f3bbdb",
       },
     ],
@@ -3637,23 +3637,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "75c81067-dae8-4cb0-b178-fb6d49da62bf",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "d4369804-2596-4298-8f14-d2960f05e9e0",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "44ce3edd-3e20-48d9-9276-0ee4a8999144",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "cd32af46-1daf-4377-8943-149dbb5abef0",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "d459321f-7f95-4024-bcba-86b2c430d2f8",
       },
     ],
@@ -3668,8 +3668,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b6eb6a5a-ec1e-4afb-a102-c9324cb53f23",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "594cfb36-1907-4885-b143-2650a9730490",
       },
     ],
@@ -3684,18 +3684,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "625f9747-cafe-4902-869c-56468d44574f",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "62347f1b-9cd5-4418-a7fa-ea7525cb095f",
       },
       {
-        dateStart: "2024-08-01T19:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T19:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "80f97e96-9942-469f-9cb1-db7035825f62",
       },
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "23154650-c14f-4168-89a4-6441a49fa2d5",
       },
     ],
@@ -3710,8 +3710,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5149f50e-fc2f-469f-b914-87c062f1783c",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "4dca892e-ec6e-412d-8fa2-a2d32f30f52a",
       },
     ],
@@ -3725,23 +3725,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ec1eec4a-3f37-48a9-85b4-039e590a09dd",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "d95de85d-d9af-44fa-b708-3dc04f91690a",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "8e1e95ab-a4f9-40c3-9b8c-13745c8ac9b0",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "e8137cce-925c-4327-a484-ba9c6189ef79",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "02c7f606-a01c-4f99-8b85-2ac1daf203ca",
       },
     ],
@@ -3755,8 +3755,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a1076d9c-7814-427e-81f9-ea33c3fba354",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T14:55:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:55:00.000+02:00",
         id: "b9341698-1fbe-441f-bbba-d3b5db397742",
       },
     ],
@@ -3770,23 +3770,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e8751e3a-30f1-45ae-9786-42757cf613f3",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T14:45:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T14:45:00.000+02:00",
         id: "c3d4812b-6041-49e6-8051-4b483451a289",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T14:45:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:45:00.000+02:00",
         id: "e8115c39-683f-43db-9dcd-2ed014f5da9f",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T13:45:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:45:00.000+02:00",
         id: "aac59d10-33fb-4a88-8590-ec5b5a3d4cd8",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T12:45:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:45:00.000+02:00",
         id: "1dd45423-8c84-4c15-bb03-7022ee7d97bb",
       },
     ],
@@ -3801,8 +3801,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c8af4138-7bb3-437a-b3bf-de5f9bce380c",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T15:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:00:00.000+02:00",
         id: "48acd390-804d-40f9-85a0-7bcc50b67380",
       },
     ],
@@ -3816,18 +3816,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fbf174af-6930-4582-a1e2-ec2b0ef22142",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "58277c22-8f63-4de4-9f12-ceb8635a5152",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "6542b413-0ac8-440d-8469-d288802e4de6",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "9e714303-ea40-4d3d-b2d8-c61205c638b9",
       },
     ],
@@ -3842,18 +3842,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e02b634c-5be4-493d-a317-58c0658e0f19",
     instances: [
       {
-        dateStart: "2024-07-31T14:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T14:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "50f5f630-31a3-450d-b872-03de5ef958d4",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "acc7e86a-3f6d-43d6-8a83-f59d5c509343",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "4558991f-76ba-4f0e-aadb-ec832b3cc303",
       },
     ],
@@ -3868,8 +3868,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "772b805a-a3c4-453b-b030-c207d06edd7f",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "190e4d40-e2ae-45e1-bade-9f8d89225a68",
       },
     ],
@@ -3884,23 +3884,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e2022c46-8639-4a4f-a194-af6c9df3eadf",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "151ea4ff-6512-430b-acda-fd17c7a561c2",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "94fa4143-0308-4b0e-813f-2d4cf785f2f3",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "c6db45a2-19d6-485e-863e-83ad290a567b",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "c23ee416-f8be-4add-8503-e073a977bacd",
       },
     ],
@@ -3914,23 +3914,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e3726e13-a387-433d-87bd-c2f8decf7322",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:30:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:30:00.000+02:00",
         id: "404680ec-3aaa-49f2-8fbb-b689fd0af351",
       },
       {
-        dateStart: "2024-08-01T09:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T09:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "3967f5a3-9f1a-4b52-b209-2c7c5a72d3f9",
       },
       {
-        dateStart: "2024-08-02T09:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T09:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "f0e0d36b-1565-45ae-aabd-e6197e1ad2d5",
       },
       {
-        dateStart: "2024-08-03T09:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T09:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "c1da2650-7fb5-4338-a5e9-4f0e4b03af32",
       },
     ],
@@ -3945,8 +3945,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7250800d-60d8-43b8-96fd-cd9a90fe887b",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:30:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:30:00.000+02:00",
         id: "39584632-d31d-40b3-8fc5-fde7219a88c0",
       },
     ],
@@ -3961,8 +3961,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b27f61a2-c03f-471f-bbcd-9bf91a3efa55",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "a4b55857-3894-45d8-b75b-d1984ab90e36",
       },
     ],
@@ -3977,13 +3977,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "60d3d094-d05b-46a1-ab68-f24e06e884b9",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "6f8a77de-9513-41fe-8d8e-2d270f3a637e",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "c8af7a5f-4b39-4453-ad4c-bb386610325f",
       },
     ],
@@ -3998,8 +3998,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a0d20e85-b378-4455-afbd-7d501b54fbe9",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "104a5c41-91f9-443e-b79d-ad571612234b",
       },
     ],
@@ -4014,23 +4014,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "66fdb057-0b46-401f-8676-29dca8cd43bf",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "d406ed85-425c-4e72-a2a7-4ff612b0de14",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "17230c8b-5117-45c0-bf08-9c683ba65602",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "8dc8c30d-cb70-4478-ba3d-b878d7265a1c",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "318f6e5f-cdd5-4dd8-9c51-aba465c25c56",
       },
     ],
@@ -4045,23 +4045,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ebdec868-475e-4d36-9821-a6216fa74eaa",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "2eff9581-165c-4158-869f-868d3b53893b",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "1cea679f-5bc3-4412-9d34-8e38fbe4c0e0",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "0f4dffd1-f837-4340-9d20-af79c3c3e6f7",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "9b016c9e-a5b7-448a-9255-1c434894d596",
       },
     ],
@@ -4076,18 +4076,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6b0ce1fd-c934-4526-98c3-aa3b7fe95c5f",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T15:45:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:45:00.000+02:00",
         id: "d0612496-2256-4da2-8adb-7f708fb1bcfa",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T14:45:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:45:00.000+02:00",
         id: "6383f93d-778d-49e3-9dcd-34f86af949c9",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T13:45:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:45:00.000+02:00",
         id: "c5ed146b-bf68-433c-9312-6e0e50433c22",
       },
     ],
@@ -4101,8 +4101,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "30df2d83-b9c2-4798-a75b-07c62da359d7",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "fff984b1-76a2-4dc4-b7b0-992a5067d2d3",
       },
     ],
@@ -4117,23 +4117,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "65935f6b-4194-48b8-9384-e55fde9794bf",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "68514b9b-a3fc-4b4d-ab34-4f6abb937b72",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "75a7f429-6073-4d0a-b6ff-8ded6406d275",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "3c5f51e8-07cd-490d-888c-029dc7af519c",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "8deb4b0f-3544-4def-9a5d-66a49b063656",
       },
     ],
@@ -4148,13 +4148,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1598a140-5102-4dd6-b8b6-1e2f429e9b43",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "997ede09-7f72-4cf1-a4de-a393733e5116",
       },
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "d5a4fd91-1ebc-422f-ba7e-6d2cfdb07ea1",
       },
     ],
@@ -4168,13 +4168,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c898298e-bfa6-44bf-9bac-dc5a7e8bb7d3",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "d54a8f53-1777-4a30-9839-521d05d6d4a4",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "23c204d4-3b3a-4363-bc92-c70d2d742fa8",
       },
     ],
@@ -4189,43 +4189,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "24934c90-ea50-47cb-80ec-31f75d83726c",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T15:50:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T15:50:00.000+02:00",
         id: "0f3c5167-6270-4437-a73e-eae3f62e67fe",
       },
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T16:50:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:50:00.000+02:00",
         id: "d9c5b0dd-d19e-494f-99b4-73accd1c8862",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T15:50:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:50:00.000+02:00",
         id: "f7f3083e-036a-4768-9440-513fd26001ae",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T16:50:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:50:00.000+02:00",
         id: "2fc29519-2b30-4953-9d8c-a2f7936e5024",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T15:50:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:50:00.000+02:00",
         id: "ea7ad12b-7305-41c4-b5b4-41ac98c3d511",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T16:50:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:50:00.000+02:00",
         id: "93d0d902-acd7-41aa-984b-4b7b58e6cf5e",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T15:50:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:50:00.000+02:00",
         id: "25486e50-1f21-43c1-a99c-f4755add22a5",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T16:50:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:50:00.000+02:00",
         id: "23be072b-040a-4897-8e20-616a3b963d4b",
       },
     ],
@@ -4240,23 +4240,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0f463668-293d-4c58-a6f0-e77e6a124a69",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "a92a8121-8658-45d8-920e-a858067b5959",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "3e79d90b-8f92-4b33-a3d6-beae2e6022e9",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "a573788c-1c16-4e4d-b907-84522b10cf32",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "06d9fce1-73f5-4fb6-8d87-36cd4bdeaa74",
       },
     ],
@@ -4270,23 +4270,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1ee9d73b-5e5b-4e55-9567-3eb3365b790e",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "6b764839-c45c-49a8-826b-ef14e9dcb05f",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "678bc6a3-d882-4409-ac82-b368faae6679",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "c5389d63-0440-463d-af21-e4fab39c1f1c",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "4e9da09a-57e8-47a6-bae6-e314fc48e075",
       },
     ],
@@ -4301,18 +4301,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "33a77631-976b-4273-9c56-6954506e2074",
     instances: [
       {
-        dateStart: "2024-07-31T15:00:00.000Z",
-        dateEnd: "2024-07-31T16:00:00.000Z",
+        dateStart: "2024-07-31T15:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:00:00.000+02:00",
         id: "0dbad848-ce6b-4a4a-91bc-0f2a9ca66bb4",
       },
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "5b0ad291-02e2-4d38-b8ff-06d4984a3ded",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "3d53e265-2cd6-4a5d-87ed-01c95dee90bd",
       },
     ],
@@ -4326,8 +4326,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1a448b20-ac4d-41ec-a35e-6f5598648d8b",
     instances: [
       {
-        dateStart: "2024-07-31T15:15:00.000Z",
-        dateEnd: "2024-07-31T16:15:00.000Z",
+        dateStart: "2024-07-31T15:15:00.000+02:00",
+        dateEnd: "2024-07-31T16:15:00.000+02:00",
         id: "e39f6639-7045-44af-b212-b58f1c092731",
       },
     ],
@@ -4342,8 +4342,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b3eaab9b-52eb-4569-bc5d-5e5392d22406",
     instances: [
       {
-        dateStart: "2024-07-31T15:15:00.000Z",
-        dateEnd: "2024-07-31T16:15:00.000Z",
+        dateStart: "2024-07-31T15:15:00.000+02:00",
+        dateEnd: "2024-07-31T16:15:00.000+02:00",
         id: "a6978c02-8269-48d5-b7f4-942f9533e268",
       },
     ],
@@ -4358,23 +4358,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cc515539-434b-46db-bcfb-a38ce7f86ccf",
     instances: [
       {
-        dateStart: "2024-07-31T15:30:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T15:30:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "17736a75-9aa9-45fd-866b-e283150c9b98",
       },
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T14:30:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:30:00.000+02:00",
         id: "2c246aff-0bf0-4385-b44a-b40f60948fc1",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:30:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:30:00.000+02:00",
         id: "8e39cf32-e49c-4811-82b5-f946a5e7835d",
       },
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "fe13b357-bd85-40ad-9246-3b8438f56902",
       },
     ],
@@ -4388,13 +4388,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0f450a62-5586-49aa-9511-9f00e6e1e114",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "aa765f57-0401-4138-b68a-cf1d43880305",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "d8d57360-c0ab-444c-a12d-e5c2f9c014f5",
       },
     ],
@@ -4409,8 +4409,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cba10643-ed12-4f00-a596-bd4013ac4f55",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "795dc98a-c009-413c-bcdf-5cb9de50bfae",
       },
     ],
@@ -4424,43 +4424,43 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "892e6e77-fbde-4902-ac6b-664352a9be0c",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T16:30:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:30:00.000+02:00",
         id: "8b81a5ab-7b6c-4829-a513-d6dc05938f6a",
       },
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T17:30:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:30:00.000+02:00",
         id: "813273f9-371d-4255-ae67-2736e32a4783",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T16:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:30:00.000+02:00",
         id: "23c318af-47d1-4698-b98a-69aef46a6349",
       },
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T17:30:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:30:00.000+02:00",
         id: "6e04f380-54e9-41a4-b5b8-d0b59845acc0",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T16:30:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:30:00.000+02:00",
         id: "184d1c8d-fd27-4c4f-a067-900ceb888cfe",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T17:30:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:30:00.000+02:00",
         id: "2b81c8d9-05cf-4d70-b116-10453546a40b",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "5783a863-9f46-414d-a9ff-a89c1fac171e",
       },
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T17:30:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:30:00.000+02:00",
         id: "e7427987-ebce-45ba-8c9b-56f2ac7dc00a",
       },
     ],
@@ -4475,23 +4475,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ba2b0879-6456-4611-8c9c-991f7bb091d8",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:30:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:30:00.000+02:00",
         id: "6bf4b3ac-5a12-4e81-8805-4ffeb738f35f",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:30:00.000+02:00",
         id: "78efe0d2-4b39-4f8c-a0a5-820cc6fdfae3",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:30:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:30:00.000+02:00",
         id: "6c2a7194-9552-4e6f-8a21-73dcde9464b9",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:30:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:30:00.000+02:00",
         id: "2a86f512-2dfa-4d80-9850-63211a0e8c5a",
       },
     ],
@@ -4505,23 +4505,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a6ee50ed-8b77-46ec-9071-a8d64f034b65",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "a9d9ac71-7fcb-414b-8515-c4ed9443d819",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "6dcda696-8dc9-48d9-8648-717b55df33e7",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "34fd49f1-d818-4f47-9203-354b1c900b9c",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "fbb83494-ae6e-42a3-b97a-ad8bbb5d961c",
       },
     ],
@@ -4535,13 +4535,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "35321256-4261-4e14-952b-00c3790bfb1d",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:30:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:30:00.000+02:00",
         id: "a4b5cb0f-f769-4283-a4a5-a2e4e2c9b16f",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:30:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:30:00.000+02:00",
         id: "c5b5872b-b6b1-4f6c-a5d3-5be0bb9ce912",
       },
     ],
@@ -4556,8 +4556,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ef46a6f0-fba2-428b-8e1d-d6d2266ddc69",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "8a1a2fb3-a0f5-4ee9-9364-9cdceab99814",
       },
     ],
@@ -4571,8 +4571,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6a45bd10-fd91-4eac-bc57-a5d25d298fc1",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T16:55:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:55:00.000+02:00",
         id: "6cd0bc13-7855-4042-85c0-a92a0c2580c2",
       },
     ],
@@ -4587,23 +4587,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d6012ce6-93cb-49fb-ba5b-02a52bbd3385",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "51995c19-5f0e-4d45-be26-a8c79eec946c",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "692a0251-a1f3-4ff6-b59d-a756c95bd5ec",
       },
       {
-        dateStart: "2024-08-02T16:30:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T16:30:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "05e2971f-75c6-44dc-9b4a-7bce9e3a6b9b",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "a5a9318b-acd6-485c-9a90-0c5ffe3a7268",
       },
     ],
@@ -4618,13 +4618,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "890a5f96-0a04-4ff5-a231-214bd2929532",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T16:45:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:45:00.000+02:00",
         id: "f99fe7d9-125d-4f16-9af8-ed3577096cff",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T14:45:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:45:00.000+02:00",
         id: "7c85be80-e3b2-4580-9ebe-dbc6e610dec9",
       },
     ],
@@ -4639,18 +4639,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aabad8c9-dadd-4504-9a6c-6f1cbb5e19ab",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "4a820afb-5dbd-4b66-aa6f-502a5a9d4554",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "00c5fe43-994d-4193-84e8-4495bc2e494f",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "ba2a6a69-f9fc-4d27-8bb6-f99744718ac4",
       },
     ],
@@ -4664,33 +4664,33 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6e444b64-07d4-4b4c-ad44-e3b6b0948536",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "ffbd3dc0-6925-41bb-9544-14b94a74fadd",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "b63ba937-c91b-4065-865b-3964098dfe5a",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "56c454ed-f29b-4bc7-b679-beea06319c39",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "102aad7c-d553-4ca2-8945-d91652d7c848",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "4057d5a0-25ff-4407-a8f0-209306dca97b",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "247a9ec0-c92a-4c0f-b525-553a70982475",
       },
     ],
@@ -4704,38 +4704,38 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8d0bf7d8-b2a4-4e58-b326-dedf3a63a1c3",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "797d1c45-aec8-4a8f-8967-df8fb0ae13f1",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "cac625be-a1ae-4cef-9b10-1b4d05d707e7",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "b2d172a9-204f-4539-a3a2-ab2943f464de",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "4e421f67-4168-417b-bc5c-aaf7f358f4c7",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "e9a06ea6-206d-4e3e-9670-0f522d0e510d",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "11f640c5-5659-483d-8fd2-7f84a8fc023d",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "65d1a7d4-72c4-4a66-a243-f53f6668b33d",
       },
     ],
@@ -4749,28 +4749,28 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "724f18f1-0b7b-4849-b177-1dc990908bb0",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "64c46606-be80-4eff-b32a-329d75f2211f",
       },
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "2a38ca5c-3ced-470b-bc24-9d142668323b",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "ab03465d-86c9-467d-a694-e06d830a8433",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "80012460-e572-4996-851f-124019898369",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "e7b35651-1a43-42f6-a082-6314f344acfa",
       },
     ],
@@ -4785,23 +4785,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9c0ee0f0-6611-4a0b-8f18-f717d2c93069",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "55f4d3c4-58a1-4ec3-abdf-19c235eb5a7f",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "40f25c42-8c7b-4757-9075-020ff2d3ae72",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "39f2ab94-fba7-458d-826f-89e4062c11ae",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "153e0fce-5cf3-4657-acd4-c668a4cbfcac",
       },
     ],
@@ -4816,23 +4816,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5b4edd85-6164-41b7-93ae-ea0d1edb63ff",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "0ad65cef-4a95-4001-8bc6-7458bbc88768",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "5bf128ce-6375-4e27-9881-5dbb5166ff18",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "7e4cdac3-2b76-4574-8a21-b4fb38cad390",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "0c1785d6-c42d-4deb-83bc-5a58f81ce448",
       },
     ],
@@ -4847,8 +4847,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "009cbaed-07e4-4cbe-82cd-e758bbf4e1e0",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T16:55:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T16:55:00.000+02:00",
         id: "7ffdca67-a428-48ab-845b-e233b8deda93",
       },
     ],
@@ -4863,8 +4863,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a14c51e8-b4b0-457f-976b-df4699c8006e",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "a270006e-0441-4332-be74-9b866a1460ee",
       },
     ],
@@ -4879,8 +4879,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f01d989c-34c5-44be-b1d1-3dde769391a3",
     instances: [
       {
-        dateStart: "2024-07-31T16:00:00.000Z",
-        dateEnd: "2024-07-31T18:30:00.000Z",
+        dateStart: "2024-07-31T16:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:30:00.000+02:00",
         id: "19531d5f-bf7c-44a5-936e-639f5e1e762e",
       },
     ],
@@ -4895,23 +4895,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e035e38f-b99b-4027-8b53-4bef45cabc39",
     instances: [
       {
-        dateStart: "2024-07-31T16:30:00.000Z",
-        dateEnd: "2024-07-31T19:30:00.000Z",
+        dateStart: "2024-07-31T16:30:00.000+02:00",
+        dateEnd: "2024-07-31T19:30:00.000+02:00",
         id: "df6bf455-3504-487a-b329-b12b7e3286e3",
       },
       {
-        dateStart: "2024-08-01T10:30:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T10:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "e71d8384-434f-4e66-b3a5-46854a76e521",
       },
       {
-        dateStart: "2024-08-02T17:30:00.000Z",
-        dateEnd: "2024-08-02T19:30:00.000Z",
+        dateStart: "2024-08-02T17:30:00.000+02:00",
+        dateEnd: "2024-08-02T19:30:00.000+02:00",
         id: "8a34b599-46ef-42d4-8392-0196b918691b",
       },
       {
-        dateStart: "2024-08-03T10:30:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T10:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "db6320a7-b164-4ee1-a80f-730a7488644b",
       },
     ],
@@ -4925,23 +4925,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8310924d-bc32-404f-ba3d-cbbd5b110ade",
     instances: [
       {
-        dateStart: "2024-07-31T16:30:00.000Z",
-        dateEnd: "2024-07-31T17:00:00.000Z",
+        dateStart: "2024-07-31T16:30:00.000+02:00",
+        dateEnd: "2024-07-31T17:00:00.000+02:00",
         id: "6ab9aa0e-f84d-47a0-ab85-e84d62097ae9",
       },
       {
-        dateStart: "2024-08-01T16:30:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:30:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "680feaff-5563-43e9-be21-399ea8d1ea82",
       },
       {
-        dateStart: "2024-08-02T16:30:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:30:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "2ca74475-e4b2-4cbf-9e87-5fb3be77a974",
       },
       {
-        dateStart: "2024-08-03T16:30:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:30:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "73226d77-f1ba-4d11-b184-c329496c5396",
       },
     ],
@@ -4955,18 +4955,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c226fcd8-4880-4c3a-9046-70e86a324283",
     instances: [
       {
-        dateStart: "2024-07-31T16:30:00.000Z",
-        dateEnd: "2024-07-31T17:30:00.000Z",
+        dateStart: "2024-07-31T16:30:00.000+02:00",
+        dateEnd: "2024-07-31T17:30:00.000+02:00",
         id: "91a58354-29e7-4a30-b0ce-48d769440170",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "5b702670-39fc-4b1c-8efc-232cba0d8f0a",
       },
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "a3d48c8e-8c85-4614-95da-cc4ee05f75b9",
       },
     ],
@@ -4981,18 +4981,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bbb1cfe8-0191-4cc0-93bf-c85061b31d68",
     instances: [
       {
-        dateStart: "2024-07-31T16:30:00.000Z",
-        dateEnd: "2024-07-31T17:30:00.000Z",
+        dateStart: "2024-07-31T16:30:00.000+02:00",
+        dateEnd: "2024-07-31T17:30:00.000+02:00",
         id: "5f54ca0f-ed6d-4648-bd8c-5d72582ff3e5",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "4b258c69-ebbb-4440-b1e8-9853ae8edfe0",
       },
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "fd76dcd8-e982-4977-8d15-ca2e93967a05",
       },
     ],
@@ -5006,13 +5006,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f6726dbd-fefe-4875-b3ea-f94ff868b391",
     instances: [
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "be684293-e3d0-48fa-b5f6-3d4b2ea45639",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "4085b221-f429-4805-8723-12e6b55a92cb",
       },
     ],
@@ -5026,8 +5026,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "528ad6fa-82a3-42f1-b8d5-21c8194ec306",
     instances: [
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "02a5ef17-513e-4d74-b178-cf6ae27bd276",
       },
     ],
@@ -5042,8 +5042,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "03ad8d1c-7f9d-4a5b-91af-68060804e40b",
     instances: [
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "f1c846b2-b70f-4985-a451-1915358fc17b",
       },
     ],
@@ -5058,23 +5058,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e699d345-d4d9-48b6-9dec-f0cea922df0a",
     instances: [
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "57ad2985-37e2-4b26-b737-93ca2eed83c4",
       },
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "9ad52c39-9ad1-48e8-923c-c6a9810b1239",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "223d178d-b5b2-45b0-8f37-27fe2966e1ce",
       },
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "e77e8061-c572-40d1-a568-951f17119cf7",
       },
     ],
@@ -5089,23 +5089,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "919b56d1-f042-4d4c-b19b-49bd0063dc95",
     instances: [
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T18:30:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T18:30:00.000+02:00",
         id: "3f25879b-f296-47b2-9afa-debe4e7bc4ac",
       },
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T18:30:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:30:00.000+02:00",
         id: "78c15ca1-a663-4fa1-a66e-e06c5653e01e",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T18:30:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:30:00.000+02:00",
         id: "b366c15c-9d01-4558-a498-d191bde1e85e",
       },
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:30:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:30:00.000+02:00",
         id: "3517640d-6698-4533-ae06-875d3888bc9c",
       },
     ],
@@ -5119,8 +5119,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ac7f3c73-4427-41cf-9b5f-c752db13c88c",
     instances: [
       {
-        dateStart: "2024-07-31T17:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T17:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "18b8b7c6-eea1-4ec4-bff5-1d0964b3e9d2",
       },
     ],
@@ -5134,23 +5134,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "847ba72e-9e93-493e-9bc2-4ce0d8411995",
     instances: [
       {
-        dateStart: "2024-07-31T17:10:00.000Z",
-        dateEnd: "2024-07-31T18:00:00.000Z",
+        dateStart: "2024-07-31T17:10:00.000+02:00",
+        dateEnd: "2024-07-31T18:00:00.000+02:00",
         id: "83f45340-adcd-497e-bd61-54b97e630e1b",
       },
       {
-        dateStart: "2024-08-01T17:10:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T17:10:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "a4dcc792-0cbe-4850-81e6-01de33c25844",
       },
       {
-        dateStart: "2024-08-02T17:10:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T17:10:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "40938799-ea0f-41ef-9b3d-e30d7b5b48f9",
       },
       {
-        dateStart: "2024-08-03T17:10:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T17:10:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "65398f1f-3f4a-4dc4-adf1-bdbeaebeef94",
       },
     ],
@@ -5165,18 +5165,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "369768b7-4f15-41e9-9e8b-2f00ced90a46",
     instances: [
       {
-        dateStart: "2024-07-31T17:30:00.000Z",
-        dateEnd: "2024-07-31T19:30:00.000Z",
+        dateStart: "2024-07-31T17:30:00.000+02:00",
+        dateEnd: "2024-07-31T19:30:00.000+02:00",
         id: "41ab14ea-29cb-42c4-a070-35e77813af0f",
       },
       {
-        dateStart: "2024-08-01T12:30:00.000Z",
-        dateEnd: "2024-08-01T14:30:00.000Z",
+        dateStart: "2024-08-01T12:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:30:00.000+02:00",
         id: "24f1b751-2736-4774-80c0-bb5f2d6a1419",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "e890407e-bc63-46e4-bb71-590d596c95e1",
       },
     ],
@@ -5191,23 +5191,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3d7499f7-20cc-43cd-98f9-0ada505578ff",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "3dae2b50-f8d9-4c4a-aa3f-d555ca1d956e",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "88f3934c-cbd4-4967-a828-021447cfd410",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "c39df894-00d6-4155-aedb-c64fdfb67605",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "e93e8e0f-2dae-4e57-8841-d81cceef8e72",
       },
     ],
@@ -5221,23 +5221,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8ed66569-f4bb-4cf0-9be4-bcea0616855e",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "4a5842bd-c2bb-4185-85ac-e509eb1236db",
       },
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "c829c911-b340-4a25-906c-0f931d40219e",
       },
       {
-        dateStart: "2024-08-02T15:30:00.000Z",
-        dateEnd: "2024-08-02T16:30:00.000Z",
+        dateStart: "2024-08-02T15:30:00.000+02:00",
+        dateEnd: "2024-08-02T16:30:00.000+02:00",
         id: "8e0a2a5b-b66c-4332-ac6b-b9bf1df676a3",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "621ae414-f87a-4ea8-ad70-d956361eee59",
       },
     ],
@@ -5251,8 +5251,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2257f88b-a558-4bba-bd2f-0e8cdf375062",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:30:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:30:00.000+02:00",
         id: "fefc7da3-3fb6-41f7-a65f-fbec5379a756",
       },
     ],
@@ -5267,8 +5267,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5682b60a-70f5-41c9-8615-507826e5ad1c",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "aa22724c-522a-4151-ad67-81903fe71337",
       },
     ],
@@ -5282,23 +5282,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ad2c5108-6684-4e6c-8824-29d32c3b69f7",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "99004447-2bcf-4c46-9eb7-231d2b5cd573",
       },
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "052996e6-d285-455d-bebe-52e4c272b3b1",
       },
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "559429b0-ee18-4b7d-a29d-01c474f5be74",
       },
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "3e78d764-322d-4420-932e-1a7a64852f8a",
       },
     ],
@@ -5312,8 +5312,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "10ea74a8-854e-4f08-b36a-aaabb0f1e972",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "cfb1f0c8-8e10-4118-8bdb-b7112871099e",
       },
     ],
@@ -5328,23 +5328,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e18ff160-6412-4bf8-86d6-7393b0c7bb98",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "e004a29c-b843-4e91-b786-998caf2c1a08",
       },
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "d39f0cba-c06a-405c-9096-c6076e141bbb",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "34e9e2eb-2d95-4037-b5e9-024e3c420d4d",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "6caec291-c2c0-4a63-9d18-3b5e914fcd95",
       },
     ],
@@ -5358,13 +5358,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ca4bed37-6b64-4292-a236-67da788bdd1e",
     instances: [
       {
-        dateStart: "2024-07-31T18:00:00.000Z",
-        dateEnd: "2024-07-31T19:00:00.000Z",
+        dateStart: "2024-07-31T18:00:00.000+02:00",
+        dateEnd: "2024-07-31T19:00:00.000+02:00",
         id: "1871cd3d-1b3e-4081-a94a-14780f437a17",
       },
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "cabf724b-8b8c-4962-88a9-cf30313ae650",
       },
     ],
@@ -5379,23 +5379,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2d4e0aa6-645a-4e94-95fb-bc6c41cdf337",
     instances: [
       {
-        dateStart: "2024-07-31T18:30:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T18:30:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "b229b977-69cf-464e-b550-7585f4aac114",
       },
       {
-        dateStart: "2024-08-01T18:30:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T18:30:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "5da4cef2-9036-4a72-8a4c-68992e3b4c33",
       },
       {
-        dateStart: "2024-08-02T18:30:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T18:30:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "d3946ae1-f24f-4d40-9e2e-7e1d6608fa90",
       },
       {
-        dateStart: "2024-08-03T18:30:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T18:30:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "24bf10a5-6aa6-4eca-858d-d4be91aa6a73",
       },
     ],
@@ -5410,8 +5410,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a6caafe1-a485-4126-b3ff-1f9c64d837fd",
     instances: [
       {
-        dateStart: "2024-07-31T19:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T19:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "a0e1b143-6b52-4755-975d-fceb20895fce",
       },
     ],
@@ -5425,23 +5425,23 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1312c2aa-7a89-4293-bbbe-84488aa30efe",
     instances: [
       {
-        dateStart: "2024-07-31T19:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T19:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "6398c0c7-1687-4fb7-9dbc-abf4386d9f70",
       },
       {
-        dateStart: "2024-08-01T19:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T19:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "3e94af87-42f0-4ca3-97ab-2c8ecb18d42f",
       },
       {
-        dateStart: "2024-08-02T19:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T19:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "888a6ffb-70bf-45fe-844d-645d549db893",
       },
       {
-        dateStart: "2024-08-03T19:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T19:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "1602f59e-b1e0-4997-a35d-8cabc5c9e5ce",
       },
     ],
@@ -5455,33 +5455,33 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "058c78ca-2bba-4fc6-9c3f-ded3daafb590",
     instances: [
       {
-        dateStart: "2024-07-31T19:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T19:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "a19d2a06-a746-4b4f-a72c-b05f122a19fb",
       },
       {
-        dateStart: "2024-07-31T19:00:00.000Z",
-        dateEnd: "2024-07-31T20:00:00.000Z",
+        dateStart: "2024-07-31T19:00:00.000+02:00",
+        dateEnd: "2024-07-31T20:00:00.000+02:00",
         id: "3ff879cf-26fc-4c17-b4e9-4dfedf02079d",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "5996baaa-61ba-4129-8885-63c99c9f31b2",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "91aa6bca-18ae-4472-8f67-1f718d4e0e2f",
       },
       {
-        dateStart: "2024-08-02T19:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T19:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "578d6645-d36f-4790-a6db-6c958ad37f1a",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "036e3eb0-3511-4912-8c12-2fbad80b11c4",
       },
     ],
@@ -5495,8 +5495,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "31906aa6-7184-4027-a0f9-ed4c0e372baf",
     instances: [
       {
-        dateStart: "2024-07-31T20:00:00.000Z",
-        dateEnd: "2024-07-31T22:00:00.000Z",
+        dateStart: "2024-07-31T20:00:00.000+02:00",
+        dateEnd: "2024-07-31T22:00:00.000+02:00",
         id: "53855e93-2b6e-4058-9efd-951bb7645570",
       },
     ],
@@ -5510,8 +5510,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7cd7054d-7beb-4dec-b2d9-3cdfc0c25dda",
     instances: [
       {
-        dateStart: "2024-07-31T21:00:00.000Z",
-        dateEnd: "2024-07-31T22:30:00.000Z",
+        dateStart: "2024-07-31T21:00:00.000+02:00",
+        dateEnd: "2024-07-31T22:30:00.000+02:00",
         id: "44b38fa0-245f-452f-9037-4a2830922625",
       },
     ],
@@ -5524,8 +5524,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "38abd1ad-5131-44f2-a755-822daa51a3e9",
     instances: [
       {
-        dateStart: "2024-07-31T22:10:00.000Z",
-        dateEnd: "2024-08-01T01:20:00.000Z",
+        dateStart: "2024-07-31T22:10:00.000+02:00",
+        dateEnd: "2024-08-01T01:20:00.000+02:00",
         id: "51074229-541b-47a1-8e33-f318419bf0f5",
       },
     ],
@@ -5538,8 +5538,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b9f2c661-c8db-4398-acb7-f74daef92917",
     instances: [
       {
-        dateStart: "2024-08-01T02:00:00.000Z",
-        dateEnd: "2024-08-01T03:40:00.000Z",
+        dateStart: "2024-08-01T02:00:00.000+02:00",
+        dateEnd: "2024-08-01T03:40:00.000+02:00",
         id: "25d56281-82fa-459c-b60e-0ec365e4eae2",
       },
     ],
@@ -5552,18 +5552,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "19529c4a-d310-47ed-bb46-cf5b3aa343e2",
     instances: [
       {
-        dateStart: "2024-08-01T09:00:00.000Z",
-        dateEnd: "2024-08-01T10:00:00.000Z",
+        dateStart: "2024-08-01T09:00:00.000+02:00",
+        dateEnd: "2024-08-01T10:00:00.000+02:00",
         id: "f978b4a2-6ffd-4585-9ab2-97a3f9dd09ec",
       },
       {
-        dateStart: "2024-08-02T09:00:00.000Z",
-        dateEnd: "2024-08-02T10:00:00.000Z",
+        dateStart: "2024-08-02T09:00:00.000+02:00",
+        dateEnd: "2024-08-02T10:00:00.000+02:00",
         id: "0631b4e3-cc66-47ab-acda-6cabd082130f",
       },
       {
-        dateStart: "2024-08-03T09:00:00.000Z",
-        dateEnd: "2024-08-03T10:00:00.000Z",
+        dateStart: "2024-08-03T09:00:00.000+02:00",
+        dateEnd: "2024-08-03T10:00:00.000+02:00",
         id: "f8956f8e-0a13-46bb-a80d-b2acdc48c3c7",
       },
     ],
@@ -5578,8 +5578,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c4c1092a-4d81-4d86-84d8-7a7697efc88d",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "9624da2e-37b5-4f61-ad7e-76fb615e5380",
       },
     ],
@@ -5593,18 +5593,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aa78bc31-f987-4ce9-94d1-bfda6b0e6ce3",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "b48aa32a-d8da-4c75-a1b4-5332c267d2ee",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "b89cb5e5-11fa-413c-b10c-47ed8fa8a761",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "f51d84e0-550b-42d3-b696-8c98826a9e0c",
       },
     ],
@@ -5618,18 +5618,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "41a89417-7875-497b-851c-79d03f535edf",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "3991455c-45a6-4d4a-8c36-ba3a26b1fddb",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "6ca68d84-dbb3-4341-88fb-f14817973f18",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "b95dc409-550a-4331-820d-3424b10d5bab",
       },
     ],
@@ -5643,18 +5643,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d073af23-956d-4242-bec7-4e32242e89a1",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "4df68756-6f05-49d6-b1ed-1cc3ce8434b0",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "9516ce03-52e1-4778-8fbc-8a747970b3e1",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "9817300a-80b8-4199-86ab-ba12ceb4c2af",
       },
     ],
@@ -5667,13 +5667,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "942509c8-4daf-4c10-9561-848c33d88a27",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "7e27464b-e786-4b74-97e4-653b37cd642e",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "1b73d5f9-1de9-42a8-9269-4c79309dfac5",
       },
     ],
@@ -5687,18 +5687,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3d893b67-0273-4fa5-a6e2-7709a436dcb1",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "5188edd4-f863-476b-8277-df11d57ba466",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "d52a65a3-13d7-4023-9ffd-e006b4f40caf",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "d50b0076-c878-4b45-90c7-a5fa7b04ea03",
       },
     ],
@@ -5712,8 +5712,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "755c8ac8-37fb-4eb1-b092-b227ff72c3ba",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:20:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:20:00.000+02:00",
         id: "82e147bf-b1ac-457d-b1b0-d523592765eb",
       },
     ],
@@ -5727,18 +5727,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7f1ad86f-b21d-4b8d-b7fd-1a48833b6ba1",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "460cd8c0-86e2-4dbb-9073-bd917586ee65",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "b40bfe3d-3483-4f9a-9d27-027e3169694d",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "3f4582f3-c8e8-4c50-bf2c-187c1b56f570",
       },
     ],
@@ -5753,18 +5753,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "53df4667-ad00-4eac-87f5-6f38a0959c04",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "7676752c-5561-4ab9-9c41-a9d350ca2e9f",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "c5964964-cd14-4640-b748-030e66c02765",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T21:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T21:00:00.000+02:00",
         id: "b8ed6727-2b70-4c7c-8176-458dc9491060",
       },
     ],
@@ -5778,18 +5778,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4de035ad-0449-4b4b-a752-f736e2900650",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "5c9b8e11-c7cf-4b1f-9a9d-125e22207947",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "cbaadf6e-2a90-4966-b92a-ef8f7251b4ee",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "cc0080d4-5230-48b1-9a01-1428ab62f7d8",
       },
     ],
@@ -5804,8 +5804,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bfdc5b1c-316b-41c0-aee9-6872e90ad28f",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "99f4cfee-5c00-4dcc-9802-fda43f72661c",
       },
     ],
@@ -5819,18 +5819,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bda7788d-9f09-4f61-91d3-5ebb96091dd9",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "8e9f1e7e-672e-473f-a97e-c7685fcb77c9",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "d9e94046-0b70-496b-aea3-199b4f10b365",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "0b2e56bf-0860-4037-9109-1f04a73c0a99",
       },
     ],
@@ -5844,18 +5844,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a2f1a45b-c1cc-444f-b3e6-6d93feb210a4",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "db3f5e6e-c3fb-4d77-a05b-3c22f6461663",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "f78dba5d-f230-4742-9b98-b13a71560071",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "6c8aca40-e5f6-4c2c-83f3-b4e518f068ad",
       },
     ],
@@ -5870,28 +5870,28 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8ccb043a-3d27-4dd0-8c9b-1958b0300c34",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "c59658c4-1214-4003-b3ae-b31ed5931895",
       },
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "d8446cc7-f861-47a8-8069-d45c938644da",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "03d69846-0e50-4e18-8bb6-a85d2279f9d6",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "26b74671-a431-4b86-a524-e964e60007ce",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "446cd1ff-d280-4f73-9c33-59833189d33a",
       },
     ],
@@ -5905,8 +5905,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c1073eeb-1f15-41a7-b785-ef60ef3bbd50",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "bd9eb2e8-c2d7-4f2f-99be-1516fb151153",
       },
     ],
@@ -5920,18 +5920,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "94c707a2-cb0f-4b47-95c1-9bdbbc85880c",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "27a013f7-b9bc-4a32-875e-13caf6b143f8",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "db9e971f-9a17-40e6-af5d-fa12b8c3ac87",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "5598905f-9c20-4336-839e-2b17a5acda2b",
       },
     ],
@@ -5945,18 +5945,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8a33d79a-24a5-4d53-9c11-0766c9efd206",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "7727f378-7332-4a55-847d-bfeb3457a177",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "3a63ca84-e1ad-4bf2-8ba5-a4ac1bf07ad6",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "1627dd53-0b4c-452d-9bb2-e449a1265319",
       },
     ],
@@ -5970,8 +5970,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b15b92b1-c9bb-476b-b311-aeda73c3f74b",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "627973be-34ba-4c0a-a337-765af300de5b",
       },
     ],
@@ -5986,8 +5986,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2ab59714-0035-4376-ad01-34f4fca2290a",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "6413286e-5469-4c7a-97a3-b2e4c71984ba",
       },
     ],
@@ -6001,8 +6001,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0f4fa3ab-435e-4941-b101-2ffe4b2da5a7",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "e608ebe7-e2f2-490a-97c6-089a59c6898f",
       },
     ],
@@ -6016,18 +6016,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3ce0f971-d326-4e36-82a3-b9ce5fd099ed",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "aa4b5f5d-3254-4db5-8eba-b486016c30e8",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "a75197c7-e99a-468f-83e5-ab5b7a6ea469",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "daaf0697-5c15-4575-89e5-7e5581996e7f",
       },
     ],
@@ -6040,18 +6040,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0ed552ab-e196-4db2-9ef9-2eef1a064850",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "71dc974d-aa31-48dd-9ab9-be23276ab3cd",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "d1fea293-4b9e-4bb9-a7c9-878a828d828f",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "a6bb4a6c-9e81-4b72-970e-7c65bacd3bbe",
       },
     ],
@@ -6065,18 +6065,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "983ae436-2e3b-4440-b276-78e246b80340",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "513fbaca-1812-4367-8977-0cfeee65d557",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "ba18b073-1ddf-4ee6-9097-78c16a7af2d9",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "b7337b71-a322-4ca2-9bb6-571d608a378b",
       },
     ],
@@ -6089,8 +6089,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8c1b8b34-a99c-422e-943b-e9be43e81be4",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "74da27ef-583d-45e6-bf96-d36e7a8fb7a4",
       },
     ],
@@ -6104,8 +6104,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f339e604-00bb-49a6-a618-e3e32a193ca6",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "29488b63-306c-4e78-bc8e-60c8aa0dc149",
       },
     ],
@@ -6120,13 +6120,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e9fff952-e98f-4f95-9186-a0416a4fc838",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "50abbfc1-eecd-48e1-a352-52108e3a3ed5",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "2e7d633d-604a-4ac2-8846-3875ca7afecc",
       },
     ],
@@ -6140,18 +6140,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "151bcb16-2fa0-4bd2-bc2a-78aefeb4c1d0",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "bf4c4264-821a-46a3-a88d-d1e56e2253e5",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "ade86a48-85ea-484f-b872-daffa0720727",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "4de75eb0-13ba-4453-acc7-f650c4bf74af",
       },
     ],
@@ -6165,18 +6165,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5adbeaad-b5f7-43c8-953c-0c0a099d11e6",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "421a9068-1181-496a-abc0-913ddf2d1458",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "25404ea5-b9bd-48fe-a6d4-5b85735b19cf",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "98d8501b-312f-4722-804b-213588c0c699",
       },
     ],
@@ -6190,13 +6190,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "38a33c53-8b73-4a6a-aa7d-87aff3dc7e1b",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "2022a26f-8d30-4492-95b4-0f92b5de46b6",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "7758a081-42e8-4015-aafc-d316c6b8e631",
       },
     ],
@@ -6210,8 +6210,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f35da1e0-604f-48bd-9d44-38d6c613f57b",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "213ef44c-fbbd-4d52-9793-457b947ee508",
       },
     ],
@@ -6224,18 +6224,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "589de406-4e27-4e73-b37e-a941a0e0eabb",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "5dbfe902-f871-452f-a232-29b2eff3ea59",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "7709daac-cbf0-4704-9edf-321cc3e7e75c",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "6dd39bf8-a458-4cea-a098-f149a56a5e0b",
       },
     ],
@@ -6250,8 +6250,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b0859673-3151-4a6a-808f-3f3f7cb2b866",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "01201f89-c7f2-477e-82b1-ab313f6d7303",
       },
     ],
@@ -6264,18 +6264,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1b026d43-3747-45a6-bebe-e928a8a5cfe9",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T23:59:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T23:59:00.000+02:00",
         id: "6833a300-ca96-45f8-be8a-e128760ee8cc",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T23:59:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T23:59:00.000+02:00",
         id: "8857394c-eb19-4a23-8cce-a6347152a3a6",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T23:59:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T23:59:00.000+02:00",
         id: "814e51a8-0098-48f0-8d6f-a9b3c8dec88e",
       },
     ],
@@ -6289,18 +6289,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0e320876-5c70-4472-a877-ebe38ba5c947",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "4708c970-787f-43c6-9887-9d624a04c7a6",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "0674046e-2152-41f8-92e7-d31e4119f914",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "d53e1a7c-178e-4053-adef-3e2777b2bb78",
       },
     ],
@@ -6314,18 +6314,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ce08f71c-4abc-495f-930c-6683f0bb965e",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "199660d5-13ab-4e77-9c46-235128f982b8",
       },
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "f26e98ff-431d-48d9-9c06-8e812e4fe61e",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "6b64c31e-4ef7-4ae7-bf29-26f20acc6c08",
       },
     ],
@@ -6339,8 +6339,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8cb678ed-d4c0-4dff-8ed5-f67675126158",
     instances: [
       {
-        dateStart: "2024-08-01T10:00:00.000Z",
-        dateEnd: "2024-08-01T11:00:00.000Z",
+        dateStart: "2024-08-01T10:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:00:00.000+02:00",
         id: "a85fcb84-5c12-4889-8867-b79af67fca06",
       },
     ],
@@ -6354,8 +6354,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ccd53995-bfaa-42b6-80b0-fb84e7214fc6",
     instances: [
       {
-        dateStart: "2024-08-01T10:30:00.000Z",
-        dateEnd: "2024-08-01T10:50:00.000Z",
+        dateStart: "2024-08-01T10:30:00.000+02:00",
+        dateEnd: "2024-08-01T10:50:00.000+02:00",
         id: "0b061fb2-6b90-4065-baf0-ef94b0cbc48b",
       },
     ],
@@ -6370,8 +6370,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b12318b8-f80a-4577-9e72-ca8ff9e79ca4",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "552132b2-d5bc-4013-b3a3-b42937f2bc54",
       },
     ],
@@ -6385,8 +6385,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fa3a7ec0-3641-45e2-adcf-065b7f9b9d3c",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "852f8b12-efe0-4c5f-8e53-7efc1ea551d2",
       },
     ],
@@ -6400,8 +6400,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bac1b644-aadc-44a5-a26f-47dcde908b89",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "8fe086a3-fbc0-4ea8-aac3-34eba1928e49",
       },
     ],
@@ -6416,8 +6416,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a42a6e31-1ccd-46de-9a6b-2296a1d31a73",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "1b173eed-d856-4863-8284-35787672735d",
       },
     ],
@@ -6431,18 +6431,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3e2f1ebf-296e-4620-8957-ee6c05ddd1bc",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "ad755629-384d-4b9f-b8e0-46a32fad2fbb",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "27dc33fe-ad3e-422a-a7a6-a7b7943eba02",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "f69b0b84-9396-436b-ba9e-44d81d199aa8",
       },
     ],
@@ -6455,8 +6455,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5ec893a0-5563-4701-87b9-c368d5413ece",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T11:30:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T11:30:00.000+02:00",
         id: "26d6122b-a196-4a9e-a240-90e16cbff042",
       },
     ],
@@ -6469,13 +6469,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fd06131d-f202-42c9-85fc-8d810f11ebaf",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "2ff26281-db27-486e-9ff5-6e19e6208ae8",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "b0a74c1b-0676-40a7-8fbe-376b6eda352b",
       },
     ],
@@ -6490,8 +6490,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "795ae1c5-24a5-4ec9-aab4-d22006646f4f",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "f43bc63a-e32d-4e97-beae-8b5798a4b12b",
       },
     ],
@@ -6505,8 +6505,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c999be39-4ab1-4004-ae71-e9cece63ac90",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "ceb0b914-12f9-48b7-9f40-322a06eeb812",
       },
     ],
@@ -6521,8 +6521,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a92de019-7203-4584-b643-05ee1c3afdcd",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "1b9cee62-ebd7-4da5-a059-758c46dc25aa",
       },
     ],
@@ -6536,8 +6536,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f492e3fa-65ab-4f3e-9b85-04598b779974",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "f54c6073-31bf-4882-8245-ca5071bc6fcb",
       },
     ],
@@ -6552,8 +6552,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a33e7b41-7ede-4ca7-b8a2-22dc4f88027e",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "3c05acc2-2f55-44e4-9094-4f8cd6e85ca1",
       },
     ],
@@ -6567,18 +6567,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c8e9a92a-f29d-4bdf-9b00-669ac24b877a",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "e313b5dd-e008-4ef3-aba1-c3ad06a45819",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "50f073db-1cab-4700-87ec-9555839ce810",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "b6126771-940a-4100-a148-7b3b5f250a6f",
       },
     ],
@@ -6592,13 +6592,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "330a5c94-a94c-425c-9c5d-3f76d4fe2abb",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "324b106f-dfa2-4949-9e96-4ea59efb229d",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "cd14d587-fa32-49d5-850c-1645cc84e089",
       },
     ],
@@ -6612,8 +6612,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7d71426c-1a4a-4d42-b4b4-3cf50d46e417",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "8805d1ee-2255-44c3-861f-d99840107619",
       },
     ],
@@ -6628,8 +6628,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7a5f67dc-d7fb-4e59-bab6-16adc309c200",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "c1bed785-a600-461f-8be6-0c6f4d3609eb",
       },
     ],
@@ -6642,8 +6642,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2780b787-a8a2-412d-bdbf-ec2087875163",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "e2f7c5b3-c971-4b42-8cc7-99a1450fc716",
       },
     ],
@@ -6658,18 +6658,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "313380d2-6484-4186-ae60-947a469f6c44",
     instances: [
       {
-        dateStart: "2024-08-01T11:00:00.000Z",
-        dateEnd: "2024-08-01T12:00:00.000Z",
+        dateStart: "2024-08-01T11:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:00:00.000+02:00",
         id: "ab19eda3-1f7e-4256-9431-b99109651629",
       },
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "72a5d409-4515-4c4b-a370-f275135c9c14",
       },
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "641572d8-0afb-49b8-94bd-65d50ff11e7b",
       },
     ],
@@ -6684,8 +6684,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a3bfadbc-623e-4007-831c-b3076271a241",
     instances: [
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T12:30:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T12:30:00.000+02:00",
         id: "1a46e705-4c59-4c4f-ab4e-9c1914dce67c",
       },
     ],
@@ -6699,8 +6699,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4d3ad557-2178-4f95-80de-02253380d025",
     instances: [
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "ac780cba-36c6-441a-a779-922ace336654",
       },
     ],
@@ -6714,8 +6714,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "680830d3-ec65-4665-ae8a-9ef4373408d5",
     instances: [
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "7c0e9044-0203-4f18-bb5d-edfb3f12a65c",
       },
     ],
@@ -6729,8 +6729,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c1c054bc-e794-4925-9a7e-7d9b5ac50062",
     instances: [
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "00bb4886-6473-449a-89ec-ca92b79b1f65",
       },
     ],
@@ -6744,8 +6744,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d7058480-e588-4a86-843b-66337844be82",
     instances: [
       {
-        dateStart: "2024-08-01T11:30:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T11:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "9434da0f-cacd-43ff-a5b5-228b453d3b77",
       },
     ],
@@ -6760,8 +6760,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9125d67e-89d8-45a5-b78e-56c51d79984a",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T12:55:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:55:00.000+02:00",
         id: "f0cce96d-922d-4bbc-8504-7064fc911ce1",
       },
     ],
@@ -6776,8 +6776,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f9e554ea-3547-4c72-aaf5-fc3d9e8a38a0",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "747c81de-ddef-4b80-b0ea-d47b9f461b95",
       },
     ],
@@ -6791,8 +6791,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "892da33b-e34f-4f47-b0ed-ae5d48e8cc26",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "80b83e3f-2b22-4f2c-a5cb-97ea7062a031",
       },
     ],
@@ -6806,18 +6806,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "df74c387-4240-4b64-9bba-f41e697ed162",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "0850e450-43a3-4efd-a3bd-d9e79a920aa8",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "ff8f9ea2-7aef-4c5c-b2d0-4b1bb5142d47",
       },
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "a5447953-f6a1-44ce-993f-63ec065aead7",
       },
     ],
@@ -6831,8 +6831,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0202d8eb-914a-489b-9f92-32bce995d616",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "f31c93a8-b9c6-4167-a732-6377c5070003",
       },
     ],
@@ -6846,8 +6846,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3875eeed-8640-4ec4-a68a-014960237b8d",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "f3f7d093-87c7-4a09-8b92-615400ce55f7",
       },
     ],
@@ -6861,8 +6861,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bbb0519f-9689-44dc-adb6-14e0f5fe3413",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "9ce42c56-0357-448c-91d1-81d948d745d1",
       },
     ],
@@ -6876,13 +6876,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "685cf0ac-f4d5-4c0c-b9ce-299484718207",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "fdb3ecd9-4692-4995-b4d8-f8b1d11b38d5",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "b48b7e81-bd56-4406-8c53-aac70663aadb",
       },
     ],
@@ -6896,13 +6896,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e5c5f140-8bc6-40d7-9fe6-45c64af757d3",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "16a7959f-3136-4bff-aa00-f1f983b1c9eb",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "8e61e414-0351-4f87-b580-7454e4c7a805",
       },
     ],
@@ -6916,8 +6916,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "38842ab7-fd83-4cf5-be62-a1adde20a9ea",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "07e7d15c-2daa-4cda-b2e8-0518013511c9",
       },
     ],
@@ -6932,8 +6932,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0148572e-e1bf-481d-b17a-cccf1d931ef1",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "cd54fd26-a90c-4c16-abdb-b97cddd664fc",
       },
     ],
@@ -6946,13 +6946,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ab7673fa-faab-4b1d-acfa-47d301cc2e7b",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "b7a393d6-3e37-4e95-bff8-dc29c218b50a",
       },
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T14:30:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:30:00.000+02:00",
         id: "9ceed249-c70d-4741-ae7a-1a6c08ee9ed9",
       },
     ],
@@ -6966,8 +6966,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e3b96c4e-2bce-4791-94db-9ae1c3c22e3f",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "5f8cfc6a-44cf-45a8-ab5a-d0cd8cb8e455",
       },
     ],
@@ -6981,8 +6981,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0cc0942f-ffe3-4887-b7e1-ad6797dfbe9a",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T12:55:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T12:55:00.000+02:00",
         id: "6a128bf5-6bf4-42cb-a5ba-994c37e4e212",
       },
     ],
@@ -6997,8 +6997,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1c94ede7-d910-4def-9bbd-c90f609e678e",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "c39c6145-fdd8-468f-a6f5-6301d89c68a2",
       },
     ],
@@ -7013,8 +7013,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "75efd96b-c1a2-4072-aa64-674d177179c3",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "639c406e-6f1c-4352-984d-71ae50706644",
       },
     ],
@@ -7029,8 +7029,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2ab23718-2d26-42c7-bf8e-242d01adc3a2",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "68d483a7-50bd-48f6-9081-fc5044883449",
       },
     ],
@@ -7045,8 +7045,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "78d986b1-e491-4e01-8207-e49edbba267f",
     instances: [
       {
-        dateStart: "2024-08-01T12:00:00.000Z",
-        dateEnd: "2024-08-01T13:00:00.000Z",
+        dateStart: "2024-08-01T12:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:00:00.000+02:00",
         id: "5720d378-a026-45e6-95ec-f0145cc4e20f",
       },
     ],
@@ -7061,8 +7061,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "71c75bc4-2461-41da-bfc9-c3f5325604fb",
     instances: [
       {
-        dateStart: "2024-08-01T12:30:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T12:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "b545ef30-87fc-4de5-8cba-f044a6348d51",
       },
     ],
@@ -7076,8 +7076,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "77d2cb96-91fd-4bb3-9de8-937b0d0f8850",
     instances: [
       {
-        dateStart: "2024-08-01T12:30:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T12:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "fd22ba44-44ce-44de-9aca-f25d4b15e8e4",
       },
     ],
@@ -7091,18 +7091,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e725f3ac-eef2-4ac7-b9cc-abeb1e7f9ac9",
     instances: [
       {
-        dateStart: "2024-08-01T12:30:00.000Z",
-        dateEnd: "2024-08-01T13:30:00.000Z",
+        dateStart: "2024-08-01T12:30:00.000+02:00",
+        dateEnd: "2024-08-01T13:30:00.000+02:00",
         id: "539ef9c8-d41c-4137-89d5-c765edf11809",
       },
       {
-        dateStart: "2024-08-02T12:30:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T12:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "16c0af41-4cca-4550-809f-0a0f49d99551",
       },
       {
-        dateStart: "2024-08-03T12:30:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T12:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "cd2911c7-f1c2-4289-90d0-a0de740ddca8",
       },
     ],
@@ -7117,8 +7117,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b18bcabf-d754-4235-9424-367c1a1a73a2",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T13:55:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T13:55:00.000+02:00",
         id: "5e2a066d-f42f-4850-bd78-8f73014379bb",
       },
     ],
@@ -7133,18 +7133,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0a16da1b-0790-49e0-ae44-b831d8a3b760",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "34e8d860-b2bf-4c7f-a0ca-9bfffcf386d9",
       },
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "13ec9512-322f-444c-b59d-fa92dec1bde4",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "3a8a86d8-b2e3-4d42-9869-a50ca72dcee6",
       },
     ],
@@ -7158,13 +7158,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d5bfff78-8f1f-4d5b-8307-5c05df577ba1",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "fa8290a8-07fe-46f9-8255-979e6ba8f292",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "bf170c09-5233-4371-bfcc-cdf7534797a9",
       },
     ],
@@ -7179,8 +7179,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "08c2a30d-cf07-4c9c-83b4-344c076cb7e7",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "34f4be11-04c9-4155-a5b3-ab77b98da396",
       },
     ],
@@ -7194,13 +7194,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "75ffc639-8693-4e92-b1c2-50ec85ebc27c",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "ab36a2d5-2a2b-4ddc-ab53-3d561c0fe8d3",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "97112c3b-0aa2-454f-8115-a2388693f687",
       },
     ],
@@ -7215,8 +7215,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "763077da-5f11-4220-8353-1d4a5f9b74b1",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "c5a8afbb-281b-4011-b49d-4ad53b2c0667",
       },
     ],
@@ -7231,8 +7231,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "79041107-663e-4cff-8f8a-3965fe037270",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:30:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:30:00.000+02:00",
         id: "3bb4a2ad-b709-4a49-b693-683548012c41",
       },
     ],
@@ -7247,8 +7247,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "81a02a81-9adf-409f-860e-83f15c3aaa3b",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "fc7871da-f242-4d3c-b530-76eceefa8e4a",
       },
     ],
@@ -7263,8 +7263,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d9f3850c-52c4-4ad0-afdc-45c72f2c8adf",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "83b6ac3a-c592-4874-a08b-6eb0bdd39e8a",
       },
     ],
@@ -7278,13 +7278,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6efdb3b6-b7b1-401d-8784-7d9eaad8b07a",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "352db8ae-beba-425b-b9c4-86b195628ffd",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "ae474a55-5a5c-47a4-9225-e90696d63e10",
       },
     ],
@@ -7298,8 +7298,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1586f3d9-fa66-4e59-b488-032e442a264a",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "eaa2ce81-662a-43a4-9266-ea191a56553b",
       },
     ],
@@ -7313,18 +7313,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4c8a08fa-76ca-4f8b-893f-9a1296af25e4",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "4c568bc2-5b77-4b1b-b726-ebb649b8357d",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "68ad515f-0a33-4ae1-9cf5-836043a02579",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "61fed316-4521-4e8e-9a3a-4e2591b7a356",
       },
     ],
@@ -7339,8 +7339,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fb9a3f01-24bf-4e35-8f9b-60b5c85d7a85",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "560e1aec-46f2-4c9c-a077-ea4a61c7c9e9",
       },
     ],
@@ -7354,13 +7354,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e7c01c07-4ef1-4626-9e0a-be04e5006a4b",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "72214ee6-53fe-4e5f-a1da-3af35f55ab01",
       },
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "68140403-c77b-4746-bc22-bd41333603c6",
       },
     ],
@@ -7374,8 +7374,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "76d4107c-36be-4f54-9fe3-6e9c47b5133c",
     instances: [
       {
-        dateStart: "2024-08-01T13:00:00.000Z",
-        dateEnd: "2024-08-01T14:00:00.000Z",
+        dateStart: "2024-08-01T13:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:00:00.000+02:00",
         id: "40c00c14-06c9-42ca-bbfd-477fade9c35e",
       },
     ],
@@ -7390,8 +7390,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cb6eda45-bbb2-4cca-9380-33644907ee02",
     instances: [
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T14:30:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:30:00.000+02:00",
         id: "de24fcd6-95c7-4dc5-b65c-b70bedaa2b5b",
       },
     ],
@@ -7405,8 +7405,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6bfb69fb-c050-4a57-afed-7536e540475c",
     instances: [
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T14:50:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:50:00.000+02:00",
         id: "85322337-5975-44b0-a9b4-abd0bdc9f7b1",
       },
     ],
@@ -7420,8 +7420,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "05ca0d97-7484-481d-b0da-16a135b2a9d6",
     instances: [
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T15:30:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T15:30:00.000+02:00",
         id: "a7ee9bed-b729-4a07-b8f6-45761b6ff3a0",
       },
     ],
@@ -7435,8 +7435,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4f8ff6a4-75e6-441c-b73d-e131d6ea58ad",
     instances: [
       {
-        dateStart: "2024-08-01T13:30:00.000Z",
-        dateEnd: "2024-08-01T14:30:00.000Z",
+        dateStart: "2024-08-01T13:30:00.000+02:00",
+        dateEnd: "2024-08-01T14:30:00.000+02:00",
         id: "ec361e59-227c-46ec-832c-13ab9d291083",
       },
     ],
@@ -7451,18 +7451,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "52b0432a-a077-4b67-9c8e-8c0dc9e05457",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "00d0c718-0f37-4371-8abb-e1efffbe6132",
       },
       {
-        dateStart: "2024-08-02T19:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T19:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "751b13ca-096f-4492-8b62-096c306fdcc7",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "10666839-2482-4814-98bc-a0cf90e54d4b",
       },
     ],
@@ -7477,8 +7477,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "10d5973f-4023-4316-abbf-1664c27146ba",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "6e2915eb-608d-4453-9c3c-49f9516c4e69",
       },
     ],
@@ -7493,8 +7493,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e1d74c2f-697d-450e-9209-a2dec963de0d",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "e3c75f96-f0d6-4a6e-be0a-054eb6425fae",
       },
     ],
@@ -7508,8 +7508,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a3770d50-a7da-41c7-92e9-b1ef8b54669b",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "fd553cc1-23ed-4417-bbdf-45527d0f157d",
       },
     ],
@@ -7523,8 +7523,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "875ddd4d-2c5f-444c-9cca-e8e7da009607",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T14:55:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T14:55:00.000+02:00",
         id: "673cd4d7-c3b0-4aa9-a829-f0169f649dbc",
       },
     ],
@@ -7539,8 +7539,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f85fb088-0960-4e7b-8490-cc71660209ce",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:30:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:30:00.000+02:00",
         id: "da076a65-f7c2-40c5-95c4-3df4f32e8e92",
       },
     ],
@@ -7555,8 +7555,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "42d2c4a5-6100-49b8-855d-791fd0b6ad1b",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "f1afb613-edf8-4dcf-b930-57f3291e9649",
       },
     ],
@@ -7570,13 +7570,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b72e3267-e5eb-4ac3-8918-274d9fedb4de",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:30:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:30:00.000+02:00",
         id: "b1786ae5-d64f-4c3b-865d-f6fa119652d1",
       },
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "7fee908f-8a8a-4a7e-bab4-070b5d4d7cb4",
       },
     ],
@@ -7590,8 +7590,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "010c06dd-0793-449b-8283-1806e6da9330",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:30:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:30:00.000+02:00",
         id: "04f3a3ef-f4b3-469b-9047-b71f0b77f0c9",
       },
     ],
@@ -7606,8 +7606,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "575f696f-7232-4646-be31-3affcf3aa5de",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "ab6b9987-40da-4b3b-b2ac-93b3b55a488d",
       },
     ],
@@ -7622,8 +7622,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "98e071e1-382f-48a1-9e1f-ac5f5c70b5de",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:00:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:00:00.000+02:00",
         id: "86c07be7-b7a3-404c-9ff8-d05d9ae154e2",
       },
     ],
@@ -7638,8 +7638,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0e9f034a-af96-4fb1-ad55-3bdcecc1d1ea",
     instances: [
       {
-        dateStart: "2024-08-01T14:00:00.000Z",
-        dateEnd: "2024-08-01T15:30:00.000Z",
+        dateStart: "2024-08-01T14:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:30:00.000+02:00",
         id: "6b0550a9-fba2-4d1b-bc1a-cf50072819d5",
       },
     ],
@@ -7653,8 +7653,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0edfe528-4ce2-4bba-9a8f-3d451fbf79fd",
     instances: [
       {
-        dateStart: "2024-08-01T14:30:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T14:30:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "2978b500-970b-4252-8893-a0a96ab74731",
       },
     ],
@@ -7669,18 +7669,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fd759f98-811f-4078-95bb-b49e56e92dde",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "9bdafda5-9a20-4947-89e7-ead0981318f3",
       },
       {
-        dateStart: "2024-08-02T17:30:00.000Z",
-        dateEnd: "2024-08-02T19:30:00.000Z",
+        dateStart: "2024-08-02T17:30:00.000+02:00",
+        dateEnd: "2024-08-02T19:30:00.000+02:00",
         id: "7ef0a582-d009-4edd-9b10-739d49615ae4",
       },
       {
-        dateStart: "2024-08-03T12:30:00.000Z",
-        dateEnd: "2024-08-03T14:30:00.000Z",
+        dateStart: "2024-08-03T12:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:30:00.000+02:00",
         id: "905739e5-57da-462f-8698-63d0b68962ea",
       },
     ],
@@ -7695,8 +7695,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c4120d3a-f9f4-4660-948e-3e1c822e3b0c",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:30:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:30:00.000+02:00",
         id: "f54d960f-030d-4337-8dc3-8c9ea2ff4c9d",
       },
     ],
@@ -7711,8 +7711,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7a9db048-b633-48c8-ae91-5b1c67c0ce31",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T15:55:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:55:00.000+02:00",
         id: "fad57fea-68d5-4188-8547-bf8126098720",
       },
     ],
@@ -7727,33 +7727,33 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0ba54969-8534-4b70-a854-d3fe224ac6c2",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "cb54386e-3344-417d-9f40-b1379e0bfde0",
       },
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "063ba6a2-4582-46fe-a7b8-5e8abb01f140",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "1511fe38-ce97-4805-a5ac-a8268ffd506e",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "e4766407-171e-4f2c-90a6-7ae958d316e1",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "77d48599-5390-43ee-90a4-000c315a4718",
       },
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "ba836dc4-4fde-487f-9a81-0f8ab0b15274",
       },
     ],
@@ -7768,13 +7768,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1a9119b8-9b75-4fcb-ba8b-b299667dc1de",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "db24fcf2-72c0-4b73-838b-9dcac330bb36",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "ae1f43fd-2cc8-4c4b-b749-55377c9c01c0",
       },
     ],
@@ -7789,8 +7789,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8ec14d16-bc95-44ee-8291-cdeff6722c7e",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:00:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:00:00.000+02:00",
         id: "64421cc3-ea04-49ac-ba99-fa8159d70e7e",
       },
     ],
@@ -7804,8 +7804,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e70fec31-4858-450f-a556-605713cd536e",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T15:10:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T15:10:00.000+02:00",
         id: "ea1b52ab-0c71-4687-8312-c38f7faeafca",
       },
     ],
@@ -7818,8 +7818,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ee690139-c359-40d3-9a43-9b4711d296ed",
     instances: [
       {
-        dateStart: "2024-08-01T15:00:00.000Z",
-        dateEnd: "2024-08-01T16:30:00.000Z",
+        dateStart: "2024-08-01T15:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:30:00.000+02:00",
         id: "56981361-7d4d-474e-a515-789053315d87",
       },
     ],
@@ -7833,8 +7833,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "575aa7c5-a8f9-440e-8f5f-57459704c12c",
     instances: [
       {
-        dateStart: "2024-08-01T15:10:00.000Z",
-        dateEnd: "2024-08-01T16:20:00.000Z",
+        dateStart: "2024-08-01T15:10:00.000+02:00",
+        dateEnd: "2024-08-01T16:20:00.000+02:00",
         id: "3a3b3931-d545-42a9-bc98-8baa805f1a7d",
       },
     ],
@@ -7849,8 +7849,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b8c54ab8-239d-4360-addc-30352ef11914",
     instances: [
       {
-        dateStart: "2024-08-01T15:30:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T15:30:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "40b92f80-6ca7-4536-af8a-14f62ff9adb9",
       },
     ],
@@ -7865,8 +7865,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ce38ee73-c084-49e0-bdbd-c63a1cec4a31",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "0d8523bc-e554-4f14-89cd-5380dfd2cc22",
       },
     ],
@@ -7879,18 +7879,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2408e93f-e22c-4ae6-ab36-3dd358f740f5",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "75b0e991-4742-4077-a17b-ec5205638433",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "2a886534-bec6-4bf5-adba-e9dac64844b1",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "e3940c63-199c-4773-a463-5320ade1a4ff",
       },
     ],
@@ -7904,18 +7904,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2dfeec72-82b7-460c-9920-79d95ecf165b",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "f8b723b7-ca7d-483c-8164-ac426134ad51",
       },
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "c534ab1d-7ea3-4fe1-8ecc-fa2b3a012803",
       },
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "dfeeca57-6249-4bc9-b7f3-f7ce00e3435a",
       },
     ],
@@ -7929,8 +7929,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4c9880c0-1a3a-400c-b7de-9eb11ccc97d7",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "745aa5b7-5afa-4595-9370-b4ae8760f3ba",
       },
     ],
@@ -7945,8 +7945,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f22d9f26-fee1-460e-b8fb-e2cb815ac20f",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T16:55:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:55:00.000+02:00",
         id: "81b8851e-cf85-4e9c-9d61-f5d557216367",
       },
     ],
@@ -7961,13 +7961,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "19fdbc45-5479-489a-8824-47c36bcb54cd",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "4bed5879-5c9b-4b95-9bb1-7fde12267b60",
       },
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "1a17429d-bbef-4c85-a13f-601ce0388cc1",
       },
     ],
@@ -7982,8 +7982,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "46a842bd-166a-4bd6-af8e-d24372dbdb46",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "55a2ba1d-11e5-463d-813c-3a42d5c65872",
       },
     ],
@@ -7997,8 +7997,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "30ae09f6-3cf5-43b6-a4c5-32d629f00d0a",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "60377d1f-4483-48c9-8635-1d9cb6f9f8c2",
       },
     ],
@@ -8012,8 +8012,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d06ad686-1027-4f62-a9e8-1d4207b4fa5f",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T16:55:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T16:55:00.000+02:00",
         id: "fb1ed499-ba14-4e4b-9163-28794b346337",
       },
     ],
@@ -8028,8 +8028,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f7188293-9e4e-43f3-8f67-bf70eee91bff",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T18:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:30:00.000+02:00",
         id: "6a18c995-bd4c-45db-b68d-27ce13b01182",
       },
     ],
@@ -8043,13 +8043,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "92cb57f1-6d94-4a24-b6fe-1514321ec071",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:30:00.000+02:00",
         id: "dc475394-4cf4-41c9-9efe-71d825857808",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:30:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:30:00.000+02:00",
         id: "8f7a1b81-386f-4120-aa86-ebf696bf2049",
       },
     ],
@@ -8063,8 +8063,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c032d56e-54fc-40cf-b4f7-97cd31bd8905",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:30:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:30:00.000+02:00",
         id: "abf04432-e06e-4b7b-90da-7db0a875fc0d",
       },
     ],
@@ -8078,8 +8078,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5ee2c50a-0066-46aa-a6ce-e0cd3609decd",
     instances: [
       {
-        dateStart: "2024-08-01T16:00:00.000Z",
-        dateEnd: "2024-08-01T17:00:00.000Z",
+        dateStart: "2024-08-01T16:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:00:00.000+02:00",
         id: "f6b958ff-8183-43df-915e-c2ee849067ac",
       },
     ],
@@ -8092,18 +8092,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3880351f-3224-45cc-99b5-45f3d316010a",
     instances: [
       {
-        dateStart: "2024-08-01T16:30:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T16:30:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "580ab174-c0a1-4a48-abbe-88a5ff9e480f",
       },
       {
-        dateStart: "2024-08-02T16:30:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T16:30:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "632e05ad-2496-4115-bf70-477484ac6be8",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "12857c6a-7ae5-420f-af80-640c091581d0",
       },
     ],
@@ -8117,18 +8117,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "65be583f-7ee2-44dc-b1e8-ad7a2d7ce773",
     instances: [
       {
-        dateStart: "2024-08-01T16:30:00.000Z",
-        dateEnd: "2024-08-01T18:30:00.000Z",
+        dateStart: "2024-08-01T16:30:00.000+02:00",
+        dateEnd: "2024-08-01T18:30:00.000+02:00",
         id: "61bbfaab-24d0-455a-b97c-ed26e0a3ff57",
       },
       {
-        dateStart: "2024-08-02T16:30:00.000Z",
-        dateEnd: "2024-08-02T18:30:00.000Z",
+        dateStart: "2024-08-02T16:30:00.000+02:00",
+        dateEnd: "2024-08-02T18:30:00.000+02:00",
         id: "74c7468d-6fde-4f38-bb90-19c1099d2704",
       },
       {
-        dateStart: "2024-08-03T16:30:00.000Z",
-        dateEnd: "2024-08-03T18:30:00.000Z",
+        dateStart: "2024-08-03T16:30:00.000+02:00",
+        dateEnd: "2024-08-03T18:30:00.000+02:00",
         id: "205c7c8b-118e-43f8-822b-80b22781859d",
       },
     ],
@@ -8142,8 +8142,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "798c5122-ec9d-496e-a4c0-077e03aefdb9",
     instances: [
       {
-        dateStart: "2024-08-01T16:40:00.000Z",
-        dateEnd: "2024-08-01T17:30:00.000Z",
+        dateStart: "2024-08-01T16:40:00.000+02:00",
+        dateEnd: "2024-08-01T17:30:00.000+02:00",
         id: "9e3b6bfb-961a-44bd-8d45-673aa19c44aa",
       },
     ],
@@ -8158,8 +8158,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e50cf16e-c9c2-4e95-9713-ead77382fff7",
     instances: [
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "fea6e056-0bd1-448b-be39-5defa3af1ebd",
       },
     ],
@@ -8174,8 +8174,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4c74c834-4413-460a-ad1c-b5b9b6815568",
     instances: [
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T18:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:00:00.000+02:00",
         id: "4bdc848a-e8ca-4e1a-9324-03eaf87015da",
       },
     ],
@@ -8190,13 +8190,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a33569b6-c4af-4340-b199-1177b22f1671",
     instances: [
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "737b2f42-9854-4cb8-97eb-4adb9a9f9926",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "348bb5f6-f54b-469d-8efe-7be02fd031e3",
       },
     ],
@@ -8211,8 +8211,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fc3b5651-e3bf-44fe-9fb5-4a20f9521652",
     instances: [
       {
-        dateStart: "2024-08-01T17:00:00.000Z",
-        dateEnd: "2024-08-01T17:55:00.000Z",
+        dateStart: "2024-08-01T17:00:00.000+02:00",
+        dateEnd: "2024-08-01T17:55:00.000+02:00",
         id: "4e12d365-5208-4974-934c-aea220a56c7f",
       },
     ],
@@ -8226,13 +8226,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "25964b38-1d70-4ab4-aacd-c58d5ac9a882",
     instances: [
       {
-        dateStart: "2024-08-01T17:30:00.000Z",
-        dateEnd: "2024-08-01T19:30:00.000Z",
+        dateStart: "2024-08-01T17:30:00.000+02:00",
+        dateEnd: "2024-08-01T19:30:00.000+02:00",
         id: "a4a570e7-bfbe-4234-90d8-bac529d10800",
       },
       {
-        dateStart: "2024-08-03T17:30:00.000Z",
-        dateEnd: "2024-08-03T19:30:00.000Z",
+        dateStart: "2024-08-03T17:30:00.000+02:00",
+        dateEnd: "2024-08-03T19:30:00.000+02:00",
         id: "e76f2106-7842-44ab-9158-2f0342bd672e",
       },
     ],
@@ -8246,8 +8246,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a3a65f2b-de2b-481a-a721-03e1aee5168c",
     instances: [
       {
-        dateStart: "2024-08-01T17:45:00.000Z",
-        dateEnd: "2024-08-01T18:30:00.000Z",
+        dateStart: "2024-08-01T17:45:00.000+02:00",
+        dateEnd: "2024-08-01T18:30:00.000+02:00",
         id: "1eabc141-7b77-4d15-b4f6-2dd2e488262a",
       },
     ],
@@ -8261,8 +8261,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d616048a-84e7-4c8c-ad93-e07a55b832b6",
     instances: [
       {
-        dateStart: "2024-08-01T17:50:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T17:50:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "14f24506-4dd6-43b2-9c98-1d3914a1c6a6",
       },
     ],
@@ -8277,8 +8277,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d3e3795e-797c-4546-b3d8-babfb08a5ec3",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "f2bebe2a-1da8-49a6-bfd6-9bb6f51908c1",
       },
     ],
@@ -8293,8 +8293,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c5e50399-df67-49bf-aa54-7c470298ad62",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "6699edcc-d226-4dfa-b120-847552b48c01",
       },
     ],
@@ -8309,8 +8309,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d39da1cd-bb6a-4dca-bd5f-b26c91dbc855",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "98c6563c-3ec7-41b6-9654-44cc05fc46ae",
       },
     ],
@@ -8325,13 +8325,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aa1f23c0-89cc-4ff8-b70e-7f9daea5dc8b",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:00:00.000+02:00",
         id: "87415196-f0c8-49ac-b6ab-aba910e716d9",
       },
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "7916c10a-3ab8-4fde-b9e5-ba3e71134a40",
       },
     ],
@@ -8344,18 +8344,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8a9acc13-339c-4e10-a2ab-5b6c1767dbf6",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "5eed6bca-86d1-49b6-846b-67ea86b8fc59",
       },
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "28402859-c5c9-4051-9e64-9600b4c6d0bd",
       },
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "553bf039-ea50-499a-a712-52fdaa6dabcd",
       },
     ],
@@ -8370,8 +8370,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aefc9873-55b9-46f3-a86c-02f30cc1202c",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T18:44:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:44:00.000+02:00",
         id: "818becb3-19d6-47a6-a0a3-e6d54a622b02",
       },
     ],
@@ -8385,8 +8385,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "de7c5f79-d3da-4e3f-baaa-bd1f85acd581",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T19:30:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T19:30:00.000+02:00",
         id: "80dcce1d-da4d-434c-af51-4df99bd34875",
       },
     ],
@@ -8401,8 +8401,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f713ed58-5369-42bd-9e30-1a8f9be12d6f",
     instances: [
       {
-        dateStart: "2024-08-01T18:00:00.000Z",
-        dateEnd: "2024-08-01T18:44:00.000Z",
+        dateStart: "2024-08-01T18:00:00.000+02:00",
+        dateEnd: "2024-08-01T18:44:00.000+02:00",
         id: "98ffd5be-25db-4ec4-95cc-58e984c489f5",
       },
     ],
@@ -8415,18 +8415,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9618a87c-9aaa-40f6-ba31-4871275a60ed",
     instances: [
       {
-        dateStart: "2024-08-01T18:30:00.000Z",
-        dateEnd: "2024-08-01T19:30:00.000Z",
+        dateStart: "2024-08-01T18:30:00.000+02:00",
+        dateEnd: "2024-08-01T19:30:00.000+02:00",
         id: "7629ad21-a6f2-4f3c-b67b-6ae3fbc6d95f",
       },
       {
-        dateStart: "2024-08-02T18:30:00.000Z",
-        dateEnd: "2024-08-02T19:30:00.000Z",
+        dateStart: "2024-08-02T18:30:00.000+02:00",
+        dateEnd: "2024-08-02T19:30:00.000+02:00",
         id: "10158a83-7e7b-4131-9c38-d4412853cf7f",
       },
       {
-        dateStart: "2024-08-03T18:30:00.000Z",
-        dateEnd: "2024-08-03T19:30:00.000Z",
+        dateStart: "2024-08-03T18:30:00.000+02:00",
+        dateEnd: "2024-08-03T19:30:00.000+02:00",
         id: "fdf1c57c-8e42-49b3-b14a-ffb38cea79de",
       },
     ],
@@ -8440,8 +8440,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b8ecab81-0755-4eae-ab4d-6e1ea69f868e",
     instances: [
       {
-        dateStart: "2024-08-01T18:45:00.000Z",
-        dateEnd: "2024-08-01T19:30:00.000Z",
+        dateStart: "2024-08-01T18:45:00.000+02:00",
+        dateEnd: "2024-08-01T19:30:00.000+02:00",
         id: "0c75dbeb-a18b-45f1-ad8b-cedce38ea888",
       },
     ],
@@ -8456,8 +8456,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cf41c019-786d-4423-8f8e-b41fd033016d",
     instances: [
       {
-        dateStart: "2024-08-01T19:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T19:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "349b3de6-de61-4909-b638-59ab358bd30f",
       },
     ],
@@ -8472,8 +8472,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "70a78120-10c3-4a2c-a2c3-33f79084e777",
     instances: [
       {
-        dateStart: "2024-08-01T19:00:00.000Z",
-        dateEnd: "2024-08-01T20:00:00.000Z",
+        dateStart: "2024-08-01T19:00:00.000+02:00",
+        dateEnd: "2024-08-01T20:00:00.000+02:00",
         id: "6f9365d9-c88f-492b-8600-aaab4fa723da",
       },
     ],
@@ -8487,8 +8487,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4e9d2343-c7f9-4bf7-a546-a71f38526432",
     instances: [
       {
-        dateStart: "2024-08-01T19:20:00.000Z",
-        dateEnd: "2024-08-01T20:30:00.000Z",
+        dateStart: "2024-08-01T19:20:00.000+02:00",
+        dateEnd: "2024-08-01T20:30:00.000+02:00",
         id: "1521f228-ef23-4eb5-a102-c697291b68cd",
       },
     ],
@@ -8502,8 +8502,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "098516af-979c-47a7-a6ea-a0cc05246115",
     instances: [
       {
-        dateStart: "2024-08-01T19:45:00.000Z",
-        dateEnd: "2024-08-01T20:30:00.000Z",
+        dateStart: "2024-08-01T19:45:00.000+02:00",
+        dateEnd: "2024-08-01T20:30:00.000+02:00",
         id: "3c91e0c5-5489-455d-8fc2-1cbf837d058c",
       },
     ],
@@ -8516,18 +8516,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "81dc6ce3-550b-4524-a36c-b1edc07a089a",
     instances: [
       {
-        dateStart: "2024-08-01T20:00:00.000Z",
-        dateEnd: "2024-08-01T23:59:00.000Z",
+        dateStart: "2024-08-01T20:00:00.000+02:00",
+        dateEnd: "2024-08-01T23:59:00.000+02:00",
         id: "95e5c58b-ed13-4727-ae09-b00160d70bda",
       },
       {
-        dateStart: "2024-08-02T20:00:00.000Z",
-        dateEnd: "2024-08-02T23:59:00.000Z",
+        dateStart: "2024-08-02T20:00:00.000+02:00",
+        dateEnd: "2024-08-02T23:59:00.000+02:00",
         id: "643d4eb6-c780-4664-86f7-9f099437b91e",
       },
       {
-        dateStart: "2024-08-03T20:00:00.000Z",
-        dateEnd: "2024-08-03T23:59:00.000Z",
+        dateStart: "2024-08-03T20:00:00.000+02:00",
+        dateEnd: "2024-08-03T23:59:00.000+02:00",
         id: "27375c84-52da-48e5-9e4b-e10941c5520a",
       },
     ],
@@ -8541,8 +8541,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2c30e049-a646-41fb-a0d5-2c01f68be7e3",
     instances: [
       {
-        dateStart: "2024-08-01T20:45:00.000Z",
-        dateEnd: "2024-08-01T21:35:00.000Z",
+        dateStart: "2024-08-01T20:45:00.000+02:00",
+        dateEnd: "2024-08-01T21:35:00.000+02:00",
         id: "2928298b-3191-459b-add1-312d8c6ecd7e",
       },
     ],
@@ -8556,8 +8556,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4275cf65-3c81-46d1-bdd1-59178294e857",
     instances: [
       {
-        dateStart: "2024-08-01T20:50:00.000Z",
-        dateEnd: "2024-08-01T22:00:00.000Z",
+        dateStart: "2024-08-01T20:50:00.000+02:00",
+        dateEnd: "2024-08-01T22:00:00.000+02:00",
         id: "a08163a9-c339-4d68-a545-da76920b75ac",
       },
     ],
@@ -8571,8 +8571,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2737e2aa-31b3-4005-8c44-aff872f6273f",
     instances: [
       {
-        dateStart: "2024-08-01T21:50:00.000Z",
-        dateEnd: "2024-08-01T22:40:00.000Z",
+        dateStart: "2024-08-01T21:50:00.000+02:00",
+        dateEnd: "2024-08-01T22:40:00.000+02:00",
         id: "101af8a4-9f23-4970-b0a2-f3a3407cad70",
       },
     ],
@@ -8586,8 +8586,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "00e14383-73dc-4468-8b20-8150c8b080b5",
     instances: [
       {
-        dateStart: "2024-08-01T22:30:00.000Z",
-        dateEnd: "2024-08-01T23:40:00.000Z",
+        dateStart: "2024-08-01T22:30:00.000+02:00",
+        dateEnd: "2024-08-01T23:40:00.000+02:00",
         id: "eea75a3c-1cfb-41b2-8de8-51eff7d9d158",
       },
     ],
@@ -8601,8 +8601,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a2c56b48-45d0-4907-913b-37f3e5122c7c",
     instances: [
       {
-        dateStart: "2024-08-01T22:55:00.000Z",
-        dateEnd: "2024-08-01T23:45:00.000Z",
+        dateStart: "2024-08-01T22:55:00.000+02:00",
+        dateEnd: "2024-08-01T23:45:00.000+02:00",
         id: "7b380825-c4f7-490f-882f-98c8acff808d",
       },
     ],
@@ -8616,8 +8616,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4d7363f1-b388-406f-bab5-01d5004d3c29",
     instances: [
       {
-        dateStart: "2024-08-02T00:00:00.000Z",
-        dateEnd: "2024-08-02T01:20:00.000Z",
+        dateStart: "2024-08-02T00:00:00.000+02:00",
+        dateEnd: "2024-08-02T01:20:00.000+02:00",
         id: "5fb76bd1-f124-4489-b002-4e68b58ffacc",
       },
     ],
@@ -8631,8 +8631,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "abfd9880-9e8b-4688-a72f-0bc776480400",
     instances: [
       {
-        dateStart: "2024-08-02T00:00:00.000Z",
-        dateEnd: "2024-08-02T01:10:00.000Z",
+        dateStart: "2024-08-02T00:00:00.000+02:00",
+        dateEnd: "2024-08-02T01:10:00.000+02:00",
         id: "1c437851-91bc-45e6-9e3f-4d4faaa80eb1",
       },
     ],
@@ -8646,8 +8646,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d566de06-a505-46b3-98cd-ef3e71351311",
     instances: [
       {
-        dateStart: "2024-08-02T01:30:00.000Z",
-        dateEnd: "2024-08-02T02:40:00.000Z",
+        dateStart: "2024-08-02T01:30:00.000+02:00",
+        dateEnd: "2024-08-02T02:40:00.000+02:00",
         id: "3eafd6fe-f426-4134-8d3c-7e8d3da4cb74",
       },
     ],
@@ -8660,8 +8660,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7eba68a5-f99e-4f7e-8a4e-4c36c69f814a",
     instances: [
       {
-        dateStart: "2024-08-02T02:00:00.000Z",
-        dateEnd: "2024-08-02T04:00:00.000Z",
+        dateStart: "2024-08-02T02:00:00.000+02:00",
+        dateEnd: "2024-08-02T04:00:00.000+02:00",
         id: "b0a4c257-9c8f-449c-8c1e-e52e8ab697c3",
       },
     ],
@@ -8675,13 +8675,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5001c641-3af6-408b-9743-2476a9fa37cf",
     instances: [
       {
-        dateStart: "2024-08-02T09:00:00.000Z",
-        dateEnd: "2024-08-02T10:00:00.000Z",
+        dateStart: "2024-08-02T09:00:00.000+02:00",
+        dateEnd: "2024-08-02T10:00:00.000+02:00",
         id: "a208e3f8-c504-4e7c-8593-c911d5fd908c",
       },
       {
-        dateStart: "2024-08-03T09:00:00.000Z",
-        dateEnd: "2024-08-03T10:00:00.000Z",
+        dateStart: "2024-08-03T09:00:00.000+02:00",
+        dateEnd: "2024-08-03T10:00:00.000+02:00",
         id: "2ca66a4a-3e95-498b-8bd2-267c632e70b1",
       },
     ],
@@ -8696,13 +8696,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "131c335e-731c-42e3-9f7d-77da47e92616",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "4525128a-8af3-4c52-851e-550f47433bda",
       },
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "c08486c1-b4e7-444d-9fa2-9112f319c2bd",
       },
     ],
@@ -8715,8 +8715,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "91f54a8c-9690-47e3-add6-5dd609b3bed1",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "c7ecc0f6-91b2-4fb1-9c00-5ab3c74e281e",
       },
     ],
@@ -8730,8 +8730,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8690e1cc-1f19-4178-9885-ce93fa7b1317",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "e28c400b-aeb6-453f-8a0c-d32773035315",
       },
     ],
@@ -8745,8 +8745,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d31282a2-79d3-4097-964d-255c9a15328c",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "dc950c63-2eb9-4c5b-88e5-c044d0be25a1",
       },
     ],
@@ -8760,8 +8760,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "80ec976f-f827-490a-8cc9-a2a4941bfc1f",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "6d7c2275-5bf5-4ed0-9581-8b2c0785bead",
       },
     ],
@@ -8775,8 +8775,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5ebd2d88-3e2a-43af-83da-be3b33b65a41",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "1992a68c-5bae-4044-806a-aa934cfa56ca",
       },
     ],
@@ -8790,13 +8790,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "80a7265f-95b2-48d4-9b6f-d515aabea6cf",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "046f4829-2211-4b92-8a67-d3db3bd4a5c6",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "52e216ed-afd0-4fcc-8d4e-fa975ff6c42c",
       },
     ],
@@ -8810,8 +8810,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8bbd206f-7739-40bf-9536-eb77962ae759",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "bc896820-ae06-4393-bf98-7577c9a2f009",
       },
     ],
@@ -8826,8 +8826,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3e5cba25-9ad3-4601-80b0-0a4a71ad9bfb",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "b56503ed-2918-4ae4-94f2-7ee29d3ea9d6",
       },
     ],
@@ -8841,8 +8841,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5479f0b0-99f7-49c1-980d-b09a70eb9dfa",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "f7583dbc-3f55-4e41-acd9-878f31bcd6ef",
       },
     ],
@@ -8857,13 +8857,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "092a27fe-7883-4b4c-a84b-cf095992da80",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "ff8fb652-e1fd-4927-93f4-12ce9a038131",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "0b19fcc1-9057-4297-bb0c-3b7e9b4be771",
       },
     ],
@@ -8877,8 +8877,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "64a5c1c6-f40e-4c92-b984-1dbdc6f70692",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:30:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:30:00.000+02:00",
         id: "3bee42e6-b570-4511-8141-c8e71c308fc7",
       },
     ],
@@ -8892,8 +8892,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "30154ce4-84cf-4626-a158-d8b931c85033",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T12:30:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:30:00.000+02:00",
         id: "6ae3f69f-6fc1-43e8-8559-240e51691e15",
       },
     ],
@@ -8908,13 +8908,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a449fa01-462f-4759-974f-191faad3e319",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "d3053571-f722-4573-9686-d9415ffa02fc",
       },
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "eeae2a18-06cf-4ce9-b94d-ae90e3921418",
       },
     ],
@@ -8928,8 +8928,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aaad32e1-a002-453a-ab0a-ada310739281",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:20:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:20:00.000+02:00",
         id: "5d5d2fba-39c7-4aba-945c-f526a376b668",
       },
     ],
@@ -8942,8 +8942,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ba3776cc-108f-458d-a990-43ddd312e949",
     instances: [
       {
-        dateStart: "2024-08-02T10:00:00.000Z",
-        dateEnd: "2024-08-02T11:00:00.000Z",
+        dateStart: "2024-08-02T10:00:00.000+02:00",
+        dateEnd: "2024-08-02T11:00:00.000+02:00",
         id: "0cecec6c-c870-4b1c-8115-000e26f58b3a",
       },
     ],
@@ -8958,8 +8958,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a6c137ee-ffa5-463b-9ca7-f6c568db0b77",
     instances: [
       {
-        dateStart: "2024-08-02T10:30:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T10:30:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "0725db98-47ed-43f3-b345-e58f3fc5fbac",
       },
     ],
@@ -8974,13 +8974,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8cb74ee9-7cc0-4b5f-b53e-35060bf9e266",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "8c35e389-dfbd-4705-855d-1b5a25de36ab",
       },
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "5278796c-7285-4322-ae83-9e24b158d13e",
       },
     ],
@@ -8995,8 +8995,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "956457b9-9015-4f7e-8f51-90a717a849aa",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "ed34a64f-a64f-470f-be7c-7e18c4cb8dcd",
       },
     ],
@@ -9009,8 +9009,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8debb1c1-39a3-4580-83e8-db5f6bd63995",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "996a0f84-b32e-4ea7-b43c-f95d190cdb4c",
       },
     ],
@@ -9025,8 +9025,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "39cbf69b-df65-4c94-91d6-9f74af2ab651",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "d7893811-0efd-4a98-b973-fb306a1b6578",
       },
     ],
@@ -9040,8 +9040,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4750790b-cb22-4f6a-a5ca-0166239367ad",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "38c74ebf-263d-4dc4-b0b2-edf78f3d83d8",
       },
     ],
@@ -9055,8 +9055,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3319cd7a-415d-43de-baf3-ebdc0afda10f",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "9fa9c289-0f39-4af0-b8a0-c83a7714972a",
       },
     ],
@@ -9070,8 +9070,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1805a5cd-1ded-4c91-bfbb-66721e4a9664",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T12:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:00:00.000+02:00",
         id: "2baaacf5-c26f-44d2-adae-36855701db32",
       },
     ],
@@ -9086,8 +9086,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "67567639-0a98-40a5-bafa-13661ba3b277",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "98d0dcd1-9a95-4fa0-90be-20678e087b3a",
       },
     ],
@@ -9100,8 +9100,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "405a4d9d-10c8-4d1b-8086-35a161a188d3",
     instances: [
       {
-        dateStart: "2024-08-02T11:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T11:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "a2f48366-4fca-4be4-a5ec-ad77d7260de7",
       },
     ],
@@ -9115,8 +9115,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4d841dfb-1bb6-45d9-9849-ccb640941d72",
     instances: [
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "800dbff5-1bca-4182-9b47-49ca4ab3a8e0",
       },
     ],
@@ -9131,8 +9131,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "339e8f4d-8bf5-41d3-b053-d57fbbdbc13f",
     instances: [
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T12:30:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T12:30:00.000+02:00",
         id: "638200c8-09f0-46ff-86a8-df5d60f84f6f",
       },
     ],
@@ -9146,8 +9146,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "24f3042d-06e2-460a-a332-115004cd852d",
     instances: [
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "1f3ff1a7-bc39-4626-984d-103a028d2b18",
       },
     ],
@@ -9161,8 +9161,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6ac9cec3-a279-4b77-8f0d-ad5d49cd5f0f",
     instances: [
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T12:30:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T12:30:00.000+02:00",
         id: "f965739a-4883-4a1e-9846-38bc6b5e582f",
       },
     ],
@@ -9176,8 +9176,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a51e38da-8350-4242-bb7c-e20837489ce8",
     instances: [
       {
-        dateStart: "2024-08-02T11:30:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T11:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "3e65da4a-dbd8-4af9-b597-d79753d743fb",
       },
     ],
@@ -9191,8 +9191,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "88de724d-e066-4a11-8062-0bb73a563551",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "ac192dcb-b37b-4642-8b62-b4a206e74d0f",
       },
     ],
@@ -9206,8 +9206,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "443de99a-5e39-4592-ba6d-7872aa93171f",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "14bccf55-e6ed-4fe2-b06d-8e594c289ece",
       },
     ],
@@ -9220,8 +9220,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b3ca342b-4d58-4305-b63e-24ef2a687a2a",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "15ac9489-010b-49d8-a143-a744bbd41f5e",
       },
     ],
@@ -9236,8 +9236,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a4225262-e4c1-4ae0-8e93-6450a326f2ad",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "ba2adfef-f2a7-4a3e-995a-31d031ae7efc",
       },
     ],
@@ -9252,8 +9252,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ac68c57d-dbd6-44b1-a7b8-9e90b6941a6c",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "1f228e3f-e115-4aab-ac16-5baa90c291c4",
       },
     ],
@@ -9268,8 +9268,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "46658c31-eb33-458a-bcdd-41bfafbcf8e7",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "29686b62-08df-4c10-a129-2c08f3e2c4ce",
       },
     ],
@@ -9283,8 +9283,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "68c2c474-1ca4-47bf-afb9-d122347690b7",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "96a3998e-5c21-467f-8c55-44e7a53c598c",
       },
     ],
@@ -9298,8 +9298,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c3a28124-57c8-4712-bc97-b78195b64630",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "d09a67de-9608-45e7-a93d-7ae398946d26",
       },
     ],
@@ -9314,8 +9314,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d11750a8-5885-474d-9d86-caf058e12629",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T12:55:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T12:55:00.000+02:00",
         id: "6276fafd-997a-491f-b40e-5c54e54a4ffb",
       },
     ],
@@ -9330,13 +9330,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "81517683-ca56-4861-b467-21fd5a5f4082",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "42831eee-408f-492e-a638-69c43b42b054",
       },
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "71835918-198d-4087-b8f0-edc9f02f68bd",
       },
     ],
@@ -9350,8 +9350,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0ebf9417-6aa7-47a1-a5f6-148d596e6554",
     instances: [
       {
-        dateStart: "2024-08-02T12:00:00.000Z",
-        dateEnd: "2024-08-02T13:00:00.000Z",
+        dateStart: "2024-08-02T12:00:00.000+02:00",
+        dateEnd: "2024-08-02T13:00:00.000+02:00",
         id: "6727cd1d-cdec-4b9a-9573-eda681318596",
       },
     ],
@@ -9366,8 +9366,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c0847fe1-26e2-4c09-b0bf-2550c7390cfe",
     instances: [
       {
-        dateStart: "2024-08-02T12:30:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T12:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "af5a923b-8ce2-4f0c-b907-b2d3dc6ddbf0",
       },
     ],
@@ -9381,8 +9381,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cb4b14bd-95f4-494d-8e43-7373ebbf9036",
     instances: [
       {
-        dateStart: "2024-08-02T12:30:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T12:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "35440f76-5668-48c1-a838-869abbe4d979",
       },
     ],
@@ -9396,8 +9396,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f21af204-ae8e-46c7-9980-46a8496e171d",
     instances: [
       {
-        dateStart: "2024-08-02T12:30:00.000Z",
-        dateEnd: "2024-08-02T13:30:00.000Z",
+        dateStart: "2024-08-02T12:30:00.000+02:00",
+        dateEnd: "2024-08-02T13:30:00.000+02:00",
         id: "1f371934-1754-437a-8189-b4a988422dfd",
       },
     ],
@@ -9411,8 +9411,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "69d43d27-d0ef-40f0-8acf-0ac0a90c3f27",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "f5ef9d1f-f1e9-4e5d-ac9c-9954b6b40639",
       },
     ],
@@ -9427,8 +9427,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "43037ef8-0deb-4c2b-9524-083e304b8217",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "724d1b93-d34c-49d0-a3e3-f10c75929699",
       },
     ],
@@ -9443,8 +9443,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3f416854-4ec8-4cf2-9381-d26b90cbe9f5",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "87ab5b8e-263b-48f1-9d97-3b54ce72f0f5",
       },
     ],
@@ -9458,8 +9458,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e31a5276-9025-49f5-b471-2c21df6fcb31",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "f18a0146-3cdb-4764-9904-91c9032a655c",
       },
     ],
@@ -9473,8 +9473,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "dbf13db0-569f-48b2-b761-0463a79101e7",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "a994ac70-7e7a-4639-bd33-06869f1dc142",
       },
     ],
@@ -9489,8 +9489,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d007c103-41f4-4687-a136-bd792472a5b3",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "d2f88e6a-3918-4ce7-9118-234abc227a71",
       },
     ],
@@ -9504,8 +9504,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f80e5675-640a-49b4-9e63-3c60e0993838",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "c9b2d125-d2b3-41f3-90b9-a44546ea1908",
       },
     ],
@@ -9519,8 +9519,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1f4e3b4f-1178-487e-a6b5-0451d4124871",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "eace2bd9-fc72-4c34-8e61-2067ed27e0da",
       },
     ],
@@ -9535,8 +9535,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "470a83d1-b681-4e42-bb7d-4f1fdbc08898",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "def3861f-f9ea-4f61-995f-a6bc96e79e0d",
       },
     ],
@@ -9550,8 +9550,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7b438271-a6ba-4a5d-b072-e0642a3c4751",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "876f7897-efc3-4d5a-a80e-2541f4f19330",
       },
     ],
@@ -9565,8 +9565,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c0f8b9c6-4ced-4c76-82e5-771f2784f593",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "0d966f04-58f8-4588-b282-c558e0fcb057",
       },
     ],
@@ -9580,8 +9580,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "00a420b5-f2dd-4b45-bf6c-9e2e4c3d79e7",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "36a24e20-2aad-430b-92f4-54b7d9f6574e",
       },
     ],
@@ -9594,8 +9594,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "447596e3-f2e8-408e-920e-635151a1952f",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "3bd25599-709d-42f3-ae48-75432f3d8e44",
       },
     ],
@@ -9610,8 +9610,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ff8f1188-03b5-4343-b7f5-ae2fc42df167",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "db2aeacd-822f-4604-933a-dff4eadcf5f1",
       },
     ],
@@ -9625,8 +9625,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4f85db7f-398f-46fd-b7c7-00339c749f5e",
     instances: [
       {
-        dateStart: "2024-08-02T13:00:00.000Z",
-        dateEnd: "2024-08-02T14:00:00.000Z",
+        dateStart: "2024-08-02T13:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:00:00.000+02:00",
         id: "ae330129-844f-4275-bb2b-4f8953287425",
       },
     ],
@@ -9641,8 +9641,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "afe69404-d3ca-4cde-97cc-d1ac16393d4a",
     instances: [
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "4cd1952a-c152-4e26-a787-fdd3dda48707",
       },
     ],
@@ -9657,13 +9657,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "08b69b8c-6b14-4710-be75-9f3ccada8929",
     instances: [
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "405e1fd0-98cd-4be9-b968-cc51b6ef392d",
       },
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T15:30:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T15:30:00.000+02:00",
         id: "e2f24d9c-6505-4332-b59b-4a7ba76071c2",
       },
     ],
@@ -9677,8 +9677,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cdf35cbd-8848-4024-b9c1-3ef0e4ef3c32",
     instances: [
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "9364e7b0-834b-4066-b2dd-7e360fe7d241",
       },
     ],
@@ -9692,8 +9692,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8871147d-667a-44a1-afe3-8f251796e573",
     instances: [
       {
-        dateStart: "2024-08-02T13:30:00.000Z",
-        dateEnd: "2024-08-02T14:50:00.000Z",
+        dateStart: "2024-08-02T13:30:00.000+02:00",
+        dateEnd: "2024-08-02T14:50:00.000+02:00",
         id: "21e52952-351b-4005-a407-29fedcc255ad",
       },
     ],
@@ -9708,8 +9708,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1881d333-2907-4ccc-b763-2d1e7054bbc4",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "0e9f2937-e27f-4ad3-a69a-2fa63385f03d",
       },
     ],
@@ -9724,8 +9724,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3ee511e8-f9cf-4d55-8aad-6103faf701bf",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T14:30:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T14:30:00.000+02:00",
         id: "311a3be0-c1c0-4286-a36c-87c614bffb1b",
       },
     ],
@@ -9739,8 +9739,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cfb02269-98d7-44d9-85da-4e7539e6f159",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "8194998f-c701-4971-8bca-8f2e96fdd014",
       },
     ],
@@ -9754,8 +9754,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "be7f8092-6fc9-4f93-8fc0-94a0719e9154",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "999cb8f7-5609-45f2-9031-ee5323f25041",
       },
     ],
@@ -9770,13 +9770,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c0f5d77c-943c-44b1-bb1e-245dac8fb4b8",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "c3758c4e-b499-44f6-b08b-d29866d58647",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "81dcb50a-68dc-416d-8370-969885ebfd33",
       },
     ],
@@ -9791,8 +9791,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8bd370de-e20f-4a87-aff3-6cf4510493e5",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:30:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:30:00.000+02:00",
         id: "8b20384e-b729-44c6-9772-b8678f768ae3",
       },
     ],
@@ -9806,8 +9806,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2a4c921f-8fe4-4cac-b35b-136d1e476f2a",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "dbfd3a05-f25e-4faa-a48a-2993aad34a96",
       },
     ],
@@ -9821,8 +9821,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bc177aa6-22aa-4507-823d-f6548504f546",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "991b3896-47ee-4023-9f49-2bba45214bf3",
       },
     ],
@@ -9837,8 +9837,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d527e4e9-d05d-43e4-b4de-031fd77c7ee1",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "01bc6e66-aafc-4f4e-9671-a4ded223de0f",
       },
     ],
@@ -9853,13 +9853,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e265938f-426b-4ac5-86a5-5f4009eabd79",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "9ccaf6f1-6dab-4c5c-b9c1-3b72154ef0ef",
       },
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "ebb9b622-90b7-4911-8ff7-690ef9f11a22",
       },
     ],
@@ -9873,8 +9873,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d192f05f-88bc-48dd-9650-af10d5bbe135",
     instances: [
       {
-        dateStart: "2024-08-02T14:00:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "93aca685-4988-4528-be10-f656e078fe3a",
       },
     ],
@@ -9888,8 +9888,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "46cebeb0-776b-499a-9cbb-cf20398dff71",
     instances: [
       {
-        dateStart: "2024-08-02T14:30:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T14:30:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "2e05be5a-7931-421a-b6cb-e9d6d2c895e5",
       },
     ],
@@ -9904,8 +9904,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "db773616-bcf0-4de7-b9ed-1ee7630757b1",
     instances: [
       {
-        dateStart: "2024-08-02T14:30:00.000Z",
-        dateEnd: "2024-08-02T15:00:00.000Z",
+        dateStart: "2024-08-02T14:30:00.000+02:00",
+        dateEnd: "2024-08-02T15:00:00.000+02:00",
         id: "8b601770-e3db-4575-91c9-bb24cd7ebbab",
       },
     ],
@@ -9919,8 +9919,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8093dd0a-4710-4ed0-9ef5-f6022dc12807",
     instances: [
       {
-        dateStart: "2024-08-02T14:30:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T14:30:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "558a55be-540b-4fad-be37-2b48d92755aa",
       },
     ],
@@ -9935,8 +9935,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "04813b86-9afb-41fe-86f5-60007ce96621",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T15:55:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:55:00.000+02:00",
         id: "17c11cb8-1e96-4687-bb11-7e8264874f16",
       },
     ],
@@ -9951,8 +9951,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7a1d41be-f516-46f9-b014-fbbf3dfd740b",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "20b213bd-d614-4bc5-b4e8-8027d4b02385",
       },
     ],
@@ -9966,8 +9966,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "97081233-e947-414c-ae43-ae616de39c83",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:30:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:30:00.000+02:00",
         id: "147bb05f-c78b-49fd-8038-43272080b8b0",
       },
     ],
@@ -9981,8 +9981,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fbda729e-1944-4301-b11b-c8717f658699",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:30:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:30:00.000+02:00",
         id: "807fc374-5070-4577-80ff-5375184b007e",
       },
     ],
@@ -9997,8 +9997,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "43bf229e-c57a-4839-b00e-e155aa59878f",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T15:55:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T15:55:00.000+02:00",
         id: "41804bca-4bc1-4c8b-865c-77738dd0d387",
       },
     ],
@@ -10012,8 +10012,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4ab07ea3-838d-46ec-8fa1-f384b22edb90",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:10:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:10:00.000+02:00",
         id: "9c512653-3c16-4e66-9ed8-0e5d1c4894fa",
       },
     ],
@@ -10027,8 +10027,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a4b86dae-706d-48f8-b846-df186f7be85e",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "f6c12998-fa0a-4286-81d3-e9ca971d3032",
       },
     ],
@@ -10043,8 +10043,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "04cfb913-2b13-4c81-b61a-aa5283b2cdfd",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "62f32b48-7ff9-48f0-a8e1-71e4bc317861",
       },
     ],
@@ -10059,13 +10059,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e3873bb8-97c5-4574-89f2-d5aff4b6aa2e",
     instances: [
       {
-        dateStart: "2024-08-02T15:00:00.000Z",
-        dateEnd: "2024-08-02T16:00:00.000Z",
+        dateStart: "2024-08-02T15:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:00:00.000+02:00",
         id: "4b32bd17-cf63-4f1e-bcb8-bb55a01870f7",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "f5ca86df-f6ec-44a9-94c7-32f8f4cd9267",
       },
     ],
@@ -10079,8 +10079,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b4225246-7e44-4c29-8870-d457872ad9fc",
     instances: [
       {
-        dateStart: "2024-08-02T15:30:00.000Z",
-        dateEnd: "2024-08-02T16:30:00.000Z",
+        dateStart: "2024-08-02T15:30:00.000+02:00",
+        dateEnd: "2024-08-02T16:30:00.000+02:00",
         id: "aeae61d0-b047-40bf-a50b-815c046b42a4",
       },
     ],
@@ -10095,8 +10095,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "077f7405-d7cd-490b-a603-6eec72ff7b5d",
     instances: [
       {
-        dateStart: "2024-08-02T15:30:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T15:30:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "34e0625d-6ee9-4caa-b627-d3d5b21edd7d",
       },
     ],
@@ -10111,8 +10111,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7c5eaf55-5ffc-4d68-85b5-4ee81905c0dd",
     instances: [
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "50b4c8ce-283f-4152-8059-a0c08fe197b6",
       },
     ],
@@ -10127,8 +10127,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1cd19bec-2857-4882-ac86-6151fa73284f",
     instances: [
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T18:30:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:30:00.000+02:00",
         id: "d39f915b-e935-4d40-81d2-446733ac9b6c",
       },
     ],
@@ -10143,8 +10143,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "545445ab-5d10-4ee1-ae3d-62b39a80d807",
     instances: [
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:30:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:30:00.000+02:00",
         id: "47b916d0-ee40-4b73-a4f7-57528b204df0",
       },
     ],
@@ -10159,8 +10159,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6cd02ff1-4eef-4aa5-adea-1eb1e9e1d1a3",
     instances: [
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T16:55:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T16:55:00.000+02:00",
         id: "42531eaf-3c67-48d4-9615-00d4e7bdb5be",
       },
     ],
@@ -10174,8 +10174,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "88165599-9736-4cad-a4a7-93f069db7593",
     instances: [
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "c22050b5-0ad4-44f5-9f6c-04c73707d2a7",
       },
     ],
@@ -10189,8 +10189,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bfdfbaea-154b-4d2a-9221-f5ce68e625e3",
     instances: [
       {
-        dateStart: "2024-08-02T16:00:00.000Z",
-        dateEnd: "2024-08-02T17:00:00.000Z",
+        dateStart: "2024-08-02T16:00:00.000+02:00",
+        dateEnd: "2024-08-02T17:00:00.000+02:00",
         id: "e3ca37e8-5c8b-44ab-8beb-166fe3a8fe52",
       },
     ],
@@ -10204,8 +10204,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a139b1bd-d46b-40bb-9717-ec5df9629466",
     instances: [
       {
-        dateStart: "2024-08-02T16:30:00.000Z",
-        dateEnd: "2024-08-02T18:30:00.000Z",
+        dateStart: "2024-08-02T16:30:00.000+02:00",
+        dateEnd: "2024-08-02T18:30:00.000+02:00",
         id: "8faa16b9-3177-4d2e-b252-ca438aad7675",
       },
     ],
@@ -10219,8 +10219,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5ef53974-5bba-4b74-b04b-3e4d9db31412",
     instances: [
       {
-        dateStart: "2024-08-02T16:30:00.000Z",
-        dateEnd: "2024-08-02T17:40:00.000Z",
+        dateStart: "2024-08-02T16:30:00.000+02:00",
+        dateEnd: "2024-08-02T17:40:00.000+02:00",
         id: "e76f0f7c-c2d6-4e48-8d9e-1bb7b3ff2bec",
       },
     ],
@@ -10234,8 +10234,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b321e03c-27b8-439b-8265-13576a62a488",
     instances: [
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "a6d7dbe0-d391-4e16-8246-60c5bb0aa508",
       },
     ],
@@ -10250,8 +10250,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8977b07f-bd27-4f0e-bf0c-ab0e44a86425",
     instances: [
       {
-        dateStart: "2024-08-02T17:00:00.000Z",
-        dateEnd: "2024-08-02T18:00:00.000Z",
+        dateStart: "2024-08-02T17:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:00:00.000+02:00",
         id: "25de8417-7cb7-43aa-b133-53f17cbffc96",
       },
     ],
@@ -10265,8 +10265,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "17a2ce4f-ad01-4f23-a028-53f65a5df814",
     instances: [
       {
-        dateStart: "2024-08-02T17:45:00.000Z",
-        dateEnd: "2024-08-02T18:25:00.000Z",
+        dateStart: "2024-08-02T17:45:00.000+02:00",
+        dateEnd: "2024-08-02T18:25:00.000+02:00",
         id: "c47ec146-3de4-4299-96fe-c5413217aa08",
       },
     ],
@@ -10280,8 +10280,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "cfd6613f-7b6f-4698-aecf-ca02b11a9576",
     instances: [
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T18:33:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:33:00.000+02:00",
         id: "bb284f77-5492-4d7c-a16a-1075a812c86f",
       },
     ],
@@ -10296,8 +10296,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3505cce3-1a78-4a67-8152-b648c38f1c70",
     instances: [
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "8547dc4b-2f75-4e37-8556-840cd6e6ebfa",
       },
     ],
@@ -10312,8 +10312,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "90400c88-3dd0-4833-85ff-ae8d7b4192d2",
     instances: [
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T18:33:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T18:33:00.000+02:00",
         id: "742b9196-c144-4d77-a221-856c040b73da",
       },
     ],
@@ -10328,8 +10328,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "153e67e7-4aba-490d-8ae6-53e023a07ec6",
     instances: [
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:00:00.000+02:00",
         id: "a950715e-c5e4-4b07-9364-35d71a5943e3",
       },
     ],
@@ -10343,8 +10343,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "647fc790-2844-4095-9d6b-15b262da0b48",
     instances: [
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T19:10:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T19:10:00.000+02:00",
         id: "826aed09-614d-4574-91a7-a4ac21b27e42",
       },
     ],
@@ -10358,8 +10358,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5cdde381-1469-48c5-817e-c9e957040f80",
     instances: [
       {
-        dateStart: "2024-08-02T18:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T18:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "19387419-b74d-41bb-9196-6257b162c843",
       },
     ],
@@ -10374,8 +10374,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "97aa3616-efb4-4c7f-8f0e-c7f2c5ea57c1",
     instances: [
       {
-        dateStart: "2024-08-02T18:35:00.000Z",
-        dateEnd: "2024-08-02T19:22:00.000Z",
+        dateStart: "2024-08-02T18:35:00.000+02:00",
+        dateEnd: "2024-08-02T19:22:00.000+02:00",
         id: "80ec5176-694d-4bd8-9e58-fd8ab1828c81",
       },
     ],
@@ -10389,8 +10389,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6e40cdb9-00b4-40db-b735-c673d9be991b",
     instances: [
       {
-        dateStart: "2024-08-02T18:40:00.000Z",
-        dateEnd: "2024-08-02T19:20:00.000Z",
+        dateStart: "2024-08-02T18:40:00.000+02:00",
+        dateEnd: "2024-08-02T19:20:00.000+02:00",
         id: "99f53f89-ea7d-4e8d-8587-a9b3ee30914f",
       },
     ],
@@ -10405,8 +10405,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c33c8cfe-f469-409c-ac17-ec777a5ded98",
     instances: [
       {
-        dateStart: "2024-08-02T19:00:00.000Z",
-        dateEnd: "2024-08-02T20:00:00.000Z",
+        dateStart: "2024-08-02T19:00:00.000+02:00",
+        dateEnd: "2024-08-02T20:00:00.000+02:00",
         id: "fb97f3e1-14d3-46eb-9eaa-d9498eb56c99",
       },
     ],
@@ -10420,8 +10420,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "536bcbdc-5191-41ab-a494-bb282f9b0164",
     instances: [
       {
-        dateStart: "2024-08-02T19:30:00.000Z",
-        dateEnd: "2024-08-02T20:40:00.000Z",
+        dateStart: "2024-08-02T19:30:00.000+02:00",
+        dateEnd: "2024-08-02T20:40:00.000+02:00",
         id: "2e4e4bd8-9aa9-48c8-8f4a-7f58fe6ac611",
       },
     ],
@@ -10435,8 +10435,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "62ec3d6d-9468-403d-b6c0-70057b2fcc31",
     instances: [
       {
-        dateStart: "2024-08-02T19:35:00.000Z",
-        dateEnd: "2024-08-02T20:20:00.000Z",
+        dateStart: "2024-08-02T19:35:00.000+02:00",
+        dateEnd: "2024-08-02T20:20:00.000+02:00",
         id: "d0b1f31a-b909-4e9c-a1e2-eb1b4dae2ced",
       },
     ],
@@ -10450,8 +10450,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "adf08db4-bdbf-4caf-a8c5-45ec83a2d839",
     instances: [
       {
-        dateStart: "2024-08-02T20:35:00.000Z",
-        dateEnd: "2024-08-02T21:25:00.000Z",
+        dateStart: "2024-08-02T20:35:00.000+02:00",
+        dateEnd: "2024-08-02T21:25:00.000+02:00",
         id: "3699121d-d97e-4f21-be24-2fc6965b19e8",
       },
     ],
@@ -10465,8 +10465,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8d628b8e-9cfc-43da-97b3-117d588cbe59",
     instances: [
       {
-        dateStart: "2024-08-02T21:00:00.000Z",
-        dateEnd: "2024-08-02T22:10:00.000Z",
+        dateStart: "2024-08-02T21:00:00.000+02:00",
+        dateEnd: "2024-08-02T22:10:00.000+02:00",
         id: "9ccc7d99-5dca-47e2-865d-32e37bf41852",
       },
     ],
@@ -10480,8 +10480,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "412d2cfc-927d-4c93-92d7-a674d1f84882",
     instances: [
       {
-        dateStart: "2024-08-02T21:40:00.000Z",
-        dateEnd: "2024-08-02T22:40:00.000Z",
+        dateStart: "2024-08-02T21:40:00.000+02:00",
+        dateEnd: "2024-08-02T22:40:00.000+02:00",
         id: "49482744-d419-46f6-b0c4-8542622f545f",
       },
     ],
@@ -10495,8 +10495,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0547dfa3-d25f-4244-8cc4-c6d7db174427",
     instances: [
       {
-        dateStart: "2024-08-02T22:30:00.000Z",
-        dateEnd: "2024-08-02T23:40:00.000Z",
+        dateStart: "2024-08-02T22:30:00.000+02:00",
+        dateEnd: "2024-08-02T23:40:00.000+02:00",
         id: "e9ab66fc-c247-410b-810a-682d0d790e8d",
       },
     ],
@@ -10510,8 +10510,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0aeb349e-1c89-4427-8498-b31612024ba1",
     instances: [
       {
-        dateStart: "2024-08-02T22:55:00.000Z",
-        dateEnd: "2024-08-03T00:05:00.000Z",
+        dateStart: "2024-08-02T22:55:00.000+02:00",
+        dateEnd: "2024-08-03T00:05:00.000+02:00",
         id: "4387ec88-87d8-47aa-9c9f-2a304b65ead1",
       },
     ],
@@ -10525,8 +10525,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "70be86f2-27c3-46c9-93bf-055d8a68169f",
     instances: [
       {
-        dateStart: "2024-08-03T00:00:00.000Z",
-        dateEnd: "2024-08-03T01:10:00.000Z",
+        dateStart: "2024-08-03T00:00:00.000+02:00",
+        dateEnd: "2024-08-03T01:10:00.000+02:00",
         id: "cae06afe-3dd4-4e00-898d-321fe268747a",
       },
     ],
@@ -10540,8 +10540,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2dc3910f-1320-4c28-9137-6da5c8a966c3",
     instances: [
       {
-        dateStart: "2024-08-03T00:15:00.000Z",
-        dateEnd: "2024-08-03T01:45:00.000Z",
+        dateStart: "2024-08-03T00:15:00.000+02:00",
+        dateEnd: "2024-08-03T01:45:00.000+02:00",
         id: "e08fee11-751f-499a-8c83-30502d345fc2",
       },
     ],
@@ -10555,8 +10555,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9447795e-db14-4132-b97f-db32f7027f11",
     instances: [
       {
-        dateStart: "2024-08-03T01:30:00.000Z",
-        dateEnd: "2024-08-03T02:40:00.000Z",
+        dateStart: "2024-08-03T01:30:00.000+02:00",
+        dateEnd: "2024-08-03T02:40:00.000+02:00",
         id: "499e7eda-bd6b-4385-bf0d-3e8d673bd792",
       },
     ],
@@ -10569,8 +10569,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0051bc49-ab7e-4798-8462-22405e225c67",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "9b6b87c5-da25-4fac-b44d-329ee4bdcdf1",
       },
     ],
@@ -10583,8 +10583,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a4d18a24-6d77-4792-b1f4-bead6299c963",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "301bbfc0-ebce-44bd-943d-7c2a3126b75c",
       },
     ],
@@ -10598,8 +10598,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4d767fd3-d378-43b0-b330-5f7965dae705",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "211e6e18-5e4e-4717-b91e-7f2d2f0ed1c4",
       },
     ],
@@ -10613,8 +10613,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c1f7d92f-423a-46e1-b2f7-85cc107bc586",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "4aeaaf49-33ac-4a2d-b8a4-0a8d1f5a3d43",
       },
     ],
@@ -10628,8 +10628,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2d942002-ab43-4e5b-9363-7e20d87c1cc5",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "dde3f189-c7a9-4ca0-9393-e9efbf01f7be",
       },
     ],
@@ -10643,13 +10643,13 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "58ab35e4-393a-4e9b-a206-b4f4ef59d186",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "35216d5c-f6d6-4c16-8ef0-a09c5efa2bfc",
       },
       {
-        dateStart: "2024-08-03T14:30:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T14:30:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "488708d2-9dc5-4fe5-8db4-ef912120554d",
       },
     ],
@@ -10663,8 +10663,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d1f9074f-8180-4d4c-b69e-91b1042b03b6",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "8f7c16f9-f159-4ea9-a68d-c8714b0c983d",
       },
     ],
@@ -10679,8 +10679,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "91ac29a1-e338-4c20-80fb-0e81d0a812f6",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "5a5c9f0b-72bf-45db-bc2e-8224552a1f41",
       },
     ],
@@ -10694,8 +10694,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "55e1091e-9626-4f3c-b782-4e9b5341f257",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "be2d565f-605f-4bf5-a9a0-2fa0ea3b246d",
       },
     ],
@@ -10710,8 +10710,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d354ac21-4810-4949-8ec7-8d237495852c",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:30:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:30:00.000+02:00",
         id: "2c1950cf-76de-4c9f-9f58-5b7218d877db",
       },
     ],
@@ -10726,8 +10726,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4edf532c-d54f-4157-86d5-4f16a900c098",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "49b9aaac-4fe9-4ee2-b836-2975fd8adce9",
       },
     ],
@@ -10741,8 +10741,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d15b66d1-5e66-4e3a-b340-8f5a1fe62564",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:20:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:20:00.000+02:00",
         id: "1ba85faf-c528-4b32-ac0b-2e5d704f1f26",
       },
     ],
@@ -10756,8 +10756,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7638a383-4730-4c75-86f2-9c3391e0665f",
     instances: [
       {
-        dateStart: "2024-08-03T10:00:00.000Z",
-        dateEnd: "2024-08-03T11:00:00.000Z",
+        dateStart: "2024-08-03T10:00:00.000+02:00",
+        dateEnd: "2024-08-03T11:00:00.000+02:00",
         id: "d8bdef63-8eb1-4574-a405-0dd32873b69f",
       },
     ],
@@ -10770,8 +10770,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "306f3d0e-7760-4229-877e-3dc1fe8bf6b7",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "341b9030-d6c2-4d01-9cba-1034694739b1",
       },
     ],
@@ -10786,8 +10786,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "83cc1e92-11ce-45f8-86d5-2e7c0b82b3cb",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "8945da2f-c439-435f-9709-cbbe7e9ba063",
       },
     ],
@@ -10801,8 +10801,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "11676881-e7ce-48c5-ac43-5218c216d848",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "8233a778-1866-4d27-9f6c-f1b773059d97",
       },
     ],
@@ -10816,8 +10816,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "42172a48-b31d-4349-9bf6-497b5242699e",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "7b6d380c-99e4-4259-b030-f1d14f45c518",
       },
     ],
@@ -10831,8 +10831,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "471b37ff-cf42-4f28-8c60-0e36a56ee7bc",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "06c797f2-9d80-4114-ab0b-f6ce3573bf0f",
       },
     ],
@@ -10847,18 +10847,18 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "984ee20f-bf28-4a29-9281-1b4ecd6630df",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "78bac6cf-639b-426b-92f2-5634ee08ced0",
       },
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "67c1e814-778e-4c82-a2db-1af39d932ca3",
       },
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "8a44b167-b3ad-44ee-b719-414421438d4b",
       },
     ],
@@ -10872,8 +10872,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "07194327-de10-4880-b797-2c7b38440741",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "8cd9f65c-1604-42f9-a930-7d76c16653f5",
       },
     ],
@@ -10888,8 +10888,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "189b602d-2152-4cd9-b332-e4ae912a017a",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "009e4bc8-7643-4125-8747-e73a9ee6387e",
       },
     ],
@@ -10904,8 +10904,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "407daa4b-71c4-4e7b-85df-42ec5fa167f0",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "a2b9a387-81f5-4582-8798-63abea5f11d8",
       },
     ],
@@ -10920,8 +10920,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f8389d89-414c-43bb-bb09-cabe4bc5a9c6",
     instances: [
       {
-        dateStart: "2024-08-03T11:00:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "6ee69796-814d-4926-89cb-9eb4440825c5",
       },
     ],
@@ -10935,8 +10935,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bc936418-cdb7-489f-b4f7-c879a650bb99",
     instances: [
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "3998e9b3-769b-4fda-9aad-c5bfbea1314d",
       },
     ],
@@ -10951,8 +10951,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a2c01ba9-de55-452d-b20e-3ead29ca5c98",
     instances: [
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T12:30:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T12:30:00.000+02:00",
         id: "c4fff1b8-a750-4dba-b55e-33066f7ec140",
       },
     ],
@@ -10967,8 +10967,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8582a4b6-4c0a-4036-a0e9-89ab8c589af7",
     instances: [
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T12:00:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T12:00:00.000+02:00",
         id: "d97dce4b-b239-48c2-80bf-2b0901383965",
       },
     ],
@@ -10982,8 +10982,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d36c267c-c37a-4744-b32a-fd5f1dcbb06d",
     instances: [
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "964b9a5f-3d87-46d6-a48c-b65bacadd246",
       },
     ],
@@ -10997,8 +10997,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3ab88403-f2ae-4d6f-a2bf-21f92b2e8805",
     instances: [
       {
-        dateStart: "2024-08-03T11:30:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T11:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "5af8e4fe-1a4a-40ea-a2a2-8d70bd196495",
       },
     ],
@@ -11012,8 +11012,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2b03497c-0ef4-4ccf-81c1-cf2f281d5803",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "a2667713-952f-4f42-868d-13171a546176",
       },
     ],
@@ -11027,8 +11027,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "eaf35b80-2b37-4188-a920-3c8f6d0453c4",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "5f3e947c-88f3-4b28-a963-87fb66c1857f",
       },
     ],
@@ -11042,8 +11042,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "37f726a3-ec73-446b-ac9c-c07db7d6a72e",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "a3950864-dadf-4271-8cf1-57b77fc911ce",
       },
     ],
@@ -11057,8 +11057,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "484488c9-40e6-4ceb-a96e-f4c183f83e10",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "0a66b0e6-6322-418a-9d16-068716c51b5e",
       },
     ],
@@ -11073,8 +11073,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b1298a9e-cf43-4cc9-bbe5-830942cb6d7a",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "b7ec82de-5be6-4466-a91c-ee4bfdaa6476",
       },
     ],
@@ -11089,8 +11089,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6eb3697e-4415-4d75-8b5f-5c79148ca388",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "d3ed2105-1fb8-4dfc-8041-cade97a157d8",
       },
     ],
@@ -11105,8 +11105,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "85b56f13-e69e-41f2-942e-604f0fc550fa",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "3ea36003-3876-4641-9671-b0789c6d5565",
       },
     ],
@@ -11121,8 +11121,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "79b72596-df5f-46e4-8b9f-71987a9a29a7",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T12:55:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T12:55:00.000+02:00",
         id: "8a14e7d2-3f8e-4f49-9724-3d4cfe2378a4",
       },
     ],
@@ -11137,8 +11137,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "74ee86eb-703c-4ec3-9423-3db7ef4eef57",
     instances: [
       {
-        dateStart: "2024-08-03T12:00:00.000Z",
-        dateEnd: "2024-08-03T13:00:00.000Z",
+        dateStart: "2024-08-03T12:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:00:00.000+02:00",
         id: "889c1f35-f86b-4e59-b423-aaa55bb3a9ae",
       },
     ],
@@ -11152,8 +11152,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6cfdfe5f-af49-4615-98c7-f460c6aa3b53",
     instances: [
       {
-        dateStart: "2024-08-03T12:30:00.000Z",
-        dateEnd: "2024-08-03T13:30:00.000Z",
+        dateStart: "2024-08-03T12:30:00.000+02:00",
+        dateEnd: "2024-08-03T13:30:00.000+02:00",
         id: "369b057d-8334-41ec-a432-2108bc90d489",
       },
     ],
@@ -11168,8 +11168,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "74d5fbd3-411b-4d8c-9c04-6768cc79db4f",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T13:55:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T13:55:00.000+02:00",
         id: "f38f5496-a84d-4c6d-889d-1ca06cf342ea",
       },
     ],
@@ -11184,8 +11184,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "91c51d33-6079-4546-855b-9ce468b46b78",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:30:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:30:00.000+02:00",
         id: "f94adfe8-1aa6-46bc-abe7-18903358f1c0",
       },
     ],
@@ -11200,8 +11200,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "38936707-136f-4014-a9c8-bb15cd0c6bdd",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:30:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:30:00.000+02:00",
         id: "117a30b6-b91b-4044-9971-3106faf6a690",
       },
     ],
@@ -11216,8 +11216,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "fa8856fe-ddf9-4796-b6bf-034315dca60b",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "a945c65e-cd7d-47c8-832d-086997b15837",
       },
     ],
@@ -11231,8 +11231,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "13e9f1bf-ab44-49c7-a364-19bcf09df6af",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "add35c05-2903-4022-aeb5-af7ada22a05b",
       },
     ],
@@ -11246,8 +11246,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "914da44e-3f61-4f0a-9838-1282f6aebd9a",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "1fa56500-c6bf-43fc-ae95-475984e67f82",
       },
     ],
@@ -11261,8 +11261,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1d3bddfd-f341-431d-9f68-f038052989ed",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "3b090922-bc19-49a1-97ab-38f7790dd13b",
       },
     ],
@@ -11276,8 +11276,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "90af01fd-cdfc-471e-bf1d-0767534cedd6",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "a3006a48-adc1-48d1-9cfb-614eda0d6572",
       },
     ],
@@ -11291,8 +11291,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f4c7f313-afe4-4663-a01f-461ad8f8f6a0",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "5e0c0975-fcaf-4597-b409-3dfb5cdfb819",
       },
     ],
@@ -11307,8 +11307,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "2428f765-3d0f-47ec-ae73-2cff0efe4634",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "60c8ec69-d283-4eda-be76-a53dfb9c696b",
       },
     ],
@@ -11322,8 +11322,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "952bbed4-a93d-4499-9277-b93092237f3b",
     instances: [
       {
-        dateStart: "2024-08-03T13:00:00.000Z",
-        dateEnd: "2024-08-03T14:00:00.000Z",
+        dateStart: "2024-08-03T13:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:00:00.000+02:00",
         id: "38aca60c-f8f8-45ec-a096-771234824fcd",
       },
     ],
@@ -11337,8 +11337,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "abc8bd15-7a63-4c75-aa0d-34dadf2c1aaf",
     instances: [
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T14:50:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:50:00.000+02:00",
         id: "042ce7d8-1673-481b-ae3f-574c6008ca68",
       },
     ],
@@ -11353,8 +11353,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f1eb536f-2b4f-477d-968c-b0cc8831dab4",
     instances: [
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "cc80db1c-357b-4ecf-b3b4-0a69675eee9b",
       },
     ],
@@ -11368,8 +11368,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "36134620-a481-41c0-894b-fe40234b1bcb",
     instances: [
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T14:30:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T14:30:00.000+02:00",
         id: "66a4def9-5f73-4c9f-933d-398bb2bc888a",
       },
     ],
@@ -11383,8 +11383,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6d961914-2be6-460e-8ab8-a022b272d518",
     instances: [
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T15:30:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T15:30:00.000+02:00",
         id: "4783efa6-0326-446b-bcd4-e368ff26514b",
       },
     ],
@@ -11399,8 +11399,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "68159cce-7258-4a88-bd9e-feb27689760b",
     instances: [
       {
-        dateStart: "2024-08-03T13:30:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T13:30:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "f167b81f-f911-41dc-9396-f60b249744ae",
       },
     ],
@@ -11415,8 +11415,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ddb2470f-d3ac-451f-8832-887c6f6382d3",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T14:55:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T14:55:00.000+02:00",
         id: "0e0a48f4-f8ef-4cc6-822b-2a08bcdc0237",
       },
     ],
@@ -11430,8 +11430,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5b9ec28b-2884-4f2c-b94f-9f8cf8c760d3",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:30:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:30:00.000+02:00",
         id: "98b2ab9a-7d49-4a18-84fb-81519113313e",
       },
     ],
@@ -11445,8 +11445,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e66f5c34-fee0-486b-8e25-4471fb579922",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "c0876dd5-bce5-4f84-a239-7100bc1e4376",
       },
     ],
@@ -11460,8 +11460,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "07697264-5655-440d-b528-d1ef060b9e42",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "b8f0ff37-f234-42c2-99ba-04d57ec0e328",
       },
     ],
@@ -11476,8 +11476,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "92d05def-69b0-4625-acb4-2c3ab9228477",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "76bb3c41-3a8c-49a7-9ba9-d9d26e972ab9",
       },
     ],
@@ -11491,8 +11491,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e1a8c878-59e4-4042-918f-e88b6fe321a6",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:00:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:00:00.000+02:00",
         id: "af62b816-ba62-48d0-b297-2824c7322cf5",
       },
     ],
@@ -11506,8 +11506,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "37401f04-074b-440a-86bf-a5623d99600c",
     instances: [
       {
-        dateStart: "2024-08-03T14:00:00.000Z",
-        dateEnd: "2024-08-03T15:30:00.000Z",
+        dateStart: "2024-08-03T14:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:30:00.000+02:00",
         id: "45a7d4ea-02e0-4661-ae46-3eb2863bfc80",
       },
     ],
@@ -11522,8 +11522,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7d103281-5180-4f3c-930a-e274ec6fea7e",
     instances: [
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "1ccc0010-96d4-460e-b6a1-4ba5e584f891",
       },
     ],
@@ -11538,8 +11538,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bcbc1a78-f525-450c-b2e9-adf5b988a337",
     instances: [
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "7e9f9db0-f8b6-49ec-aea0-dcefce349178",
       },
     ],
@@ -11553,8 +11553,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "ca6051fe-a3fd-4c4e-b00f-9cf40c2fdfd5",
     instances: [
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "b495543e-e2c0-4638-bf7f-a1c6cd985bf9",
       },
     ],
@@ -11569,8 +11569,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a4fb6012-ca9c-45aa-83e7-1dad57537f65",
     instances: [
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T15:55:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T15:55:00.000+02:00",
         id: "913d0452-72f6-40f3-b1ab-24cf4d4e0ca3",
       },
     ],
@@ -11584,8 +11584,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "71e29756-b80f-455e-9265-3059a8216fed",
     instances: [
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "6f140b09-df6f-431e-b54f-1dce621fccdc",
       },
     ],
@@ -11599,8 +11599,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4b8c1994-8235-4046-85e7-efecefc44def",
     instances: [
       {
-        dateStart: "2024-08-03T15:00:00.000Z",
-        dateEnd: "2024-08-03T16:00:00.000Z",
+        dateStart: "2024-08-03T15:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:00:00.000+02:00",
         id: "8040e1c7-ec5f-428d-8d8b-f41ebcd3caa0",
       },
     ],
@@ -11615,8 +11615,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "13a721e7-8e44-4132-93a7-bfe6188810ea",
     instances: [
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T17:30:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T17:30:00.000+02:00",
         id: "576106ba-ecef-44e7-96af-461e56e3e14b",
       },
     ],
@@ -11630,8 +11630,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "707d8bce-1591-44f2-aaec-694cd46f9863",
     instances: [
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T16:30:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T16:30:00.000+02:00",
         id: "4a03b646-6286-4075-9800-b7834e6040e8",
       },
     ],
@@ -11646,8 +11646,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "3e5deb0d-34a3-40fe-ab10-d3da2059835b",
     instances: [
       {
-        dateStart: "2024-08-03T15:30:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T15:30:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "d67d1a8f-555e-46c1-8cc4-def7c422c652",
       },
     ],
@@ -11662,8 +11662,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c2757867-234d-4cc1-9dfb-446aafad5c30",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:30:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:30:00.000+02:00",
         id: "87b632da-d5c0-4903-a7aa-e5c2cbc05d7f",
       },
     ],
@@ -11677,8 +11677,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "4f2119ad-ea0b-4864-9180-1c2675af4de9",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "de990003-f3ad-4de3-8b9e-47a0e671ed63",
       },
     ],
@@ -11693,8 +11693,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d9088458-f2de-404d-965a-8bcc5e29277b",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T16:55:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T16:55:00.000+02:00",
         id: "a6b07c05-4598-47ac-a515-87ce13d68398",
       },
     ],
@@ -11708,8 +11708,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "97aa06b8-5933-4b97-8357-cd2883c313b1",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:30:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:30:00.000+02:00",
         id: "a881670e-3425-4b9a-a0d3-6def1458f6e5",
       },
     ],
@@ -11723,8 +11723,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1ecee766-dc05-4c8f-a23e-f0015b59f7b4",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T19:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:00:00.000+02:00",
         id: "31c6cf47-79c9-49fa-8a33-0e54ba942fa4",
       },
     ],
@@ -11739,8 +11739,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "518d9678-22c0-474d-bc60-375c66bee3b0",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "e320306e-8a9a-453c-b5f2-463c89267d12",
       },
     ],
@@ -11755,8 +11755,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "e0cbcafb-49a3-4a9b-b202-ee4ef3f62e94",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "a0cf19a4-065f-4669-84ee-de3dae37b61f",
       },
     ],
@@ -11770,8 +11770,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d75172a6-b0b9-464d-8aec-b02b2cdda77b",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "c0be6b0b-0e76-43d5-ade6-278151946889",
       },
     ],
@@ -11785,8 +11785,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "c66c568a-ca99-4e49-a58f-acaec258b585",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T17:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T17:00:00.000+02:00",
         id: "fad8ad9a-8eb0-49b5-8f12-0b23b7f387dc",
       },
     ],
@@ -11801,8 +11801,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "35685a24-531d-407f-a685-064ee6513eea",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T18:30:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:30:00.000+02:00",
         id: "2c1ec071-6ad2-472d-af0a-231b1c0d81a6",
       },
     ],
@@ -11816,8 +11816,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "aed34c80-fcca-4724-bda8-7ed89b1fed44",
     instances: [
       {
-        dateStart: "2024-08-03T16:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T16:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "943dde2c-52eb-41c1-b069-a38405700496",
       },
     ],
@@ -11830,8 +11830,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0ed7949e-20f1-416c-976e-773fb4504462",
     instances: [
       {
-        dateStart: "2024-08-03T16:30:00.000Z",
-        dateEnd: "2024-08-03T17:30:00.000Z",
+        dateStart: "2024-08-03T16:30:00.000+02:00",
+        dateEnd: "2024-08-03T17:30:00.000+02:00",
         id: "5c0140f4-4e40-4498-af40-62515c13d096",
       },
     ],
@@ -11845,8 +11845,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "22ae1738-295c-44b5-9060-4c1fedda9534",
     instances: [
       {
-        dateStart: "2024-08-03T16:30:00.000Z",
-        dateEnd: "2024-08-03T17:40:00.000Z",
+        dateStart: "2024-08-03T16:30:00.000+02:00",
+        dateEnd: "2024-08-03T17:40:00.000+02:00",
         id: "b4076d72-99a8-4633-9e63-0e69c12e375b",
       },
     ],
@@ -11861,8 +11861,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "56425f0d-7c9c-4909-b807-185c1f3b7133",
     instances: [
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "1da6cfb3-4267-4b5c-94f0-82341fdd8f1c",
       },
     ],
@@ -11876,8 +11876,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f64df306-1cd0-4fbf-9d7d-ed6d2a0e8fb9",
     instances: [
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:00:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:00:00.000+02:00",
         id: "59f92567-d162-4d1f-8db7-e54c2f1032ce",
       },
     ],
@@ -11892,8 +11892,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "f5befcd9-936c-414a-b321-56085f04700b",
     instances: [
       {
-        dateStart: "2024-08-03T17:00:00.000Z",
-        dateEnd: "2024-08-03T18:30:00.000Z",
+        dateStart: "2024-08-03T17:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:30:00.000+02:00",
         id: "86e4442e-7b78-47c5-847d-876cb78210fa",
       },
     ],
@@ -11908,8 +11908,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7fe22ca2-ad10-4c04-a483-11d71e92500c",
     instances: [
       {
-        dateStart: "2024-08-03T17:30:00.000Z",
-        dateEnd: "2024-08-03T18:30:00.000Z",
+        dateStart: "2024-08-03T17:30:00.000+02:00",
+        dateEnd: "2024-08-03T18:30:00.000+02:00",
         id: "e9d19388-36e4-442d-9f27-70e3a9000392",
       },
     ],
@@ -11923,8 +11923,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "89bdb6b2-18d7-4300-83d7-11e84004eb11",
     instances: [
       {
-        dateStart: "2024-08-03T17:45:00.000Z",
-        dateEnd: "2024-08-03T18:25:00.000Z",
+        dateStart: "2024-08-03T17:45:00.000+02:00",
+        dateEnd: "2024-08-03T18:25:00.000+02:00",
         id: "9503d740-aa7f-4e93-8276-479294ef735b",
       },
     ],
@@ -11939,8 +11939,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "42b5c943-84d2-49a5-bcf3-ddd6123d1e2e",
     instances: [
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "661b7433-7688-4787-ad27-d87113715465",
       },
     ],
@@ -11955,8 +11955,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "6a868b31-54fd-401c-aacb-8e1e75515f16",
     instances: [
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T18:45:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T18:45:00.000+02:00",
         id: "d7b42d5d-d58e-43d5-9478-1db4276133f9",
       },
     ],
@@ -11970,8 +11970,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "9ce5e577-60f7-40e5-acfa-19d2b09f4992",
     instances: [
       {
-        dateStart: "2024-08-03T18:00:00.000Z",
-        dateEnd: "2024-08-03T19:10:00.000Z",
+        dateStart: "2024-08-03T18:00:00.000+02:00",
+        dateEnd: "2024-08-03T19:10:00.000+02:00",
         id: "52836c5b-0000-40ed-9b28-65c15cfc3bfc",
       },
     ],
@@ -11985,8 +11985,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "5288ef12-245f-4bc8-94d5-bdbdd3c131d5",
     instances: [
       {
-        dateStart: "2024-08-03T18:40:00.000Z",
-        dateEnd: "2024-08-03T19:40:00.000Z",
+        dateStart: "2024-08-03T18:40:00.000+02:00",
+        dateEnd: "2024-08-03T19:40:00.000+02:00",
         id: "8c1f9c75-9942-49c1-bec3-e34a4171aaf7",
       },
     ],
@@ -12001,8 +12001,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "b36103e9-fa07-4257-bbc8-9e82321e2544",
     instances: [
       {
-        dateStart: "2024-08-03T19:00:00.000Z",
-        dateEnd: "2024-08-03T20:00:00.000Z",
+        dateStart: "2024-08-03T19:00:00.000+02:00",
+        dateEnd: "2024-08-03T20:00:00.000+02:00",
         id: "8fbc896e-ec8a-4dac-8a6c-2a1c59d15470",
       },
     ],
@@ -12016,8 +12016,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "1721423f-2ca4-4a26-bb50-1bf951efcd6f",
     instances: [
       {
-        dateStart: "2024-08-03T19:30:00.000Z",
-        dateEnd: "2024-08-03T20:40:00.000Z",
+        dateStart: "2024-08-03T19:30:00.000+02:00",
+        dateEnd: "2024-08-03T20:40:00.000+02:00",
         id: "0d0b9e2d-c1ca-4f5a-a668-d08c6430068e",
       },
     ],
@@ -12031,8 +12031,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "8f296339-2aa6-4297-b6ad-5b881ad3467d",
     instances: [
       {
-        dateStart: "2024-08-03T19:55:00.000Z",
-        dateEnd: "2024-08-03T20:40:00.000Z",
+        dateStart: "2024-08-03T19:55:00.000+02:00",
+        dateEnd: "2024-08-03T20:40:00.000+02:00",
         id: "2de17e90-235b-4666-a9f7-011832a8e711",
       },
     ],
@@ -12046,8 +12046,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "deda97b9-63f4-4751-ac44-3300c8f77253",
     instances: [
       {
-        dateStart: "2024-08-03T20:55:00.000Z",
-        dateEnd: "2024-08-03T21:45:00.000Z",
+        dateStart: "2024-08-03T20:55:00.000+02:00",
+        dateEnd: "2024-08-03T21:45:00.000+02:00",
         id: "88b77610-7d73-490d-ac8d-9941837186ee",
       },
     ],
@@ -12061,8 +12061,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d3a2a8eb-8340-480e-8e51-f7afd11226b9",
     instances: [
       {
-        dateStart: "2024-08-03T21:00:00.000Z",
-        dateEnd: "2024-08-03T22:10:00.000Z",
+        dateStart: "2024-08-03T21:00:00.000+02:00",
+        dateEnd: "2024-08-03T22:10:00.000+02:00",
         id: "80b5421a-ab27-48fc-996c-515060417777",
       },
     ],
@@ -12076,8 +12076,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "0d7941ae-d59c-4f32-b1aa-b94875ba4c1c",
     instances: [
       {
-        dateStart: "2024-08-03T22:00:00.000Z",
-        dateEnd: "2024-08-03T23:00:00.000Z",
+        dateStart: "2024-08-03T22:00:00.000+02:00",
+        dateEnd: "2024-08-03T23:00:00.000+02:00",
         id: "b46d70df-cd63-4d2f-9994-d8e2f19daffa",
       },
     ],
@@ -12091,8 +12091,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "bc5db58c-22ef-4ce7-b0d0-9405cc3f151d",
     instances: [
       {
-        dateStart: "2024-08-03T22:30:00.000Z",
-        dateEnd: "2024-08-03T23:40:00.000Z",
+        dateStart: "2024-08-03T22:30:00.000+02:00",
+        dateEnd: "2024-08-03T23:40:00.000+02:00",
         id: "d61d5146-3f10-4c28-b00b-9fc63d1e060d",
       },
     ],
@@ -12106,8 +12106,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "7154e06d-9c9e-466b-a4f4-2a29875b0185",
     instances: [
       {
-        dateStart: "2024-08-03T23:15:00.000Z",
-        dateEnd: "2024-08-04T00:15:00.000Z",
+        dateStart: "2024-08-03T23:15:00.000+02:00",
+        dateEnd: "2024-08-04T00:15:00.000+02:00",
         id: "94363783-a0a5-4d97-97d3-e7fb3ed33e9f",
       },
     ],
@@ -12121,8 +12121,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "a6a3cc27-8251-47b4-9994-3e8978f4f23a",
     instances: [
       {
-        dateStart: "2024-08-04T00:10:00.000Z",
-        dateEnd: "2024-08-04T01:20:00.000Z",
+        dateStart: "2024-08-04T00:10:00.000+02:00",
+        dateEnd: "2024-08-04T01:20:00.000+02:00",
         id: "353fd4e7-3d52-4675-a63a-4f3f5b4fe9a1",
       },
     ],
@@ -12136,8 +12136,8 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
     id: "d097ec02-3870-4c1d-9fa3-5a26cbe97bc5",
     instances: [
       {
-        dateStart: "2024-08-04T01:40:00.000Z",
-        dateEnd: "2024-08-04T02:20:00.000Z",
+        dateStart: "2024-08-04T01:40:00.000+02:00",
+        dateEnd: "2024-08-04T02:20:00.000+02:00",
         id: "756a828e-c70c-4154-ba62-ce8ab8db880f",
       },
     ],
@@ -12145,10 +12145,10 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
 ];
 
 const daysToDatesMap: Record<Day, Date> = {
-  wednesday: new Date("2024-07-31T00:00:00.000Z"),
-  thursday: new Date("2024-08-01T00:00:00.000Z"),
-  friday: new Date("2024-08-02T00:00:00.000Z"),
-  saturday: new Date("2024-08-03T00:00:00.000Z"),
+  wednesday: new Date("2024-07-31T00:00:00.000+02:00"),
+  thursday: new Date("2024-08-01T00:00:00.000+02:00"),
+  friday: new Date("2024-08-02T00:00:00.000+02:00"),
+  saturday: new Date("2024-08-03T00:00:00.000+02:00"),
 };
 export const getDayByDate = (_date: string | Date) => {
   const date = z.coerce.date().parse(_date);
