@@ -186,7 +186,7 @@ export function SingleWoodstockEvent({
               key={text}
             >
               <Icon className={"size-6"} />
-              {isCollapsible ? (
+              {isCollapsible && text.length > 0 ? (
                 <CollapsibleLargeText text={text} />
               ) : (
                 <span className="flex-1 overflow-ellipsis">{text}</span>
