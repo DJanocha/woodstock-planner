@@ -27,13 +27,13 @@ export const EventsSearchBy = () => {
     }, [])
     return (
         <Form {...form}>
-            <form onChange={form.handleSubmit(onSubmit)} className="flex-1">
-                <div className="flex flex-col items-center gap-4">
+            <form onChange={form.handleSubmit(onSubmit)} className="flex-1 flex">
+                <div className="flex flex-col items-center gap-4 flex-1 w-full">
                     <FormField
                         control={form.control}
                         name={`searchBy`}
                         render={({ field }) => (
-                            <FormItem>
+                            <FormItem className="w-full">
                                 <FormControl>
                                     <Input
                                         {...field}

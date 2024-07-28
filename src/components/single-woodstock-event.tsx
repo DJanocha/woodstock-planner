@@ -7,13 +7,8 @@
 import { format } from "date-fns";
 import { useAtom } from "jotai";
 import {
-  HeartIcon,
   MapPinIcon,
-  PartyPopperIcon,
-  ReceiptTextIcon,
-  ShieldQuestionIcon,
-  ThumbsDownIcon,
-  XIcon,
+  XIcon
 } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { z } from "zod";
@@ -22,11 +17,12 @@ import {
   userDislikedEventsInstancesAtom,
   userSelectedEventsInstancesAtom,
 } from "~/atoms/user-preferences-atom";
+import { iconsConfig } from "~/configs/icons";
+import { cn } from "~/lib/utils";
+import { ExcludeFromUnion } from "~/types/common";
+import { UserPreference } from "~/validators/filtered-events-input";
 import { woodstockEventValidator } from "~/validators/woodstock-event";
 import { Button } from "./ui/button";
-import { UserPreference } from "~/validators/filtered-events-input";
-import { ExcludeFromUnion } from "~/types/common";
-import { cn } from "~/lib/utils";
 
 /** Add fonts into your Next.js project:
 
