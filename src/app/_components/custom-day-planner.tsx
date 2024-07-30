@@ -4,10 +4,11 @@ import { isSameDay, areIntervalsOverlapping } from "date-fns";
 import { useAtom } from "jotai";
 import { useMemo, useState } from "react";
 import { savedEventInstancesIdsAtom } from "~/atoms/user-preferences-atom";
+import { V6 } from "~/components/v6";
 import { daysToDatesMap } from "~/events-list";
 import { api } from "~/trpc/react";
 import { type EventDay, eventDays } from "~/validators/event-day";
-import { WoodstockEvent } from "~/validators/woodstock-event";
+import { type WoodstockEvent } from "~/validators/woodstock-event";
 
 const hours = Array.from({ length: 24 }, (_, i) => i);
 const days = eventDays;
@@ -54,16 +55,5 @@ export const CustomDayPlanner = () => {
     return _placements;
   }, [thisDayEvents]);
   console.log({ thisDayEvents, placements });
-  return (
-    <div className="flex flex-col items-center justify-center">
-      {hours.map((hour) => (
-        <div
-          key={hour}
-          className="before:contents['xx'] h-10 w-72 border-2 border-gray-300 before:left-0 before:top-0"
-        >
-          {hour}
-        </div>
-      ))}
-    </div>
-  );
+  return <V6 instancesDetails={mappedEvents} />;
 };
