@@ -9,7 +9,8 @@ export const eventsRouter = createTRPCRouter({
   getFiltered: publicProcedure
     .input(filteredEventsInputValidator)
     .query(({ input }) => {
-      const skip = input.pageSize * input.pageIndex;
+      const pageIndex = input.cursor.pageIndex ?? input.pageIndex;
+      const skip = input.pageSize * pageIndex;
       const eventKeysTosearchBy: (keyof (typeof events)[number])[] = [
         "kind",
         "place",
