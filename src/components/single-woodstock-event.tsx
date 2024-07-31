@@ -97,14 +97,21 @@ export function SingleWoodstockEvent({
   ) {
     return null;
   }
+  const eventFirstLine = woodstockEvent.event.split("\n")[0];
+  const eventRestLines = woodstockEvent.event.split("\n").slice(1).join("\n");
   return (
     <div className="h-30 flex flex-col gap-4 rounded-lg border bg-background p-4 sm:p-6">
       <div className="flex items-start justify-between">
         <div className="flex w-full flex-col items-stretch gap-1">
-          <div className="flex w-full flex-row items-start justify-between">
-            <h3 className="w-full overflow-ellipsis text-lg font-semibold text-black">
-              {woodstockEvent.event}
+          <div className="flex w-full flex-col items-start justify-between">
+            <h3 className="w-full overflow-ellipsis whitespace-pre-line text-lg font-bold text-black">
+              {eventFirstLine}
             </h3>
+            {eventRestLines && (
+              <h4 className="w-full overflow-ellipsis whitespace-pre-line text-sm font-light text-black">
+                {eventRestLines}
+              </h4>
+            )}
           </div>
           {configItems.map(({ Icon, text, isCollapsible }) => (
             <div
@@ -115,7 +122,9 @@ export function SingleWoodstockEvent({
               {isCollapsible && text.length > 0 ? (
                 <CollapsibleLargeText text={text} />
               ) : (
-                <span className="flex-1 overflow-ellipsis">{text}</span>
+                <span className="flex-1 overflow-ellipsis whitespace-pre-wrap">
+                  {text}
+                </span>
               )}
             </div>
           ))}
