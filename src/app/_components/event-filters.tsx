@@ -41,9 +41,34 @@ import {
   eventFriendshipVariant,
   eventFriendshipVariants,
 } from "~/validators/events-friendship";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "~/components/ui/alert-dialog";
+import {
+  dislikedEventsIdsAtom,
+  likedEventsIdsAtom,
+  savedEventInstancesIdsAtom,
+} from "~/atoms/user-preferences-atom";
+import { useCallback } from "react";
 
 export function EventFilters() {
   const [filters, setFilters] = useAtom(filtersAtom);
+  const [, setSavedInstances] = useAtom(savedEventInstancesIdsAtom);
+  const [, setDislikedIds] = useAtom(dislikedEventsIdsAtom);
+  const [, setLikedIds] = useAtom(likedEventsIdsAtom);
+  const resetMyPreferencesAndLikes = useCallback(() => {
+    setSavedInstances([]);
+    setDislikedIds([]);
+    setLikedIds([]);
+  }, [setDislikedIds, setLikedIds, setSavedInstances]);
   const form = useForm<z.input<typeof filteredEventsInputFiltersValidator>>({
     resolver: zodResolver(filteredEventsInputFiltersValidator),
     defaultValues: filters,
@@ -71,11 +96,42 @@ export function EventFilters() {
             <DrawerHeader>
               <DrawerTitle>Preferences</DrawerTitle>
               <DrawerDescription>
-                Which kind of events are you looking for?
+                Which kind of events are you looking for?{" "}
               </DrawerDescription>
             </DrawerHeader>
             <Separator />
-            <ScrollArea className="flex h-[80dvh] flex-col items-center gap-4 overflow-auto p-4 pb-0">
+            <div className="flex flex-col justify-center py-1">
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button variant="destructive">
+                    Reset all preferences and likes
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>
+                      Are you absolutely sure?
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                      This action will result in removing all your preferences
+                      and likes.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction
+                      onClick={() => {
+                        resetMyPreferencesAndLikes();
+                      }}
+                    >
+                      Reset all
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </div>
+
+            <ScrollArea className="flex h-[75dvh] flex-col items-center gap-4 overflow-auto p-4 pb-0">
               <FormField
                 control={form.control}
                 name={`days`}
