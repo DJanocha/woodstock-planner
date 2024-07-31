@@ -75,7 +75,7 @@ export function EventFilters() {
               </DrawerDescription>
             </DrawerHeader>
             <Separator />
-            <ScrollArea className="flex h-[60vh] max-h-[60vh] flex-col items-center gap-4 overflow-auto p-4 pb-0">
+            <ScrollArea className="flex h-[80dvh] flex-col items-center gap-4 overflow-auto p-4 pb-0">
               <FormField
                 control={form.control}
                 name={`days`}
