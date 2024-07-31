@@ -11,6 +11,7 @@ import { api } from "~/trpc/react";
 import { type PaginatedInput } from "~/validators/paginated-input";
 
 export function AllEvents() {
+  const pageSize = useMemo(() => 10, []);
   const [filters] = useAtom(filtersAtom);
   const [searchBy] = useAtom(searchByAtom);
   const {
@@ -22,12 +23,16 @@ export function AllEvents() {
     {
       ...filters,
       ...searchBy,
+      pageSize,
     },
     {
       getNextPageParam: (_lastPage, allPages) => {
         const nextPageParam: PaginatedInput["cursor"] = {
           pageIndex: allPages.length,
         };
+        if (_lastPage.length < pageSize) {
+          return undefined;
+        }
         return nextPageParam;
       },
     },
