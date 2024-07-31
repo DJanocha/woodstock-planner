@@ -4,6 +4,8 @@ import { events } from "~/events-list";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { hasGivenEventAnInstanceInAnyOfGivenDays } from "~/utils";
 import { filteredEventsInputValidator } from "~/validators/filtered-events-input";
+const stringToLowerAlphaNumeric = (str: string) =>
+  str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
 export const eventsRouter = createTRPCRouter({
   getFiltered: publicProcedure
@@ -23,7 +25,9 @@ export const eventsRouter = createTRPCRouter({
       const filteredBySearchEngine = events.filter((e) =>
         eventKeysTosearchBy.some((evKey) => {
           const val = z.string().default("").parse(e[evKey]);
-          return val?.includes(input.searchBy.toLowerCase());
+          return stringToLowerAlphaNumeric(val).includes(
+            stringToLowerAlphaNumeric(input.searchBy),
+          );
         }),
       );
       const filteredByDays = filteredBySearchEngine.filter((e) =>
