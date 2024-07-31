@@ -15,6 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { filteredEventsInputSearchByValidator } from "~/validators/filtered-events-input";
 import { type z } from "zod";
 import { useCallback } from "react";
+import { debounce } from "lodash";
 type FormValues = z.infer<typeof filteredEventsInputSearchByValidator>;
 export const EventsSearchBy = () => {
   const [searchBy, setSearchBy] = useAtom(searchByAtom);
@@ -22,12 +23,14 @@ export const EventsSearchBy = () => {
     resolver: zodResolver(filteredEventsInputSearchByValidator),
     defaultValues: { ...searchBy },
   });
-  const onSubmit = useCallback<SubmitHandler<FormValues>>(
+  const _onSubmit = useCallback<SubmitHandler<FormValues>>(
     (vals) => {
       setSearchBy(vals);
     },
     [setSearchBy],
   );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const onSubmit = useCallback(debounce(_onSubmit, 500), [_onSubmit]);
   return (
     <Form {...form}>
       <form onChange={form.handleSubmit(onSubmit)} className="flex flex-1">
