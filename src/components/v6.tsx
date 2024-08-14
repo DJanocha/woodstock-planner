@@ -5,12 +5,13 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { type RouterOutputs } from "~/trpc/react";
 import { Button } from "./ui/button";
 import {
   differenceInHours,
   differenceInMinutes,
+  isBefore,
   isSameDay,
   startOfDay,
 } from "date-fns";
@@ -113,6 +114,20 @@ type InstanceWithEvent = RouterOutputs["events"]["getEventsInstances"][number];
 type InstanceWithEventWithHorizontalPosition = InstanceWithEvent & {
   horizontalPosition: number;
 };
+const scrollToInstance = ({ instanceId }: { instanceId: string }) => {
+  // Select the element with the specific data attribute
+  const element = document.querySelector(
+    `[data-event-instance-id="${instanceId}"]`,
+  );
+
+  // Check if the element exists
+  if (element) {
+    // Scroll to the element
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    console.log("Element not found");
+  }
+};
 
 const addHorizontalPositionToEventsWithInstances = ({
   instances,
@@ -193,16 +208,25 @@ export function V6({
       }),
     [instancesInSelectedDate],
   );
-  console.log({
-    selectedDate,
-    eventsWithHorizontalPosition: instancesWithHorizontalPosition,
-    instancesDetails,
-    instancesInSelectedDate,
-  });
   const handleDateChange = (date: Date) => {
     setSelectedDate(date);
   };
+  const firstInstanceId = useMemo(
+    () =>
+      instancesWithHorizontalPosition.sort((first, second) => {
+        return isBefore(first.instance.dateEnd, second.instance.dateEnd)
+          ? -1
+          : 1;
+      })[0]?.instance.id,
+    [instancesWithHorizontalPosition],
+  );
+  useEffect(() => {
+    if (firstInstanceId) {
+      scrollToInstance({ instanceId: firstInstanceId });
+    }
+  }, [firstInstanceId]);
   const tenMinuteIntervalsInDay = 24 * 6;
+
   return (
     <div className="h-min gap-4 bg-background p-4 text-foreground sm:p-6">
       {/* <div className="grid-rows-24 mx-auto grid max-w-6xl grid-cols-8 gap-4" style={{ */}
@@ -265,6 +289,7 @@ export function V6({
             return (
               <div
                 key={eventDetails.instance.id}
+                data-event-instance-id={eventDetails.instance.id}
                 // className={`col-start-${colStart} col-span-2 md:col-span-1 row-start-${minutesFromStartOfDayUntilEventStarts + 1} row-span-${minDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
                 className={`col-start-${colStart} col-span-2 md:col-span-1 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-lg bg-gray-100 p-4 ring-2 ring-lime-600`}
                 style={{
