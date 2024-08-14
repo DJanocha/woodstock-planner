@@ -1,7 +1,8 @@
-import { addHours, isSameDay } from "date-fns";
+import { isSameDay } from "date-fns";
 import { z } from "zod";
-import { type EventDay, isEventDay } from "./validators/filtered-events-input";
+import { isEventDay } from "./validators/filtered-events-input";
 import { type woodstockEventValidator } from "./validators/woodstock-event";
+import { EventDay } from "./validators/event-day";
 
 const _polishTimezoneOffset = 2;
 export const events: z.input<typeof woodstockEventValidator>[] = [

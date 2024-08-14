@@ -1,6 +1,7 @@
 "use client";
 import { FilterIcon } from "lucide-react";
 import * as React from "react";
+import { eventDayValidator } from "~/validators/event-day";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
@@ -29,10 +30,7 @@ import {
 import { Separator } from "~/components/ui/separator";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
 import { iconsConfig } from "~/configs/icons";
-import {
-  eventDayValidator,
-  filteredEventsInputFiltersValidator,
-} from "~/validators/filtered-events-input";
+import { filteredEventsInputFiltersValidator } from "~/validators/filtered-events-input";
 import {
   woodstockEventKindValidator,
   woodstockEventPlaceValidador,

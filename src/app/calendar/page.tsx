@@ -1,6 +1,4 @@
 import { CustomDayPlanner } from "../_components/custom-day-planner";
-import { EventsCallendar } from "../_components/events-callendar";
-import { EventsCallendarReact } from "../_components/events-callendar-react";
 import { Navbar } from "../_components/navbar";
 
 const CalendarPage = () => {

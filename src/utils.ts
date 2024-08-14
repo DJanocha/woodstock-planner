@@ -1,11 +1,12 @@
 import { uniq } from "lodash";
 import {
-  type EventDay,
-  eventDayValidator,
+  //   type EventDay,
+  //   eventDayValidator,
   isEventDay,
 } from "./validators/filtered-events-input";
 import { type WoodstockEvent } from "./validators/woodstock-event";
 import { getDayByDate } from "./events-list";
+import { type EventDay, eventDayValidator } from "./validators/event-day";
 export const hasGivenEventAnInstanceInAnyOfGivenDays = ({
   days,
   event,
