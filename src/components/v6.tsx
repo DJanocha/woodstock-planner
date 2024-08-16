@@ -5,97 +5,14 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
+import { differenceInMinutes, isBefore, isSameDay, startOfDay } from "date-fns";
 import { useEffect, useMemo, useState } from "react";
 import { type RouterOutputs } from "~/trpc/react";
-import { Button } from "./ui/button";
-import {
-  differenceInHours,
-  differenceInMinutes,
-  isBefore,
-  isSameDay,
-  startOfDay,
-} from "date-fns";
 import { calculateInstancesWithEventIndexes } from "~/utils/event-in-day-planner-utils";
-const _rowsStartClassNames = [
-  "row-start-0",
-  "row-start-1",
-  "row-start-2",
-  "row-start-3",
-  "row-start-4",
-  "row-start-5",
-  "row-start-6",
-  "row-start-7",
-  "row-start-8",
-  "row-start-9",
-  "row-start-10",
-  "row-start-11",
-  "row-start-12",
-  "row-start-13",
-  "row-start-14",
-  "row-start-15",
-  "row-start-16",
-  "row-start-17",
-  "row-start-18",
-  "row-start-19",
-  "row-start-20",
-  "row-start-21",
-  "row-start-22",
-  "row-start-23",
-  "row-start-24",
-];
-const _rowSpanClassNames = [
-  "row-span-1",
-  "row-span-2",
-  "row-span-3",
-  "row-span-4",
-  "row-span-5",
-  "row-span-6",
-  "row-span-7",
-  "row-span-8",
-  "row-span-9",
-  "row-span-10",
-  "row-span-11",
-  "row-span-12",
-  "row-span-13",
-  "row-span-14",
-  "row-span-15",
-  "row-span-16",
-  "row-span-17",
-  "row-span-18",
-  "row-span-19",
-  "row-span-20",
-  "row-span-21",
-  "row-span-22",
-  "row-span-23",
-  "row-span-24",
-];
-const _colStartClassNames = [
-  "col-start-0",
-  "col-start-1",
-  "col-start-2",
-  "col-start-3",
-  "col-start-4",
-  "col-start-5",
-  "col-start-6",
-  "col-start-7",
-  "col-start-8",
-  "col-start-9",
-  "col-start-10",
-  "col-start-11",
-  "col-start-12",
-  "col-start-13",
-  "col-start-14",
-  "col-start-15",
-  "col-start-16",
-  "col-start-17",
-  "col-start-18",
-  "col-start-19",
-  "col-start-20",
-  "col-start-21",
-  "col-start-22",
-  "col-start-23",
-  "col-start-24",
-];
+import { SingleWoodstockEvent } from "./single-woodstock-event";
+import { Button } from "./ui/button";
+import { Drawer, DrawerContent } from "./ui/drawer";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 /** Add fonts into your Next.js project:
 
@@ -129,20 +46,14 @@ const scrollToInstance = ({ instanceId }: { instanceId: string }) => {
   }
 };
 
-const addHorizontalPositionToEventsWithInstances = ({
-  instances,
-}: {
-  instances: InstanceWithEvent[];
-}): InstanceWithEventWithHorizontalPosition[] => {
-  const _withPosition: InstanceWithEventWithHorizontalPosition[] =
-    instances.map((instance) => ({ ...instance, horizontalPosition: -1 }));
-  return _withPosition;
-};
 export function V6({
   instancesDetails,
 }: {
   instancesDetails: InstanceWithEvent[];
 }) {
+  const [selectedInstanceWithEvent, setSelectedInstanceWithEvent] = useState<
+    InstanceWithEvent | undefined
+  >();
   const [selectedDate, setSelectedDate] = useState(new Date("2024-07-31"));
   const instancesInSelectedDate = useMemo(
     () =>
@@ -164,43 +75,7 @@ export function V6({
       }),
     [instancesDetails, selectedDate],
   );
-  //   const events = [
-  //     {
-  //       dateStart: new Date("2024-07-29T10:00:00"),
-  //       dateEnd: new Date("2024-07-29T13:00:00"),
-  //       kind: "Meeting",
-  //       description: "Weekly team meeting",
-  //       color: "bg-primary text-primary-foreground",
-  //     },
-  //     {
-  //       dateStart: new Date("2024-07-29T09:00:00"),
-  //       dateEnd: new Date("2024-07-29T14:00:00"),
-  //       kind: "Call",
-  //       description: "Call with supplier",
-  //       color: "bg-secondary text-secondary-foreground",
-  //     },
-  //     {
-  //       dateStart: new Date("2024-07-29T10:00:00"),
-  //       dateEnd: new Date("2024-07-29T11:30:00"),
-  //       kind: "Lunch",
-  //       description: "Lunch with client",
-  //       color: "bg-muted text-muted-foreground",
-  //     },
-  //     {
-  //       dateStart: new Date("2024-07-29T11:00:00"),
-  //       dateEnd: new Date("2024-07-29T12:30:00"),
-  //       kind: "Meeting",
-  //       description: "Project planning meeting",
-  //       color: "bg-card text-card-foreground",
-  //     },
-  //     {
-  //       dateStart: new Date("2024-07-29T12:00:00"),
-  //       dateEnd: new Date("2024-07-29T13:30:00"),
-  //       kind: "Presentation",
-  //       description: "Present quarterly results",
-  //       color: "bg-accent text-accent-foreground",
-  //     },
-  //   ]
+
   const instancesWithHorizontalPosition = useMemo(
     () =>
       calculateInstancesWithEventIndexes({
@@ -228,327 +103,129 @@ export function V6({
   const tenMinuteIntervalsInDay = 24 * 6;
 
   return (
-    <div className="h-min gap-4 bg-background p-4 text-foreground sm:p-6">
-      {/* <div className="grid-rows-24 mx-auto grid max-w-6xl grid-cols-8 gap-4" style={{ */}
-      <div
-        className="mx-auto grid max-w-6xl grid-cols-8 gap-4"
-        style={{
-          gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
-        }}
-      >
+    <div className="flex h-full w-full flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
+      <ScrollArea className="h-[70dvh]">
         <div
-          className="col-span-1 grid gap-0"
-          style={{
-            gridTemplateRows: `repeat(${24}, minmax(0, 1fr))`,
-            gridRowStart: 1,
-            gridRowEnd: `span ${tenMinuteIntervalsInDay}`,
-          }}
-        >
-          {/* Hour Labels */}
-          {[...Array.from({ length: 24 })].map((_, hour) => {
-            const hourCellDate = new Date(
-              `2024-07-29T${hour.toString().padStart(2, "0")}:00:00`,
-            ).toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            });
-
-            const hourMinuteDelimeter = ":";
-            const [hours, minutes] = hourCellDate.split(hourMinuteDelimeter);
-            return (
-              <div
-                key={hour}
-                className="flex flex-col items-center justify-center rounded-none bg-card bg-gray-100 p-2 text-card-foreground shadow-sm ring-1 ring-gray-200 sm:flex-row"
-              >
-                <span>{hours}</span>
-                <span>{":"}</span>
-                <span>{minutes}</span>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* <div className="col-span-7 grid grid-cols-7 gap-2 overflow-scroll"> */}
-        <div
-          className="col-span-7 grid grid-cols-12 gap-2 overflow-scroll"
+          className="mx-auto grid max-w-6xl grid-cols-8 gap-4"
           style={{
             gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
-            gridRowStart: 1,
-            gridRowEnd: `span ${tenMinuteIntervalsInDay}`,
           }}
         >
-          {instancesWithHorizontalPosition.map((eventDetails) => {
-            const dateStart = new Date(eventDetails.instance.dateStart);
-            const colStart = eventDetails.instance.index + 1;
-            const dateEnd = new Date(eventDetails.instance.dateEnd);
-            const tenMinutesSegmentsDiff =
-              differenceInMinutes(dateEnd, dateStart) / 10;
-            const tenMinutesFromStartOfDayUntilEventStarts =
-              differenceInMinutes(dateStart, startOfDay(dateStart)) / 10;
-
-            return (
-              <div
-                key={eventDetails.instance.id}
-                data-event-instance-id={eventDetails.instance.id}
-                // className={`col-start-${colStart} col-span-2 md:col-span-1 row-start-${minutesFromStartOfDayUntilEventStarts + 1} row-span-${minDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
-                className={`col-start-${colStart} col-span-2 md:col-span-1 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-lg bg-gray-100 p-4 ring-2 ring-lime-600`}
-                style={{
-                  gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
-                  gridRowEnd: `span ${tenMinutesSegmentsDiff} `,
-                  gridRowStart: `${tenMinutesFromStartOfDayUntilEventStarts + 1}`,
-                }}
-                onClick={() => {
-                  console.log({
-                    eventDetails,
-                    minutesFromStartOfDayUntilEventStarts:
-                      tenMinutesFromStartOfDayUntilEventStarts,
-                    tenMinutesSegmentsDiff,
-                    hourDiff: tenMinutesSegmentsDiff / 6,
-                  });
-                }}
-              >
-                <h3 className="mb-2 truncate text-sm font-bold">
-                  {eventDetails.event?.event ?? ""}
-                </h3>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="mx-auto mt-8 max-w-6xl">
-        <div className="flex justify-center gap-4">
-          <Button
-            variant="outline"
-            onClick={() => handleDateChange(new Date("2024-07-31"))}
+          <div
+            className="col-span-1 grid gap-0"
+            style={{
+              gridTemplateRows: `repeat(${24}, minmax(0, 1fr))`,
+              gridRowStart: 1,
+              gridRowEnd: `span ${tenMinuteIntervalsInDay}`,
+            }}
           >
-            Wednesday
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => handleDateChange(new Date("2024-08-01"))}
-          >
-            Thursday
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => handleDateChange(new Date("2024-08-02"))}
-          >
-            Friday
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => handleDateChange(new Date("2024-07-27"))}
-          >
-            Saturday
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-  return (
-    <div className="bg-background p-4 text-foreground sm:p-6">
-      <div className="grid-rows-24 mx-auto grid max-w-6xl grid-cols-[100px_1fr] gap-4">
-        <div className="space-y-4">
-          {/* Hour Labels */}
-          <div className="grid grid-rows-12">
-            {[...Array.from({ length: 24 })].map((_, hour) => (
-              <div
-                key={hour}
-                className="flex items-center justify-center rounded-lg bg-card p-2 text-card-foreground shadow-sm"
-              >
-                {new Date(
-                  `2024-07-29T${hour.toString().padStart(2, "0")}:00:00`,
-                ).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-7 gap-2 overflow-scroll">
-          {instancesWithHorizontalPosition.map((eventDetails, index) => {
-            const dateStart = new Date(eventDetails.instance.dateStart);
-            const dateEnd = new Date(eventDetails.instance.dateEnd);
-            const hourDiff = differenceInHours(dateEnd, dateStart);
-            const eventStartHour = dateStart.getHours();
-
-            return (
-              <div
-                key={index}
-                className={`col-start-${eventDetails.instance.index + 2} col-span-2 md:col-span-1 row-start-${eventStartHour + 1} row-span-${hourDiff} rounded-lg bg-gray-100 p-4`}
-                onClick={() => {
-                  console.log({ eventDetails, eventStartHour, hourDiff });
-                }}
-              >
-                <h3 className="mb-2 truncate text-sm font-bold">
-                  {eventDetails.event?.event ?? ""}
-                </h3>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mx-auto mt-8 max-w-6xl">
-          <div className="flex justify-center gap-4">
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-07-31"))}
-            >
-              Wednesday
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-08-01"))}
-            >
-              Thursday
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-08-02"))}
-            >
-              Friday
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-07-27"))}
-            >
-              Saturday
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-  return (
-    <div className="bg-background p-4 text-foreground sm:p-6">
-      <div className="mx-auto grid max-w-6xl grid-cols-[100px_1fr] gap-4">
-        <div className="space-y-4">
-          {[...Array.from({ length: 24 })].map((_, hour) => (
-            <div
-              key={hour}
-              className="flex items-center justify-center rounded-lg bg-card p-2 text-card-foreground shadow-sm"
-            >
-              {new Date(
+            {/* Hour Labels */}
+            {[...Array.from({ length: 24 })].map((_, hour) => {
+              const hourCellDate = new Date(
                 `2024-07-29T${hour.toString().padStart(2, "0")}:00:00`,
               ).toLocaleTimeString([], {
                 hour: "2-digit",
                 minute: "2-digit",
-              })}
-            </div>
-          ))}
-        </div>
-        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {[...Array.from({ length: 24 })].map((_, hour) => (
-            <div key={hour} className="relative grid grid-cols-1 gap-4">
-              {instancesWithHorizontalPosition.map((instanceDetails, index) => {
-                const { event, instance } = instanceDetails;
-                const dateStart = new Date(instance.dateStart);
-                const dateEnd = new Date(instance.dateEnd);
-                const eventStart = dateStart?.getHours();
-                const eventEnd = dateEnd.getHours();
-                if (hour >= eventStart && hour < eventEnd) {
-                  const eventDuration =
-                    (dateEnd.getTime() - dateStart.getTime()) /
-                    (1000 * 60 * 60);
-                  const eventHeight = `h-[${eventDuration * 100}%]`;
-                  const eventPosition = `${eventStart - hour >= 0 ? "top-0" : "bottom-0"}`;
-                  const eventOrder = `${eventStart - hour >= 0 ? "order-1" : "order-2"}`;
-                  return (
-                    <div
-                      key={index}
-                      className={`col-span-1 rounded-lg bg-card p-4 text-card-foreground shadow-sm ${eventHeight} ${eventPosition} ${eventOrder}`}
-                    >
-                      <div className="mb-2 flex items-center justify-between">
-                        <div className="text-sm font-medium">
-                          {dateStart.toLocaleTimeString([], {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })}
-                          -{" "}
-                          {dateEnd.toLocaleTimeString([], {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })}
-                        </div>
-                        <div className="rounded-full px-2 py-1 text-xs font-medium">
-                          {event?.kind ?? ""}
-                        </div>
-                      </div>
-                      <div className="text-sm">{event?.event}</div>
-                    </div>
-                  );
-                }
-                return (
-                  <div
-                    key={index}
-                    className="col-span-1 rounded-lg bg-background shadow-sm"
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </div> */}
-        {/* perplexity ai suggestion below */}
-        <div className="grid grid-cols-7 gap-2 overflow-scroll">
-          {instancesWithHorizontalPosition.map((eventDetails, index) => {
-            const hourDiff = differenceInHours(
-              new Date(eventDetails.instance.dateEnd),
-              new Date(eventDetails.instance.dateStart),
-            );
+              });
 
-            return (
-              <div
-                key={index}
-                className={`col-start-${eventDetails.instance.index + 1} col-span-1 md:col-span-1 row-span-${hourDiff} rounded-lg bg-gray-100 p-4`}
-                onClick={() => {
-                  console.log({ eventDetails });
-                }}
-              >
-                <h3 className="mb-2 text-lg font-bold">
-                  {/* {eventDetails.event.title} */}
-                  {eventDetails.event?.event ?? ""}
-                </h3>
-                <p className="text-gray-600">
-                  {eventDetails.instance.dateStart.toLocaleString()} -{" "}
-                  {eventDetails.instance.dateEnd.toLocaleString()}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-        {/* perplexity ai suggestion above */}
+              const hourMinuteDelimeter = ":";
+              const [hours, minutes] = hourCellDate.split(hourMinuteDelimeter);
+              return (
+                <div
+                  key={hour}
+                  className="flex flex-col items-center justify-center rounded-none bg-card bg-gray-100 p-2 text-card-foreground shadow-sm ring-1 ring-gray-200 sm:flex-row"
+                >
+                  <span>{hours}</span>
+                  <span>{":"}</span>
+                  <span>{minutes}</span>
+                </div>
+              );
+            })}
+          </div>
 
-        <div className="mx-auto mt-8 max-w-6xl">
-          <div className="flex justify-center gap-4">
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-07-31"))}
-            >
-              Wednesday
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-08-01"))}
-            >
-              Thursday
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-08-02"))}
-            >
-              Friday
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleDateChange(new Date("2024-07-27"))}
-            >
-              Saturday
-            </Button>
+          <div
+            className="col-span-7 grid grid-cols-12 gap-2 overflow-scroll"
+            style={{
+              gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
+              gridRowStart: 1,
+              gridRowEnd: `span ${tenMinuteIntervalsInDay}`,
+            }}
+          >
+            {instancesWithHorizontalPosition.map((eventDetails) => {
+              const dateStart = new Date(eventDetails.instance.dateStart);
+              const colStart = eventDetails.instance.index + 1;
+              const dateEnd = new Date(eventDetails.instance.dateEnd);
+              const tenMinutesSegmentsDiff =
+                differenceInMinutes(dateEnd, dateStart) / 10;
+              const tenMinutesFromStartOfDayUntilEventStarts =
+                differenceInMinutes(dateStart, startOfDay(dateStart)) / 10;
+
+              return (
+                <div
+                  key={eventDetails.instance.id}
+                  data-event-instance-id={eventDetails.instance.id}
+                  // className={`col-start-${colStart} col-span-2 md:col-span-1 row-start-${minutesFromStartOfDayUntilEventStarts + 1} row-span-${minDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
+                  className={`col-start-${colStart} col-span-2 md:col-span-1 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
+                  style={{
+                    gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
+                    gridRowEnd: `span ${tenMinutesSegmentsDiff} `,
+                    gridRowStart: `${tenMinutesFromStartOfDayUntilEventStarts + 1}`,
+                  }}
+                  onClick={() => {
+                    setSelectedInstanceWithEvent(eventDetails);
+                    console.log({
+                      eventDetails,
+                      minutesFromStartOfDayUntilEventStarts:
+                        tenMinutesFromStartOfDayUntilEventStarts,
+                      tenMinutesSegmentsDiff,
+                      hourDiff: tenMinutesSegmentsDiff / 6,
+                    });
+                  }}
+                >
+                  <h3 className="mb-2 truncate text-sm font-bold">
+                    {eventDetails.event?.event ?? ""}
+                  </h3>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
+      </ScrollArea>
+      <ScrollArea className="flex w-full flex-nowrap gap-2">
+        <div className="flex w-full justify-around space-x-4 p-4">
+          {[
+            { dateAsString: "2024-07-31", label: "Wednesday" },
+            { dateAsString: "2024-08-01", label: "Thursday" },
+            { dateAsString: "2024-08-02", label: "Friday" },
+            { dateAsString: "2024-07-27", label: "Saturday" },
+          ].map(({ dateAsString, label }) => (
+            <Button
+              variant="outline"
+              key={dateAsString} // Corrected the spelling of 'kay' to 'key'
+              onClick={() => handleDateChange(new Date(dateAsString))}
+            >
+              {label}
+            </Button>
+          ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+      <Drawer
+        open={!!selectedInstanceWithEvent?.event}
+        onOpenChange={(open) => {
+          if (!open) {
+            setSelectedInstanceWithEvent(undefined);
+          }
+        }}
+      >
+        <DrawerContent>
+          {selectedInstanceWithEvent?.event ? (
+            <SingleWoodstockEvent
+              woodstockEvent={selectedInstanceWithEvent.event}
+            />
+          ) : null}
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 }
