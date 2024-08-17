@@ -1,0 +1,140 @@
+import { getRandomElement } from "~/utils/array-utils";
+
+const backgroundsFrom = [
+  "from-jade-50",
+  "from-jade-100",
+  "from-jade-200",
+  "from-jade-300",
+  "from-jade-400",
+  "from-jade-500",
+  //   "from-jade-600",
+  //   "from-jade-700",
+  //   "from-jade-800",
+  //   "from-jade-900",
+  //   "from-jade-950",
+  "from-wewak-50",
+  "from-wewak-100",
+  "from-wewak-200",
+  "from-wewak-300",
+  "from-wewak-400",
+  "from-wewak-500",
+  //   "from-wewak-600",
+  //   "from-wewak-700",
+  //   "from-wewak-800",
+  //   "from-wewak-900",
+  //   "from-wewak-950",
+  "from-waikawa-gray-50",
+  "from-waikawa-gray-100",
+  "from-waikawa-gray-200",
+  "from-waikawa-gray-300",
+  "from-waikawa-gray-400",
+  "from-waikawa-gray-500",
+  //   "from-waikawa-gray-600",
+  //   "from-waikawa-gray-700",
+  //   "from-waikawa-gray-800",
+  //   "from-waikawa-gray-900",
+  //   "from-waikawa-gray-950",
+  "from-perfume-50",
+  "from-perfume-100",
+  "from-perfume-200",
+  "from-perfume-300",
+  "from-perfume-400",
+  "from-perfume-500",
+  //   "from-perfume-600",
+  //   "from-perfume-700",
+  //   "from-perfume-800",
+  //   "from-perfume-900",
+  //   "from-perfume-950",
+  "from-which-haze-50",
+  "from-which-haze-100",
+  "from-which-haze-200",
+  "from-which-haze-300",
+  "from-which-haze-400",
+  "from-which-haze-500",
+  //   "from-which-haze-600",
+  //   "from-which-haze-700",
+  //   "from-which-haze-800",
+  //   "from-which-haze-900",
+  //   "from-which-haze-950",
+] as const;
+const backgroundsTo = [
+  "to-jade-50",
+  "to-jade-100",
+  "to-jade-200",
+  "to-jade-300",
+  "to-jade-400",
+  "to-jade-500",
+  //   "to-jade-600",
+  //   "to-jade-700",
+  //   "to-jade-800",
+  //   "to-jade-900",
+  //   "to-jade-950",
+  "to-wewak-50",
+  "to-wewak-100",
+  "to-wewak-200",
+  "to-wewak-300",
+  "to-wewak-400",
+  "to-wewak-500",
+  //   "to-wewak-600",
+  //   "to-wewak-700",
+  //   "to-wewak-800",
+  //   "to-wewak-900",
+  //   "to-wewak-950",
+  "to-waikawa-gray-50",
+  "to-waikawa-gray-100",
+  "to-waikawa-gray-200",
+  "to-waikawa-gray-300",
+  "to-waikawa-gray-400",
+  "to-waikawa-gray-500",
+  //   "to-waikawa-gray-600",
+  //   "to-waikawa-gray-700",
+  //   "to-waikawa-gray-800",
+  //   "to-waikawa-gray-900",
+  //   "to-waikawa-gray-950",
+  "to-perfume-50",
+  "to-perfume-100",
+  "to-perfume-200",
+  "to-perfume-300",
+  "to-perfume-400",
+  "to-perfume-500",
+  //   "to-perfume-600",
+  //   "to-perfume-700",
+  //   "to-perfume-800",
+  //   "to-perfume-900",
+  //   "to-perfume-950",
+  "to-which-haze-50",
+  "to-which-haze-100",
+  "to-which-haze-200",
+  "to-which-haze-300",
+  "to-which-haze-400",
+  "to-which-haze-500",
+  //   "to-which-haze-600",
+  //   "to-which-haze-700",
+  //   "to-which-haze-800",
+  //   "to-which-haze-900",
+  //   "to-which-haze-950",
+] as const;
+
+export const getRandomBackground = () => getRandomElement(backgroundsFrom);
+
+export type WithColors<T> = T & { colors: string };
+export const assignRandomBackgroundToElements = <T>({
+  elements,
+}: {
+  elements: T[];
+}) => {
+  const assignedColors: string[] = [];
+  const elementsWithColors: (T & { colors: string })[] = [];
+  elements.forEach((el) => {
+    const colorFrom = getRandomElement(backgroundsFrom);
+    const colorTo = getRandomElement(backgroundsTo);
+    const result: T & { colors: string } = {
+      ...el,
+      colors: ["bg-gradient-to-br", colorFrom, colorTo].join(" "),
+    };
+    assignedColors.push(colorFrom);
+    elementsWithColors.push(result);
+  });
+  console.log({ elementsWithColors, elements });
+  return elementsWithColors;
+};

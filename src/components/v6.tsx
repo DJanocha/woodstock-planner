@@ -13,6 +13,12 @@ import { SingleWoodstockEvent } from "./single-woodstock-event";
 import { Button } from "./ui/button";
 import { Drawer, DrawerContent } from "./ui/drawer";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import {
+  assignRandomBackgroundToElements,
+  WithColors,
+} from "~/styles/color-utils";
+import { cn } from "~/lib/utils";
+// const randomColors
 
 /** Add fonts into your Next.js project:
 
@@ -51,9 +57,10 @@ export function V6({
 }: {
   instancesDetails: InstanceWithEvent[];
 }) {
-  const [selectedInstanceWithEvent, setSelectedInstanceWithEvent] = useState<
-    InstanceWithEvent | undefined
-  >();
+  const [
+    selectedInstanceWithEventWithClassNames,
+    setSelectedInstanceWithEventWithClassNames,
+  ] = useState<WithColors<InstanceWithEvent> | undefined>();
   const [selectedDate, setSelectedDate] = useState(new Date("2024-07-31"));
   const instancesInSelectedDate = useMemo(
     () =>
@@ -82,6 +89,13 @@ export function V6({
         instancesWithEvents: instancesInSelectedDate,
       }),
     [instancesInSelectedDate],
+  );
+  const instancesWithHorizontalPositionAndBgColors = useMemo(
+    () =>
+      assignRandomBackgroundToElements({
+        elements: instancesWithHorizontalPosition,
+      }),
+    [instancesWithHorizontalPosition],
   );
   const handleDateChange = (date: Date) => {
     setSelectedDate(date);
@@ -151,43 +165,46 @@ export function V6({
               gridRowEnd: `span ${tenMinuteIntervalsInDay}`,
             }}
           >
-            {instancesWithHorizontalPosition.map((eventDetails) => {
-              const dateStart = new Date(eventDetails.instance.dateStart);
-              const colStart = eventDetails.instance.index + 1;
-              const dateEnd = new Date(eventDetails.instance.dateEnd);
-              const tenMinutesSegmentsDiff =
-                differenceInMinutes(dateEnd, dateStart) / 10;
-              const tenMinutesFromStartOfDayUntilEventStarts =
-                differenceInMinutes(dateStart, startOfDay(dateStart)) / 10;
+            {instancesWithHorizontalPositionAndBgColors.map(
+              ({ colors, event, instance }) => {
+                const dateStart = new Date(instance.dateStart);
+                const colStart = instance.index + 1;
+                const dateEnd = new Date(instance.dateEnd);
+                const tenMinutesSegmentsDiff =
+                  differenceInMinutes(dateEnd, dateStart) / 10;
+                const tenMinutesFromStartOfDayUntilEventStarts =
+                  differenceInMinutes(dateStart, startOfDay(dateStart)) / 10;
+                console.log({ instance, event, classNames: colors });
 
-              return (
-                <div
-                  key={eventDetails.instance.id}
-                  data-event-instance-id={eventDetails.instance.id}
-                  // className={`col-start-${colStart} col-span-2 md:col-span-1 row-start-${minutesFromStartOfDayUntilEventStarts + 1} row-span-${minDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
-                  className={`col-start-${colStart} col-span-2 md:col-span-1 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
-                  style={{
-                    gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
-                    gridRowEnd: `span ${tenMinutesSegmentsDiff} `,
-                    gridRowStart: `${tenMinutesFromStartOfDayUntilEventStarts + 1}`,
-                  }}
-                  onClick={() => {
-                    setSelectedInstanceWithEvent(eventDetails);
-                    console.log({
-                      eventDetails,
-                      minutesFromStartOfDayUntilEventStarts:
-                        tenMinutesFromStartOfDayUntilEventStarts,
-                      tenMinutesSegmentsDiff,
-                      hourDiff: tenMinutesSegmentsDiff / 6,
-                    });
-                  }}
-                >
-                  <h3 className="mb-2 truncate text-sm font-bold">
-                    {eventDetails.event?.event ?? ""}
-                  </h3>
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    key={instance.id}
+                    data-event-instance-id={instance.id}
+                    // className={`col-start-${colStart} col-span-2 md:col-span-1 row-start-${minutesFromStartOfDayUntilEventStarts + 1} row-span-${minDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
+                    className={cn(
+                      `col-start-${colStart} col-span-8 md:col-span-2 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-lg p-4`,
+                      colors,
+                    )}
+                    style={{
+                      gridTemplateRows: `repeat(${tenMinuteIntervalsInDay}, minmax(0, 1fr))`,
+                      gridRowEnd: `span ${tenMinutesSegmentsDiff} `,
+                      gridRowStart: `${tenMinutesFromStartOfDayUntilEventStarts + 1}`,
+                    }}
+                    onClick={() => {
+                      setSelectedInstanceWithEventWithClassNames({
+                        event,
+                        instance,
+                        colors,
+                      });
+                    }}
+                  >
+                    <h3 className="mb-2 truncate text-sm font-bold">
+                      {event?.event ?? ""}
+                    </h3>
+                  </div>
+                );
+              },
+            )}
           </div>
         </div>
       </ScrollArea>
@@ -211,17 +228,22 @@ export function V6({
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <Drawer
-        open={!!selectedInstanceWithEvent?.event}
+        open={!!selectedInstanceWithEventWithClassNames?.event}
         onOpenChange={(open) => {
           if (!open) {
-            setSelectedInstanceWithEvent(undefined);
+            setSelectedInstanceWithEventWithClassNames(undefined);
           }
         }}
       >
-        <DrawerContent>
-          {selectedInstanceWithEvent?.event ? (
+        <DrawerContent
+          className={cn(
+            "border-none p-4 shadow-md",
+            selectedInstanceWithEventWithClassNames?.colors ?? "",
+          )}
+        >
+          {selectedInstanceWithEventWithClassNames?.event ? (
             <SingleWoodstockEvent
-              woodstockEvent={selectedInstanceWithEvent.event}
+              woodstockEvent={selectedInstanceWithEventWithClassNames.event}
             />
           ) : null}
         </DrawerContent>
