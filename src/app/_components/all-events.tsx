@@ -1,9 +1,14 @@
 "use client";
 
-import { atom, useAtom } from "jotai";
+import { useAtom } from "jotai";
 import { useMemo } from "react";
 import { filtersAtom } from "~/atoms/filters-atom";
 import { searchByAtom } from "~/atoms/search-by-atom";
+import {
+  dislikedEventsIdsAtom,
+  likedEventsIdsAtom,
+} from "~/atoms/user-preferences-atom";
+import { Deck } from "~/components/deck";
 import { SingleWoodstockEvent } from "~/components/single-woodstock-event";
 import { Button } from "~/components/ui/button";
 import { LoadingSpinner } from "~/components/ui/loading-spinner";
@@ -13,6 +18,10 @@ import { type PaginatedInput } from "~/validators/paginated-input";
 export function AllEvents() {
   const pageSize = useMemo(() => 10, []);
   const [filters] = useAtom(filtersAtom);
+  const [dislikedEventsIds, setDislikedEventsIds] = useAtom(
+    dislikedEventsIdsAtom,
+  );
+  const [likedEventsIds, setLikedEventsIds] = useAtom(likedEventsIdsAtom);
   const [searchBy] = useAtom(searchByAtom);
   const {
     data: { pages = [] } = {},
@@ -39,14 +48,27 @@ export function AllEvents() {
   );
 
   const rows = useMemo(() => pages.flatMap((page) => page), [pages]);
+  console.log({ rows });
 
   return (
-    <div className="w-full py-2">
-      <div className="flex flex-col gap-4">
-        {rows.map((event) => (
-          <SingleWoodstockEvent woodstockEvent={event} key={event.id} />
-        ))}
-      </div>
+    <div className="w-full flex-1 py-2">
+      <Deck
+        items={rows}
+        renderItem={({ item: event, isOnTop }) => (
+          <SingleWoodstockEvent
+            woodstockEvent={event}
+            key={event.id}
+            shouldHideActionButtons={true}
+            shouldHideContent={!isOnTop}
+          />
+        )}
+        onDragged={({ dir, item }) => {
+          if (dir === "left") {
+            return setDislikedEventsIds([...dislikedEventsIds, item.id]);
+          }
+          return setLikedEventsIds([...likedEventsIds, item.id]);
+        }}
+      />
       <div className="flex flex-col items-center py-4">
         {isFetchingNextPage ? (
           <LoadingSpinner className="h-10 w-10" />

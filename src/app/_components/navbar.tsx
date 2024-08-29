@@ -3,7 +3,7 @@
 // import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { buttonVariants } from "~/components/ui/button";
 
 const links = {
   search: "/",
@@ -13,7 +13,7 @@ export const Navbar = () => {
   //   const {} = useRouter();
   const pathname = usePathname();
   return (
-    <nav className="flex h-[15dvh] flex-row items-center gap-2">
+    <nav className="flex h-[10dvh] flex-row items-center gap-2">
       <Link
         href="/"
         className={buttonVariants({

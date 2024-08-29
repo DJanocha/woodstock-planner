@@ -9,7 +9,9 @@ export const CollapsibleLargeText = ({ text }: { text: string }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div className="flex flex-1 flex-row items-start">
-      <span className={cn("", isOpen ? "" : "line-clamp-2")}>{text}</span>
+      <span className={cn("", isOpen ? "" : "line-clamp-2 flex-1")}>
+        {text}
+      </span>
       <Button
         variant="ghost"
         size="sm"

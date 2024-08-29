@@ -7,17 +7,17 @@
 
 import { differenceInMinutes, isBefore, isSameDay, startOfDay } from "date-fns";
 import { useEffect, useMemo, useState } from "react";
+import { cn } from "~/lib/utils";
+import {
+  assignRandomBackgroundToElements,
+  WithColors,
+} from "~/styles/color-utils";
 import { type RouterOutputs } from "~/trpc/react";
 import { calculateInstancesWithEventIndexes } from "~/utils/event-in-day-planner-utils";
 import { SingleWoodstockEvent } from "./single-woodstock-event";
 import { Button } from "./ui/button";
 import { Drawer, DrawerContent } from "./ui/drawer";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
-import {
-  assignRandomBackgroundToElements,
-  WithColors,
-} from "~/styles/color-utils";
-import { cn } from "~/lib/utils";
 // const randomColors
 
 /** Add fonts into your Next.js project:
@@ -244,6 +244,7 @@ export function V6({
           {selectedInstanceWithEventWithClassNames?.event ? (
             <SingleWoodstockEvent
               woodstockEvent={selectedInstanceWithEventWithClassNames.event}
+              shouldHideActionButtons={false}
             />
           ) : null}
         </DrawerContent>

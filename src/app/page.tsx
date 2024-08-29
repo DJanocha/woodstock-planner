@@ -18,10 +18,8 @@ export default async function Home() {
             </div>
           </h1>
         </div>
-        <ScrollArea className="h-[45dvh] flex-1 overflow-auto">
-          <AllEvents />
-        </ScrollArea>
-        <nav className="flex h-[15dvh] flex-row items-center gap-2">
+        <AllEvents />
+        <nav className="flex h-[10dvh] flex-row items-center gap-2">
           <EventsSearchBy />
           <EventFilters />
         </nav>
