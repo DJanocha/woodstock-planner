@@ -43,6 +43,19 @@ import { cn } from "~/lib/utils";
 // });
 // const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 // const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: 0 });
+const getStartPosition = ({ index }: { index: number }) => {
+  const modulo = index % 4;
+  if (modulo === 0) {
+    return { x: -1000, y: -1000 };
+  }
+  if (modulo === 1) {
+    return { x: 1000, y: -1000 };
+  }
+  if (modulo === 2) {
+    return { x: 1000, y: 1000 };
+  }
+  return { x: -1000, y: 1000 };
+};
 const trans = (r: number, s: number) =>
   `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 const to = (i: number) => ({
@@ -55,9 +68,10 @@ const to = (i: number) => ({
 
 // const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 const from = (_i: number) => ({
-  x: 0,
+  //   x: Math.random() > 0.5 ? -1000 : 1000,
+  x: getStartPosition({ index: _i }).x,
+  y: getStartPosition({ index: _i }).y,
   scale: 0.9,
-  y: 0,
   rot: -10 * Math.random(),
 });
 
