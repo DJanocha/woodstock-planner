@@ -39,11 +39,9 @@ To read more about using these font, please visit the Next.js documentation:
 export function SingleWoodstockEvent({
   woodstockEvent,
   shouldHideActionButtons,
-  shouldHideContent,
 }: {
   woodstockEvent: z.input<typeof woodstockEventValidator>;
   shouldHideActionButtons?: boolean;
-  shouldHideContent?: boolean;
 }) {
   const { place, description, instances, kind } = woodstockEvent;
   const [userFilters] = useAtom(filtersAtom);
@@ -100,93 +98,91 @@ export function SingleWoodstockEvent({
   }
   const eventFirstLine = woodstockEvent.event.split("\n")[0];
   const eventRestLines = woodstockEvent.event.split("\n").slice(1).join("\n");
-  //   if (shouldHideContent) {
-  //     return (
-  //       <div className="h-30 w-full rounded-lg border bg-primary/40">
-  //         {" "}
-  //         hidden content
-  //       </div>
-  //     );
-  //   }
   return (
     <div
       className={cn(
-        "relateive flex h-96 w-60 flex-col gap-4 rounded-lg border bg-background p-4 ring-2 ring-purple-600 sm:p-6",
+        "relative flex h-96 w-60 flex-col gap-4 rounded-lg border bg-background p-4 ring-2 ring-purple-600 sm:p-6",
       )}
     >
-      {shouldHideContent ? (
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-primary">
-          hidden content
+      <div className="flex w-full flex-col items-stretch gap-1">
+        <div className="flex w-full flex-col items-start justify-between">
+          <h3 className="text-md w-full overflow-ellipsis whitespace-pre-line text-sm font-bold text-black">
+            {eventFirstLine}
+          </h3>
+          {eventRestLines && (
+            <h4 className="w-full overflow-ellipsis whitespace-pre-line text-sm font-light text-black">
+              {eventRestLines}
+            </h4>
+          )}
         </div>
-      ) : null}
-      <div className="flex items-start justify-between">
-        <div className="flex w-full flex-col items-stretch gap-1">
-          <div className="flex w-full flex-col items-start justify-between">
-            <h3 className="w-full overflow-ellipsis whitespace-pre-line text-lg font-bold text-black">
-              {eventFirstLine}
-            </h3>
-            {eventRestLines && (
-              <h4 className="w-full overflow-ellipsis whitespace-pre-line text-sm font-light text-black">
-                {eventRestLines}
-              </h4>
-            )}
-          </div>
-          {configItems.map(
-            ({ Icon, text, isCollapsible }) =>
-              text && (
-                <div
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
-                  key={text}
-                >
-                  <Icon className={"size-6"} />
-                  {isCollapsible ? (
-                    // <ScrollArea className="flex-1 overflow-auto ring-2 ring-red-600">
-                    <ScrollArea className="max-h-32 flex-1 overflow-auto pr-1">
-                      <ScrollBar orientation="vertical" />
-                      <span className="flex-1 overflow-ellipsis whitespace-pre-wrap">
-                        {text}
-                      </span>
-                    </ScrollArea>
-                  ) : (
+        {configItems.map(
+          ({ Icon, text, isCollapsible }) =>
+            text && (
+              <div
+                className="flex items-start gap-2 text-sm text-muted-foreground"
+                key={text}
+              >
+                <Icon className={"size-6"} />
+                {isCollapsible ? (
+                  // <ScrollArea className="flex-1 overflow-auto ring-2 ring-red-600">
+                  <ScrollArea className="max-h-32 flex-1 overflow-auto pr-1">
+                    <ScrollBar orientation="vertical" />
                     <span className="flex-1 overflow-ellipsis whitespace-pre-wrap">
                       {text}
                     </span>
-                  )}
-                  {/* {isCollapsible && text.length > 0 ? (
+                  </ScrollArea>
+                ) : (
+                  <span className="flex-1 overflow-ellipsis whitespace-pre-wrap">
+                    {text}
+                  </span>
+                )}
+                {/* {isCollapsible && text.length > 0 ? (
                 <CollapsibleLargeText text={text} />
               ) : (
                 <span className="flex-1 overflow-ellipsis whitespace-pre-wrap">
                   {text}
                 </span>
               )} */}
-                </div>
-              ),
-          )}
-        </div>
-        {/* <XIcon /> */}
+              </div>
+            ),
+        )}
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        {instances.map((instance) => {
-          const isSaved = savedEventsInstancesIds.includes(instance.id);
-          return (
-            <Badge
-              key={instance.id}
-              variant={"secondary"}
-              onClick={() => toggleSaveInstanceId({ instanceId: instance.id })}
-              className={cn(
-                "cursor-pointer",
-                isSaved
-                  ? "to bg-gradient-to-br from-green-700 to-green-900 text-white ring-2 ring-green-900"
-                  : "",
-              )}
-            >
-              {format(instance.dateStart, "EEE HH:mm")} -{" "}
-              {format(instance.dateEnd, "HH:mm")}
-            </Badge>
-          );
-        })}
+      <div className="flex flex-row items-baseline gap-2">
+        {instances.length > 1 ? (
+          <span className="text-lg text-secondary-foreground">
+            {instances.length}:
+          </span>
+        ) : null}
+        <ScrollArea className="flex h-12 overflow-auto pr-1">
+          <ScrollBar orientation="horizontal" />
+          <div className="mt-4 flex flex-nowrap items-center gap-2">
+            {instances.map((instance) => {
+              const isSaved = savedEventsInstancesIds.includes(instance.id);
+              return (
+                <Badge
+                  key={instance.id}
+                  variant={"secondary"}
+                  onClick={() =>
+                    toggleSaveInstanceId({ instanceId: instance.id })
+                  }
+                  className={cn(
+                    "cursor-pointer",
+                    "flex-shrink-0",
+                    isSaved
+                      ? "to bg-gradient-to-br from-green-700 to-green-900 text-white ring-2 ring-green-900"
+                      : "",
+                  )}
+                >
+                  {format(instance.dateStart, "EEE HH:mm")} -{" "}
+                  {format(instance.dateEnd, "HH:mm")}
+                </Badge>
+              );
+            })}
+          </div>
+        </ScrollArea>
       </div>
+
       {shouldHideActionButtons ? null : (
         <div className="flex w-full flex-1 flex-row justify-between gap-2">
           {eventFriendshipVariants.map((friendship) => {
