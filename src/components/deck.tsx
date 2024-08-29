@@ -126,7 +126,12 @@ export function Deck<T extends MinimalItemInfo>({
       //     void api.start((i) => to(i));
       //   }, 600);
       void api.start((i) => {
-        if (index !== i) return; // We're only interested in changing spring-data for the current spring
+          if (index !== i) {
+            return;
+          }
+          if (!isTopCard) {
+            return;
+          }
         const isGone = gone.has(indexAsNumber);
         const x = isGone
           ? (200 + window.innerWidth) * (dir ?? 1)
