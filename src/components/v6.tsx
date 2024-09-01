@@ -198,7 +198,7 @@ export function V6({
                       });
                     }}
                   >
-                    <h3 className="mb-2 truncate text-sm font-bold">
+                    <h3 className="text-shadow-sm mb-2 truncate text-sm font-bold shadow-white">
                       {event?.event ?? ""}
                     </h3>
                   </div>
