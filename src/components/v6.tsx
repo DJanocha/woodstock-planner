@@ -119,9 +119,9 @@ export function V6({
 
   return (
     // <div className="flex h-full w-full flex-1 flex-grow flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
-    <div className="flex h-[45dvh] w-full flex-1 flex-grow flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
+    <div className="flex h-[45dvh] w-full flex-1 flex-grow flex-col justify-between gap-4 bg-transparent p-4 text-foreground sm:p-6">
       <ScrollArea
-        className="h-full ring-2 ring-blue-400"
+        className="h-full rounded-xl bg-background"
         aria-orientation="vertical"
       >
         <div className="h-full w-min">
@@ -148,7 +148,7 @@ export function V6({
               return (
                 <div
                   key={hour}
-                  className="flex flex-col items-center justify-center rounded-none bg-card bg-gray-100 p-2 text-card-foreground shadow-sm ring-1 ring-gray-200 sm:flex-row"
+                  className="flex flex-col items-center justify-center rounded-none border-b border-primary bg-card bg-gray-100 p-2 text-card-foreground shadow-sm sm:flex-row"
                 >
                   <span>{hour.toString().padStart(2, "0")}</span>
                 </div>
@@ -181,7 +181,7 @@ export function V6({
                     data-event-instance-id={instance.id}
                     // className={`col-start-${colStart} col-span-2 md:col-span-1 row-start-${minutesFromStartOfDayUntilEventStarts + 1} row-span-${minDiff} row-span-1 rounded-lg bg-gray-100 p-4`}
                     className={cn(
-                      `col-start-${colStart} col-span-8 md:col-span-2 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-lg p-4`,
+                      `col-start-${colStart} col-span-8 md:col-span-2 row-span-${tenMinutesSegmentsDiff} row-span-1 rounded-sm p-4`,
                       colors,
                     )}
                     style={{
