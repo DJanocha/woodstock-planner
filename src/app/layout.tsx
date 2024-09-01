@@ -5,6 +5,8 @@ import { type Metadata } from "next";
 import { setDefaultOptions } from "date-fns";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { ClientRootLayout } from "./_components/client-root-layout";
+import { HydrateClient } from "~/trpc/server";
 
 export const metadata: Metadata = {
   title: "Woodstock planner",
@@ -20,7 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <HydrateClient>
+            <ClientRootLayout>{children}</ClientRootLayout>
+          </HydrateClient>
+        </TRPCReactProvider>
       </body>
     </html>
   );

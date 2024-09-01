@@ -1,7 +1,8 @@
-import { addHours, isSameDay } from "date-fns";
+import { isSameDay } from "date-fns";
 import { z } from "zod";
-import { type Day, isDay } from "./validators/filtered-events-input";
+import { isEventDay } from "./validators/filtered-events-input";
 import { type woodstockEventValidator } from "./validators/woodstock-event";
+import { EventDay } from "./validators/event-day";
 
 const _polishTimezoneOffset = 2;
 export const events: z.input<typeof woodstockEventValidator>[] = [
@@ -12144,12 +12145,12 @@ export const events: z.input<typeof woodstockEventValidator>[] = [
   },
 ];
 
-const daysToDatesMap: Record<Day, Date> = {
+export const daysToDatesMap = {
   wednesday: new Date("2024-07-31T00:00:00.000+02:00"),
   thursday: new Date("2024-08-01T00:00:00.000+02:00"),
   friday: new Date("2024-08-02T00:00:00.000+02:00"),
   saturday: new Date("2024-08-03T00:00:00.000+02:00"),
-};
+} as const satisfies Record<EventDay, Date>;
 export const getDayByDate = (_date: string | Date) => {
   const date = z.coerce.date().parse(_date);
   const maybeDay = Object.entries(daysToDatesMap).find((entry) => {
@@ -12159,7 +12160,7 @@ export const getDayByDate = (_date: string | Date) => {
       return entry;
     }
   })?.[0];
-  if (isDay(maybeDay)) {
+  if (isEventDay(maybeDay)) {
     return maybeDay;
   }
 };
