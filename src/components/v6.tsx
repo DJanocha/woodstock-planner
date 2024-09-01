@@ -5,12 +5,13 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
+import { Scrollbar } from "@radix-ui/react-scroll-area";
 import { differenceInMinutes, isBefore, isSameDay, startOfDay } from "date-fns";
 import { useEffect, useMemo, useState } from "react";
 import { cn } from "~/lib/utils";
 import {
   assignRandomBackgroundToElements,
-  WithColors,
+  type WithColors,
 } from "~/styles/color-utils";
 import { type RouterOutputs } from "~/trpc/react";
 import { calculateInstancesWithEventIndexes } from "~/utils/event-in-day-planner-utils";
@@ -119,7 +120,16 @@ export function V6({
   return (
     // <div className="flex h-full w-full flex-1 flex-grow flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
     <div className="flex h-[45dvh] w-full flex-1 flex-grow flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
-      <ScrollArea className="h-full">
+      <ScrollArea
+        className="h-full ring-2 ring-blue-400"
+        aria-orientation="vertical"
+      >
+        <div className="h-full w-min">
+          <Scrollbar
+            orientation="vertical"
+            className="touch-pinch-zoom bg-blue-500"
+          />
+        </div>
         <div
           className="mx-auto grid max-w-6xl grid-cols-8 gap-4"
           style={{
@@ -197,25 +207,31 @@ export function V6({
           </div>
         </div>
       </ScrollArea>
-      <ScrollArea className="flex w-full flex-nowrap gap-2">
-        <div className="flex w-full justify-around space-x-1 p-4 lg:space-x-4">
-          {[
-            { dateAsString: "2024-07-31", label: "Wednesday" },
-            { dateAsString: "2024-08-01", label: "Thursday" },
-            { dateAsString: "2024-08-02", label: "Friday" },
-            { dateAsString: "2024-07-27", label: "Saturday" },
-          ].map(({ dateAsString, label }) => (
-            <Button
-              variant="outline"
-              key={dateAsString} // Corrected the spelling of 'kay' to 'key'
-              onClick={() => handleDateChange(new Date(dateAsString))}
-            >
-              {label}
-            </Button>
-          ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      <div className="overflow-y-hidden">
+        <ScrollArea
+          className="w-full gap-2 overflow-y-hidden ring-2 ring-pink-400"
+          type="scroll"
+          aria-orientation="horizontal"
+        >
+          <div className="flex w-full justify-around space-x-1 px-4 lg:space-x-4">
+            {[
+              { dateAsString: "2024-07-31", label: "Wednesday" },
+              { dateAsString: "2024-08-01", label: "Thursday" },
+              { dateAsString: "2024-08-02", label: "Friday" },
+              { dateAsString: "2024-07-27", label: "Saturday" },
+            ].map(({ dateAsString, label }) => (
+              <Button
+                variant="outline"
+                key={dateAsString} // Corrected the spelling of 'kay' to 'key'
+                onClick={() => handleDateChange(new Date(dateAsString))}
+              >
+                {label}
+              </Button>
+            ))}
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </div>
       <Drawer
         open={!!selectedInstanceWithEventWithClassNames?.event}
         onOpenChange={(open) => {
