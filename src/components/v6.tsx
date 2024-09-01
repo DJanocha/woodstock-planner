@@ -133,25 +133,13 @@ export function V6({
               gridRowEnd: `span ${tenMinuteIntervalsInDay}`,
             }}
           >
-            {/* Hour Labels */}
             {[...Array.from({ length: 24 })].map((_, hour) => {
-              const hourCellDate = new Date(
-                `2024-07-29T${hour.toString().padStart(2, "0")}:00:00`,
-              ).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              });
-
-              const hourMinuteDelimeter = ":";
-              const [hours, minutes] = hourCellDate.split(hourMinuteDelimeter);
               return (
                 <div
                   key={hour}
                   className="flex flex-col items-center justify-center rounded-none bg-card bg-gray-100 p-2 text-card-foreground shadow-sm ring-1 ring-gray-200 sm:flex-row"
                 >
-                  <span>{hours}</span>
-                  <span>{":"}</span>
-                  <span>{minutes}</span>
+                  <span>{hour.toString().padStart(2, "0")}</span>
                 </div>
               );
             })}
@@ -209,7 +197,7 @@ export function V6({
         </div>
       </ScrollArea>
       <ScrollArea className="flex w-full flex-nowrap gap-2">
-        <div className="flex w-full justify-around space-x-4 p-4">
+        <div className="flex w-full justify-around space-x-1 p-4 lg:space-x-4">
           {[
             { dateAsString: "2024-07-31", label: "Wednesday" },
             { dateAsString: "2024-08-01", label: "Thursday" },
