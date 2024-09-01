@@ -8,14 +8,12 @@ import { Navbar } from "./_components/navbar";
 export default async function Home() {
   return (
     <HydrateClient>
-      <main className="flex h-screen flex-col items-stretch justify-start bg-gradient-to-b from-[#2e026d] to-[#15162c] px-8 text-white md:items-center">
-        <div className="container flex h-[10dvh] flex-col items-stretch justify-center gap-12 py-16 md:items-center">
-          <h1 className="flex flex-col items-center text-5xl font-extrabold tracking-tight sm:text-[5rem] md:flex-row">
-            <span>Woodstock</span>
-            <div className="flex flex-row justify-between">
-              <span className="text-[hsl(280,100%,70%)]"> Planner </span>
-              <span>App</span>
-            </div>
+      <main className="flex h-screen flex-col items-stretch justify-start bg-gradient-to-b from-[#2e026d] to-[#15162c] px-4 py-4 text-white">
+        <div className="container flex h-[10dvw] flex-col items-center justify-center gap-12 py-16">
+          <h1 className="flex flex-row flex-wrap items-center gap-2 text-center text-5xl font-extrabold tracking-tight sm:text-[5rem]">
+            Woodstock
+            <span className="text-[hsl(280,100%,70%)]"> Planner </span>
+            App
           </h1>
         </div>
         <AllEvents />

@@ -161,7 +161,8 @@ export function Deck<T extends MinimalItemInfo = MinimalItemInfo>({
   );
 
   return (
-    <div className="relative m-auto flex h-full min-h-[600px] w-full flex-1 cursor-[url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')_39_39,_auto] items-center justify-center overflow-hidden bg-blue-100">
+    // <div className="relative m-auto flex h-full min-h-[500px] w-full flex-1 cursor-[url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')_39_39,_auto] items-center justify-center overflow-hidden bg-transparent">
+    <div className="relative m-auto flex h-full w-full cursor-[url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')_39_39,_auto] items-center justify-center overflow-hidden bg-transparent">
       {props.map(({ x, y, rot, scale }, i) =>
         items[i] ? (
           <animated.div

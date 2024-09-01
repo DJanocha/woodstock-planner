@@ -68,22 +68,11 @@ export function AllEvents() {
   );
 
   return (
-    <div className="w-full flex-1 py-2">
-      <Deck
-        items={lastRow}
-        renderItem={renderItem}
-        onDragged={handleDragged}
-        onAllCardsSwiped={fetchNextPage}
-      />
-      {/* <div className="flex flex-col items-center py-4">
-        {isFetchingNextPage ? (
-          <LoadingSpinner className="h-10 w-10" />
-        ) : hasNextPage ? (
-          <Button className="w-full" size="lg" onClick={() => fetchNextPage()}>
-            Load more
-          </Button>
-        ) : null}
-      </div> */}
-    </div>
+    <Deck
+      items={lastRow}
+      renderItem={renderItem}
+      onDragged={handleDragged}
+      onAllCardsSwiped={fetchNextPage}
+    />
   );
 }
