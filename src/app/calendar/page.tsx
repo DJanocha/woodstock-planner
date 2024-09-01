@@ -13,10 +13,7 @@ const CalendarPage = () => {
           </div>
         </h1>
       </div>
-      <div className="h-[45-dvh] flex-1 items-center justify-center">
-        {/* <EventsCallendarReact /> */}
-        <CustomDayPlanner />
-      </div>
+      <CustomDayPlanner />
       <Navbar />
     </main>
   );

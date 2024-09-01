@@ -117,8 +117,9 @@ export function V6({
   const tenMinuteIntervalsInDay = 24 * 6;
 
   return (
-    <div className="flex h-full w-full flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
-      <ScrollArea className="h-[70dvh]">
+    // <div className="flex h-full w-full flex-1 flex-grow flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
+    <div className="flex h-[45dvh] w-full flex-1 flex-grow flex-col justify-between gap-4 bg-background p-4 text-foreground sm:p-6">
+      <ScrollArea className="h-full">
         <div
           className="mx-auto grid max-w-6xl grid-cols-8 gap-4"
           style={{
